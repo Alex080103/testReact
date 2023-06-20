@@ -1,0 +1,34 @@
+#animate-move {
+    animation: move linear infinite alternate;
+    animation-duration: 4s;
+}
+
+.animate-appear {
+    animation: appear ease-out forwards;
+    animation-duration: 1s;
+}
+
+.animate-nav:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    bottom: -4px;
+    width: 20px;
+    height: 4px;
+    transition: 0.5s;
+}
+
+.animate-nav:hover:after{
+    width: 90%;
+}
+
+
+@keyframes move {
+    0% { transform:  translateX(0px);}
+    100% { transform:  translateX(50vw);}
+}
+
+@keyframes appear {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
