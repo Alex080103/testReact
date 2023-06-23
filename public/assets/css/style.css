@@ -1,3 +1,15 @@
+:root {
+    --swiper-navigation-color: #D60B51;
+  }
+
+  .swiper-button-next:after, .swiper-button-prev:after {
+    position:absolute!important;
+    z-index: 50!important;
+  }
+  .swiper-slide-shadow {
+    opacity: 0!important;
+  }
+
 #animate-move {
     animation: move linear infinite alternate;
     animation-duration: 4s;
@@ -19,9 +31,8 @@
 }
 
 .animate-nav:hover:after{
-    width: 90%;
+    width: 94%;
 }
-
 
 @keyframes move {
     0% { transform:  translateX(0px);}

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import logo from "../assets/img/LOGO_MILO_ILLUSTRATOR.jpg";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import "../assets/js/navbar/nav";
 
 
@@ -20,7 +19,7 @@ export default function Nav()
     }
 
     // navMobileButtons.current.addEventListener("click", toggleDisplayNavMobile);
-
+    const urlName = useLocation();
 
     //render
     return (
@@ -28,17 +27,17 @@ export default function Nav()
             <nav id="nav" className="fixed transition-all duration-[0.8s] top-0 bg-main-white z-50 shadow-2 border-b-2">
             <div className="grid grid-cols-2 md:grid-cols-[20%_80%] ld:grid-cols-[30%_70%] z-50  w-[100vw]">
                 <Link to="/" onClick={closeDisplayNavMobile}>
-                    <img src={logo} className="justify-self-start w-[120px] w-[ md:w-[170px]"></img>
+                    <img src={"/assets/img/LOGO_MILO_ILLUSTRATOR.jpg"} className="justify-self-start h-[80px] md:h-[100px]"></img>
                 </Link>
                 <div className="hidden md:grid grid-cols-[30%_30%_30%_10%] xl:grid-cols-[22%_23%_23%_30%] w-full items-center justify-items-center md:overflow-y-hidden text-[18px] lg:text-[22px] grid-rows-1 h-full">
                 <div className="flex items-center  relative">
-                    <Link to="/EspaceJeune" className="font-caviar animate-nav after:bg-main-orange relative">Espace jeune</Link>
+                    <Link to="/EspaceJeune" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceJeune" ? "after:!w-[94%]" : ""} after:!bg-main-orange relative`}>Espace jeune</Link>
                 </div>
                 <div className="flex  items-center relative">
-                    <Link to="/EspaceEntreprise" className="font-caviar animate-nav after:bg-main-green relative">Espace entreprise</Link>
+                    <Link to="/EspaceEntreprise" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceEntreprise" ? "after:!w-[94%]" : ""} after:!bg-main-green relative`}>Espace entreprise</Link>
                 </div>
                 <div className="flex   items-center relative">
-                    <Link to="/EspaceMilo" className="font-caviar animate-nav after:bg-main-pink relative">La mission locale</Link>
+                    <Link to="/EspaceMilo" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceMilo" ? "after:!w-[94%]" : ""} after:!bg-main-pink relative`}>La mission locale</Link>
                 </div>
                 <div className="flex  items-center text-2xl lg:text-3xl relative">
                     <Link to="tel:03 24 38 29 17" className="font-caviar italic text-main-pink uppercase font-bold w-full">

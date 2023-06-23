@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Tab from "../components/Tab.jsx";
 import TabContent from "../components/TabContent.jsx";
+import Team from "../components/espaceMilo/Team.jsx";
 
 
 const EspaceMilo = () => {
@@ -11,10 +12,10 @@ const EspaceMilo = () => {
             <section id="visual">
                 <div className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-center">
                     <picture>
-                        <source media="(max-width: 500px)" srcSet="assets\img\missionLocalePage\Plan_de_travail_2.png"></source>
-                        <source media="(min-width: 500px)" srcSet="assets\img\missionLocalePage\Plan_de_travail_1.png"></source>
+                        <source media="(max-width: 500px)" srcSet="assets/img/miloPage/Plan_de_travail_2.png"></source>
+                        <source media="(min-width: 500px)" srcSet="assets/img/miloPage/Plan_de_travail_1.png"></source>
 
-                        <img src="assets\img\missionLocalePage\Plan_de_travail_2.png"
+                        <img src="assets/img/miloPage/Plan_de_travail_2.png"
                             className="pt-10 pb-16 w-full"
                             alt ="visuel décrivant les missions de la mission locale (emploi, mobilité, formation, santé, 
                             Orientation, Logement, Formations, Promotions des métier), et le public visé (Jeunes 16/25 ans vor tout 
@@ -28,12 +29,12 @@ const EspaceMilo = () => {
                 <Tab title="NOS FINANCEURS" id="tab3" activeTab={activeTab} setActiveTab={setActiveTab}></Tab>
             </section>
                 <TabContent id="tab1" activeTab={activeTab} value="1">
-                    <p>salut</p>
+                    <Team></Team>
                 </TabContent>
                 <TabContent id="tab2" activeTab={activeTab} value="2">
                     <div className="w-[75%] mx-auto flex-col flex gap-8">
-                        <img src="assets\img\missionLocalePage\screenFacebook.PNG" className="w-full"></img>
-                        <img src="assets\img\missionLocalePage\screenInsta.PNG" className="w-full"></img>
+                        <img src="/assets/img/miloPage/screenFacebook.PNG" className="w-full"></img>
+                        <img src="/assets/img/miloPage/screenInsta.PNG" className="w-full"></img>
                         <iframe src="https://www.youtube.com/embed/9DpJQg9jGqM" className="aspect-video"></iframe>
                     </div>
                 </TabContent>

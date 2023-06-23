@@ -30,7 +30,7 @@ export default function App() {
         <Route path='/EspaceEntreprise' element= {<EspaceEntreprise/>} />
         <Route path='/EspaceMilo' element= {<EspaceMilo/>} />
         <Route path='/EspaceJeune' element= {<EspaceJeune/>} />
-        <Route path='/Crud' element= {<Crud/>} />
+        <Route path='/Crud/:name' element= {<Crud/>} />
 
 
 
