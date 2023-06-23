@@ -26,16 +26,25 @@ $persons = array(
         'description' => "Conseillère dédiée à l'accompagnement des jeunes vers l'emploi et la formation. Ensemble, donnons vie à vos projets professionnels. Réalisez votre potentiel dès aujourd'hui !",
         'photo' => '/assets/img/equipe/sonia.png',
         'portrait' => "/assets/img/miloPage/equipe/sonia.jpg",
-        'role' => 'Conseillère formation emploi'
+        'role' => 'Conseillère Formation Emploi'
     ),
     array(
-        'id' => 3,
+        'id' => 4,
         'nom' => 'BINET',
         'prenom' => 'Christine',
         'description' => "Chargée de projet et de communication passionnée, je suis là pour concrétiser vos idées et promouvoir votre message. Ensemble, créons des projets impactants et communiquons avec succès. ",
         'photo' => '/assets/img/equipe/christine.png',
         'portrait' => "/assets/img/miloPage/equipe/christine.jpg",
         'role' => 'Chargée de projets et de communication'
+    ),
+    array(
+        'id' => 5,
+        'nom' => 'LEBLANC',
+        'prenom' => 'Géraldine',
+        'description' => "Conseillère dédiée à l'accompagnement des jeunes vers l'emploi et la formation. Ensemble, donnons vie à vos projets professionnels. Réalisez votre potentiel dès aujourd'hui !",
+        'photo' => '/assets/img/equipe/geraldine.png',
+        'portrait' => "/assets/img/miloPage/equipe/geraldine.jpg",
+        'role' => 'Conseillère Formation Emploi'
     ),
 );
 

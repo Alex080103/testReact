@@ -104,7 +104,7 @@ const Home =  () =>
                 <div className="redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
                     bg-[url('/assets/img/homepage/photoBulle5.jpg')] bg-cover bg-opacity-50 " title="photo de personnes heureuse">
                 </div>
-                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center blur-none">Pour tous</h2>
+                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center blur-none">Tous publics</h2>
             </Link>
         </div>
           </section>

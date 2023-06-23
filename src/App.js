@@ -21,8 +21,7 @@ export default function App() {
   //   appearAll();
 
   // })
-
-
+  
   return (
     <BrowserRouter>
     <Nav/>
@@ -36,6 +35,7 @@ export default function App() {
 
         <Route path='/' element= {<Home/>} />
       </Routes>
+
     </BrowserRouter>
   );
 }

@@ -14,11 +14,11 @@ const Team = () => {
         fetchTeam();
       }, [])
     return (
-        <section id="team">
-            <div class="grid grid-cols-3 gap-8 justify-items-center">
-                {persons.map((person) => {
+        <section id="team" class="mt-8 md:mt-16">
+            <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 justify-items-center">
+                {persons.map((person, index) => {
                     return (
-                        <CardTeam content={person}></CardTeam>
+                        <CardTeam content={person} key={index}></CardTeam>
                     )
                 })}
                 
