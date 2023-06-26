@@ -5,6 +5,7 @@ import SliderPosts from "../components/homepage/SliderPosts";
 import SliderForum from "../components/homepage/SliderForum";
 import Socials from "../components/homepage/Socials";
 import Contact from "../components/Contact";
+import BanniereSuperficie from "../components/homepage/BanniereSuperficie";
 
 function appearAll() {
     const redirect = document.getElementById("redirect");
@@ -104,6 +105,7 @@ const Home =  () =>
       <main>
         <section id="redirect" aria-label="fond avec des bulles" className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed pt-8 sm:pt-16 pb-16 md:pb-24">
         <h1 className="text-4xl px-4 sm:text-5xl mb-8 md:mb-16 text-center font-title">Mission Locale <span className="italic">Sud Ardennes</span></h1>
+        {/* Apparition des éléments au fur et à mesure grâce au script appearAll */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:gap-0 lg:grid-cols-4 w-full md:w-11/12 lg:w-[99%] xl:w-11/12 mx-auto">
             <Link to="/MissionLocale" className="flex justify-start flex-col">
                 <div className={`redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
@@ -131,16 +133,17 @@ const Home =  () =>
             </Link>
         </div>
           </section>
-        <Contact></Contact>
+        {/* Partie comportant les réseaux et un slider avec l'équipe */}
         <Socials persons={persons}>
-
         </Socials>
         <section className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed">
             <SliderForum forums={forums}>
             </SliderForum>
-            <SliderPosts posts={posts}>
-            </SliderPosts>
+            <BanniereSuperficie/>
+            {/* <SliderPosts posts={posts}>
+            </SliderPosts> */}
         </section>
+        <Contact></Contact>
 
       </main>
       );

@@ -30,7 +30,7 @@ const Socials = ({persons}) => {
                 <div className="w-11/12 justify-self-center md:justify-self-auto pt-8 pb-12">
                     {persons.length > 0 ?
                     <swiper-container  className="lg:h-[380px]" slides-per-view="1" speed="500" loop="true" navigation="true"    
-                    autoplay="true" delay="500" effect="cards" disable-on-interaction="true" >
+                    autoplay="true" delay="500" disable-on-interaction="false" >
                         {persons.map((person, index) =>{
                             return (
                             <swiper-slide key={index} className="lg:h-[380px]">

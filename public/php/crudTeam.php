@@ -1,5 +1,19 @@
 <?php
 
+// $req = $bdd->prepare("SELECT * FROM persons");
+// $req->execute();
+// $datas-> $req->fetchAll(PDO::FETCH_ASSOC);
+
+// $req = $bdd->prepare("UPDATE nom, prenom, photo FROM persons WHERE person_id = ?");
+// $req->execute([$id]);
+
+// $req = $bdd->prepare("INSERT INTO persons (person_id, person_name, person_surname, person_photo, person_description)");
+// $req->execute([$id]);
+
+// $req = $bdd->prepare("DELETE FROM persons WHERE person_id = ?");
+// $req->execute([$id]);
+
+
 $persons = array(
     array(
         'id' => 1,
@@ -46,6 +60,24 @@ $persons = array(
         'portrait' => "/assets/img/miloPage/equipe/geraldine.jpg",
         'role' => 'Conseillère Formation Emploi'
     ),
+    array(
+        'id' => 6,
+        'nom' => 'BIGAND',
+        'prenom' => 'Laurence',
+        'description' => "Conseillère dédiée à l'accompagnement des jeunes vers l'emploi et la formation. Ensemble, donnons vie à vos projets professionnels. Réalisez votre potentiel dès aujourd'hui !",
+        'photo' => '/assets/img/equipe/laurence.png',
+        'portrait' => "/assets/img/miloPage/equipe/laurence.jpg",
+        'role' => 'Conseillère Formation Emploi'
+    ),
+    array(
+        'id' => 7,
+        'nom' => 'CHOLET',
+        'prenom' => 'Anne Laure',
+        'description' => "Conseillère dédiée à l'accompagnement des jeunes vers l'emploi et la formation. Ensemble, donnons vie à vos projets professionnels. Réalisez votre potentiel dès aujourd'hui !",
+        'photo' => '/assets/img/equipe/anne_laure.png',
+        'portrait' => "/assets/img/miloPage/equipe/anne_laure.jpg",
+        'role' => 'Conseillère Formation Emploi'
+    )
 );
 
 echo(json_encode($persons));
