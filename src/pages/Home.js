@@ -5,6 +5,7 @@ import SliderPosts from "../components/homepage/SliderPosts";
 import SliderForum from "../components/homepage/SliderForum";
 import Socials from "../components/homepage/Socials";
 import Contact from "../components/Contact";
+import BanniereSuperficie from "../components/homepage/BanniereSuperficie";
 
 function appearAll() {
     const redirect = document.getElementById("redirect");
@@ -34,34 +35,57 @@ const Home =  () =>
         const [posts, setPosts ]= useState([
        {
          date: '2023-06-01',
-         texte: 'Premier élément',
-         image: 'https://picsum.photos/200/300?random=1'
+         texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
+
+         image: 'https://picsum.photos/325/360?random=1'
        },
        {
          date: '2023-06-10',
-         texte: 'Deuxième élément',
-         image: 'https://picsum.photos/200/300?random=2'
+         texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
+
+         image: 'https://picsum.photos/325/360?random=2'
+
        },
        {
          date: '2023-06-15',
-         texte: 'Troisième élément',
-         image: 'https://picsum.photos/200/300?random=3'
-       }
+         texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
+         image: 'https://picsum.photos/325/360?random=3'
+
+       },
+       {
+        date: '2023-06-15',
+        texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
+        image: 'https://picsum.photos/325/360?random=4'
+
+      },        
+      {
+        date: '2023-06-15',
+        texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
+        image: 'https://picsum.photos/325/360?random=5'
+
+      },
+      {
+        date: '2023-06-15',
+        texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
+        image: 'https://picsum.photos/325/360?random=6'
+
+      }
      ]);
      const forums = [
         {
             id : 1,
             date : '2023-06-14',
-            image : 'assets/img/homepage/affiche.jpg',
-            texte : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce id tellus eget lectus lacinia accumsan. Sed ac venenatis ligula. In aliquet, ligula vel suscipit scelerisque, diam ex posuere tellus, a tristique magna mauris vitae erat. Sed id est vitae felis cursus commodo nec eu odio. Donec eu dapibus ex, non laoreet urna. Nullam suscipit convallis justo, a luctus urna laoreet at. Donec efficitur bibendum purus a tincidunt. Nullam sit amet velit in erat efficitur fringilla in ut nisl. Donec at neque vel ex vulputate semper et a diam. Nullam luctus metus non ante efficitur, ut convallis elit fringilla. Sed aliquet, nisl ut semper volutpat, nisl justo lobortis urna, sed cursus tellus dui sed nulla.',
-            lien : 'public/assets/img/homepage/affiche.jpg'
+            image : '/assets/img/homepage/affiche_2023_sanitaire_social_-ecrans_rvb.jpg',
+            texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
+            lien : 'assets/img/homepage/affiche.jpg',
+            screen : "assets/img/homepage/video1.png"
         },
         {
             id : 2,
             date : '2023-06-13',
-            image : 'assets/img/homepage/affiche2.jpg',
-            texte : 'Sed quis ipsum eu mi fringilla rutrum. Integer ac magna ut lorem rhoncus feugiat. Nullam vel est a risus venenatis egestas. Sed eleifend leo in feugiat hendrerit. Suspendisse vitae erat eget libero egestas ullamcorper. Phasellus congue purus sit amet nisi ultrices fringilla. Donec faucibus sapien id eleifend rutrum. Pellentesque sodales elit ut erat fringilla, non varius urna laoreet. Phasellus convallis pulvinar risus ut facilisis. Proin congue lacus in nibh interdum, at sollicitudin lacus facilisis.',
-            lien : 'public/assets/img/homepage/affiche2.jpg'
+            image : '/assets/img/homepage/affiche_NOV_2023_job_dating-ecrans.jpg',
+            texte : "C’est la 11ème édition… De nombreux postes sont à pourvoir dans les agences de travail temporaire. Un job dating leur est consacré le mardi 21 novembre à Rethel. Agent de conditionnement, peintre, assistant administratif, chaudronnier, maçon, électricien, boucher, assistant commercial, préparateur de commandes, conducteur routier… autant d’offres à pourvoir via les Agences pour l’emploi qui seront présentes. Cette manifestation se déroulera de 9h30 à 12h30 à la salle l’Atmosphère, 2 boulevard 4eme Armée à Rethel.", 
+            screen : 'assets/img/homepage/video2.png'
         }
     ]; 
    
@@ -81,43 +105,45 @@ const Home =  () =>
       <main>
         <section id="redirect" aria-label="fond avec des bulles" className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed pt-8 sm:pt-16 pb-16 md:pb-24">
         <h1 className="text-4xl px-4 sm:text-5xl mb-8 md:mb-16 text-center font-title">Mission Locale <span className="italic">Sud Ardennes</span></h1>
+        {/* Apparition des éléments au fur et à mesure grâce au script appearAll */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:gap-0 lg:grid-cols-4 w-full md:w-11/12 lg:w-[99%] xl:w-11/12 mx-auto">
             <Link to="/MissionLocale" className="flex justify-start flex-col">
                 <div className={`redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
                     bg-[url('/assets/img/homepage/photoBulle7.jpg')] bg-cover bg-opacity-50`} title="photo chaleureuse de l'équipe">
                 </div>
-                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center blur-none">La mission locale Sud 08</h2>
+                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">La mission locale Sud 08</h2>
             </Link>
             <Link to="/EspaceJeune" className="flex justify-start flex-col h-full">
                 <div className="redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
                     bg-[url('/assets/img/homepage/photoBulle4Cut.jpg')] bg-center bg-cover bg-opacity-50 " title="photo de jeunes motivés">
                 </div>
-                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center blur-none">Espace jeune</h2>
+                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">Espace jeune</h2>
             </Link>
             <Link to="/EspaceEntreprise" className="flex justify-start mt-4 md:mt-0 flex-col">
                 <div className="redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
                     bg-[url('/assets/img/homepage/photoBulle8.jpg')] bg-center bg-cover bg-opacity-50 " title="photo de personnes en entreprise">
                 </div>
-                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center blur-none">Espace entreprise</h2>
+                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">Espace entreprise</h2>
             </Link>
             <Link to="/PourTous" className="flex justify-start mt-4 md:mt-0 flex-col">
                 <div className="redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
-                    bg-[url('/assets/img/homepage/photoBulle5.jpg')] bg-cover bg-opacity-50 " title="photo de personnes heureuse">
+                    bg-[url('/assets/img/homepage/photoBulle3.jpg')] bg-cover bg-opacity-50 bg-bottom bg-left " title="photo de personnes heureuse">
                 </div>
-                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center blur-none">Pour tous</h2>
+                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">Tous publics</h2>
             </Link>
         </div>
           </section>
-        <Contact></Contact>
+        {/* Partie comportant les réseaux et un slider avec l'équipe */}
         <Socials persons={persons}>
-
         </Socials>
         <section className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed">
             <SliderForum forums={forums}>
             </SliderForum>
-            <SliderPosts posts={posts}>
-            </SliderPosts>
+            <BanniereSuperficie/>
+            {/* <SliderPosts posts={posts}>
+            </SliderPosts> */}
         </section>
+        <Contact></Contact>
 
       </main>
       );

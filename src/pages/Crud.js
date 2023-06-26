@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import Search from "../components/crud/Search";
-import Pagination from "../components/crud/Pagination";
-import Table from "../components/crud/Table";
+import Search from "../components/admin/Search";
+import Pagination from "../components/admin/Pagination";
+import Table from "../components/admin/Table";
 import Modal from "../components/Modal";
 
 const Crud = () =>

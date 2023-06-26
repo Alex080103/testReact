@@ -40,10 +40,10 @@ const SliderPosts = ({posts}) => {
                                               <p><em>{post.date}</em></p>
                                           </div>
                                       </div>
-                                      <p className=" mt-4 xl:line-clamp-[8] md:line-clamp-4">{post.texte}
+                                      <p className=" mt-4 xl:line-clamp-[8] line-clamp-4">{post.texte}
                                       </p><a href="http.fauxlien.com " className="text-blue-500 underline">Voir plus</a>
                                     </div>
-                                    <div className="w-full h-auto overflow-y-scroll">
+                                    <div className="w-full h-auto overflow-y">
                                       <img src={post.image} className="object-contain object-center h-auto" alt="$description['malvoyant']"></img>
                                     </div>
                                   </div>

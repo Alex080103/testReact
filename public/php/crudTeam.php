@@ -1,5 +1,19 @@
 <?php
 
+// $req = $bdd->prepare("SELECT * FROM persons");
+// $req->execute();
+// $datas-> $req->fetchAll(PDO::FETCH_ASSOC);
+
+// $req = $bdd->prepare("UPDATE nom, prenom, photo FROM persons WHERE person_id = ?");
+// $req->execute([$id]);
+
+// $req = $bdd->prepare("INSERT INTO persons (person_id, person_name, person_surname, person_photo, person_description)");
+// $req->execute([$id]);
+
+// $req = $bdd->prepare("DELETE FROM persons WHERE person_id = ?");
+// $req->execute([$id]);
+
+
 $persons = array(
     array(
         'id' => 1,
@@ -26,10 +40,10 @@ $persons = array(
         'description' => "Conseillère dédiée à l'accompagnement des jeunes vers l'emploi et la formation. Ensemble, donnons vie à vos projets professionnels. Réalisez votre potentiel dès aujourd'hui !",
         'photo' => '/assets/img/equipe/sonia.png',
         'portrait' => "/assets/img/miloPage/equipe/sonia.jpg",
-        'role' => 'Conseillère formation emploi'
+        'role' => 'Conseillère Formation Emploi'
     ),
     array(
-        'id' => 3,
+        'id' => 4,
         'nom' => 'BINET',
         'prenom' => 'Christine',
         'description' => "Chargée de projet et de communication passionnée, je suis là pour concrétiser vos idées et promouvoir votre message. Ensemble, créons des projets impactants et communiquons avec succès. ",
@@ -37,6 +51,33 @@ $persons = array(
         'portrait' => "/assets/img/miloPage/equipe/christine.jpg",
         'role' => 'Chargée de projets et de communication'
     ),
+    array(
+        'id' => 5,
+        'nom' => 'LEBLANC',
+        'prenom' => 'Géraldine',
+        'description' => "Conseillère dédiée à l'accompagnement des jeunes vers l'emploi et la formation. Ensemble, donnons vie à vos projets professionnels. Réalisez votre potentiel dès aujourd'hui !",
+        'photo' => '/assets/img/equipe/geraldine.png',
+        'portrait' => "/assets/img/miloPage/equipe/geraldine.jpg",
+        'role' => 'Conseillère Formation Emploi'
+    ),
+    array(
+        'id' => 6,
+        'nom' => 'BIGAND',
+        'prenom' => 'Laurence',
+        'description' => "Conseillère dédiée à l'accompagnement des jeunes vers l'emploi et la formation. Ensemble, donnons vie à vos projets professionnels. Réalisez votre potentiel dès aujourd'hui !",
+        'photo' => '/assets/img/equipe/laurence.png',
+        'portrait' => "/assets/img/miloPage/equipe/laurence.jpg",
+        'role' => 'Conseillère Formation Emploi'
+    ),
+    array(
+        'id' => 7,
+        'nom' => 'CHOLET',
+        'prenom' => 'Anne Laure',
+        'description' => "Conseillère dédiée à l'accompagnement des jeunes vers l'emploi et la formation. Ensemble, donnons vie à vos projets professionnels. Réalisez votre potentiel dès aujourd'hui !",
+        'photo' => '/assets/img/equipe/anne_laure.png',
+        'portrait' => "/assets/img/miloPage/equipe/anne_laure.jpg",
+        'role' => 'Conseillère Formation Emploi'
+    )
 );
 
 echo(json_encode($persons));

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, NavLink} from "react-router-dom";
 
 const Contact = () => {
 
@@ -24,7 +25,7 @@ const Contact = () => {
                         <p className="italic inline">2 Rue de l'Agriculture</p><br></br>
                         <a href="tel:03.24.71.95.91"><i className="fa-solid fa-phone mr-2 text-main-pink"></i>03 24 71 95 91</a>
                     </div>
-                    <a href="#"><i className="fa-solid fa-envelope text-2xl p-2 md:p-4 text-center w-full bg-main-pink text-main-white"></i></a>
+                    <Link to="/Contact"><i className="fa-solid fa-envelope text-2xl p-2 md:p-4 text-center w-full bg-main-pink text-main-white"></i></Link>
                 </div>
             </div>
     )

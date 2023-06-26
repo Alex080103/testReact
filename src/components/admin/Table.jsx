@@ -8,7 +8,7 @@ const Table = ({datas, onload, urlName}) => {
 
     function salut()
     {
-        alert('Salut')
+        alert('Salut');
     }
 
 
@@ -42,8 +42,8 @@ const Table = ({datas, onload, urlName}) => {
                                 <div className="w-44 z-10 bg-white rounded divide-y divide-gray-100 shadow  ">
                                     <ul className="py-1 text-sm text-gray-700 w-full">
                                         <li>
-                                            <button onClick={() => setContentToModal(content)} data-modal-target={urlName == ":team" ? "modif-modal-team" : urlName == ":post" ? "modif-modal-post" : "default-modal"}
-                                            data-modal-show={urlName == ":team" ? "modif-modal-team" : urlName == ":post" ? "modif-modal-post" : "default-modal"}
+                                            <button onClick={() => setContentToModal(content)} data-modal-target={urlName == ":team" ? "add-modal-team" : urlName == ":post" ? "modif-modal-post" : "default-modal"}
+                                            data-modal-show={urlName == ":team" ? "add-modal-team" : urlName == ":post" ? "modif-modal-post" : "default-modal"}
                                             className="block py-2 px-4 hover:bg-gray-100 w-full">Edit</button>
                                         </li>
                                     </ul>
@@ -55,7 +55,7 @@ const Table = ({datas, onload, urlName}) => {
                         </tr>
                         )
                         })
-                        }
+                    }
                 </tbody>
             </table>
                 <Modal type={urlName} action={"modif"} content={contentToModal}></Modal>

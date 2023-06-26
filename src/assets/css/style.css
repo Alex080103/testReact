@@ -1,3 +1,4 @@
+
 #animate-move {
     animation: move linear infinite alternate;
     animation-duration: 4s;
@@ -32,3 +33,20 @@
     0% { opacity: 0;}
     100% { opacity: 1;}
 }
+
+/*STYLE SCROLL BAR*/
+
+body::-webkit-scrollbar {
+    width : 50px!important;
+    background-color: #dfc716;
+}
+  
+  body::-webkit-scrollbar-track {
+    background: rgb(7, 7, 7); /* color of the tracking area */
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: #dfc716; /* color of the scroll thumb */
+    border-radius: 20px; /* roundness of the scroll thumb */
+    /* creates padding around scroll thumb */
+  }
