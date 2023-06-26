@@ -17,7 +17,7 @@ const CardTeam = ({content}) => {
                 <i className="fa-solid fa-comment text-gray-800 text-xl rounded-full >"></i>
             </button>
             <div className={`absolute bottom-1/4 transition-all duration-[0.9s] ease-out ${ showText == false ? "translate-y-1/4 opacity-0" : "opacity-1" }`}>
-                <div className="bg-gray-800 backdrop-blur-md text-main-white">
+                <div className="bg-gray-800 text-main-white">
                     <p className="p-4 text-md md:text-xl">{content.description}</p>
                 </div>
             </div>

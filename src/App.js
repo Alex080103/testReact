@@ -7,6 +7,7 @@ import EspaceEntreprise from "./pages/EspaceEntreprise.js";
 import EspaceMilo from "./pages/EspaceMilo.js";
 import EspaceJeune from "./pages/EspaceJeune.js";
 import Crud from "./pages/Crud";
+import Contact from "./pages/Contact";
 import { BrowserRouter, Router, useLocation } from "react-router-dom";
 import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
@@ -30,6 +31,7 @@ export default function App() {
         <Route path='/EspaceMilo' element= {<EspaceMilo/>} />
         <Route path='/EspaceJeune' element= {<EspaceJeune/>} />
         <Route path='/Crud/:name' element= {<Crud/>} />
+        <Route path='/Contact' element={<Contact/>}/>
 
 
 

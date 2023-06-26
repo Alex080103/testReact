@@ -2,6 +2,10 @@
     --swiper-navigation-color: #D60B51;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   .swiper-button-next:after, .swiper-button-prev:after {
     position:absolute!important;
     z-index: 50!important;

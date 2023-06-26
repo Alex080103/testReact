@@ -8,7 +8,7 @@ const Table = ({datas, onload, urlName}) => {
 
     function salut()
     {
-        alert('Salut')
+        alert('Salut');
     }
 
 

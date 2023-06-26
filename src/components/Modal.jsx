@@ -1,9 +1,15 @@
+import { useState } from "react";
+
 const Modal = ({type, action, content}) => {
+    // const [modalIsOpen, setModalIsOpen] = useState(false);
+    // function handleClick {
+    //     setModalIsOpen((modalIsOpen) => !modalIsOpen);
+    // }${ modalIsOpen == true ? "" : "hidden"}
     return (
     <div id={type == ":team" && action == "add" ? "add-modal-team" : type == ":post" && action == "add" ? "add-modal-post" :
         type == ":team" && action == "modif" ? "modif-modal-team" : type == ":post" && action == "modif" ? "modif-modal-post" : "default-modal"
     } 
-    tabIndex="-1" aria-hidden="true" className="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    tabIndex="-1" aria-hidden="true" className={`fixed top-0 left-0 right-0 z-50  hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full`}>
        <div className="relative w-full max-w-md max-h-full bg-main-gray pb-12">
            <div className="relative  h-full rounded-lg shadow">
                <button type="button" className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" 

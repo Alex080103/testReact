@@ -13,19 +13,20 @@ const SliderForum = ({forums}) => {
                     <div className=" h-full border-b md:border-b-0 border-r-2 border-gray-800">
                         <img src={forum.image} className="object-cover object-center w-full aspect-[181/256]"></img>
                     </div>
-                    <div className="p-4 flex-col justify-center md:justify-start md:items-end flex">
-                        <div className="flex items-center text-center  md:text-right">
+                    <div className="sm:p-4 flex flex-col justify-center md:justify-start md:items-end ">
+                        <div className="hidden sm:flex items-center text-center  md:text-right">
                             <div className="sm:mr-4 mx-auto">
                                 <a href="https://www.facebook.com/milosudardennes" target="_blank" className="text-blue-500 text-center md:text-right text-2xl underline">Mission Locale Sud Ardennes</a>
                                 <p><em>{forum.date}</em></p>
                             </div>
                             <div className="bg-[url('assets/img/LOGO_MILO_ILLUSTRATOR.jpg')] hidden sm:block bg-cover bg-center rounded-full mr h-24 w-32 sm:h-16 sm:w-24"></div>
                         </div>
-                        <p className="mt-4 text-right hidden sm:inline mr sm:!line-clamp-3 md:!line-clamp-[10]">{forum.texte}
-                        </p>
-                        <button className="bg-blue-600 px-4 py-2 mt-2 md:mt-8 text-main-white mx-auto w-auto">Voir la publication</button>
-                        <a href="https://www.facebook.com/milosudardennes" className="mx-auto"><img src="assets/img/homepage/video.png" className="aspect-video h-32 hidden lg:block mx-auto mt-8"/></a>
-                        <button className="bg-red-600 px-4 py-2 mt-2 md:mt-8 text-main-white mx-auto w-auto">Voir la vidéo</button>
+                        <p className="mt-4 text-right hidden sm:inline mr sm:!line-clamp-3 md:!line-clamp-[10]">{forum.texte}</p>
+                        <div className="flex md:flex-wrap justify-center">
+                            <button className="w-1/2 sm:w-auto bg-blue-600 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la publication</button>
+                            <a href="https://www.facebook.com/milosudardennes" className="mx-auto hidden lg:block"><img src={forum.screen} className="aspect-video h-32  mx-auto mt-8"/></a>
+                            <button className="w-1/2 sm:w-auto bg-red-600 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la vidéo</button>
+                        </div>
                     </div>
                 </div>
                 </swiper-slide>

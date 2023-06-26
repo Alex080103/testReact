@@ -1,7 +1,7 @@
 const Socials = ({persons}) => {
     
     return (
-        <section id="socials" className="bg-[url('assets/img/homepage/photoReseaux.jpg')] bg-center bg-fixed bg-cover" title="photo de personnes en groupe">
+        <section id="socials" className="bg-[url('assets/img/homepage/photoReseaux.jpg')] bg-center md:bg-fixed bg-cover" title="photo de personnes en groupe">
         <div className="h-auto md:h-auto w-full relative bg-gray-600 bg-opacity-60 ">
             <div className="grid grid-cols-1 md:grid-cols-2 grid-row-1 items-center pt-[50px] text-main-white  md:py-12">
                 <div className="flex ml-8 gap-8">
@@ -29,13 +29,13 @@ const Socials = ({persons}) => {
                 </div>
                 <div className="w-11/12 justify-self-center md:justify-self-auto pt-8 pb-12">
                     {persons.length > 0 ?
-                    <swiper-container slides-per-view="1" speed="500" loop="true" navigation="true"    
-                    autoplay="true" delay="500" effect="cards" disable-on-interaction="true">
+                    <swiper-container  className="lg:h-[380px]" slides-per-view="1" speed="500" loop="true" navigation="true"    
+                    autoplay="true" delay="500" effect="cards" disable-on-interaction="true" >
                         {persons.map((person, index) =>{
                             return (
-                            <swiper-slide key={index}>
+                            <swiper-slide key={index} className="lg:h-[380px]">
                                 <div className="duration-700 ease-in-out flex items-center justify-center" key={index}>
-                                    <div className="max-w-[98%] sm:max-w-[80%] md:max-w-md bg-[url('assets/img/homepage/bullesPetit.jpg')] bg-contain border-2 border-main-pink  shadow-lg ${hidden} rounded-lg overflow-hidden my-2 sm:my-4">
+                                    <div className="max-w-[98%] sm:max-w-[80%]  md:max-w-md bg-[url('assets/img/homepage/bullesPetit.jpg')] bg-contain border-2 border-main-pink  shadow-lg ${hidden} rounded-lg overflow-hidden my-2 sm:my-4">
                                         <div className="py-2 sm:py-4 px-6">
                                             <div className="grid grid-cols-2 items-center">
                                                 <img className="w-32 mx-auto h-32 rounded-full object-cover object-center" 
