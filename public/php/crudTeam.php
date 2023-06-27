@@ -46,7 +46,8 @@ $persons = array(
         'id' => 4,
         'nom' => 'BINET',
         'prenom' => 'Christine',
-        'description' => "Chargée de projet et de communication passionnée, je suis là pour concrétiser vos idées et promouvoir votre message. Ensemble, créons des projets impactants et communiquons avec succès. ",
+        'description' => "Christine organise des forums qui mettent en relation les talents et les opportunités. En bref, le sens de l’humain passe avant tout dans ses missions ! 
+        Elle gère aussi nos réseaux sociaux et la conception des supports de communication divers.",
         'photo' => '/assets/img/equipe/christine.png',
         'portrait' => "/assets/img/miloPage/equipe/christine.jpg",
         'role' => 'Chargée de projets et de communication'

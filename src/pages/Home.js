@@ -107,7 +107,7 @@ const Home =  () =>
         <h1 className="text-4xl px-4 sm:text-5xl mb-8 md:mb-16 text-center font-title">Mission Locale <span className="italic">Sud Ardennes</span></h1>
         {/* Apparition des éléments au fur et à mesure grâce au script appearAll */}
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:gap-0 lg:grid-cols-4 w-full md:w-11/12 lg:w-[99%] xl:w-11/12 mx-auto">
-            <Link to="/MissionLocale" className="flex justify-start flex-col">
+            <Link to="/EspaceMilo" className="flex justify-start flex-col">
                 <div className={`redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
                     bg-[url('/assets/img/homepage/photoBulle7.jpg')] bg-cover bg-opacity-50`} title="photo chaleureuse de l'équipe">
                 </div>
@@ -125,7 +125,7 @@ const Home =  () =>
                 </div>
                     <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">Espace entreprise</h2>
             </Link>
-            <Link to="/PourTous" className="flex justify-start mt-4 md:mt-0 flex-col">
+            <Link to="/OneForAll" className="flex justify-start mt-4 md:mt-0 flex-col">
                 <div className="redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
                     bg-[url('/assets/img/homepage/photoBulle3.jpg')] bg-cover bg-opacity-50 bg-bottom bg-left " title="photo de personnes heureuse">
                 </div>
@@ -139,6 +139,7 @@ const Home =  () =>
         <section className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed">
             <SliderForum forums={forums}>
             </SliderForum>
+            <button>Ajoutez réseaux</button>
             <BanniereSuperficie/>
             {/* <SliderPosts posts={posts}>
             </SliderPosts> */}
