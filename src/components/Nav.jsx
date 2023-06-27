@@ -29,18 +29,18 @@ export default function Nav()
                 <Link to="/" onClick={closeDisplayNavMobile}>
                     <img src={"/assets/img/LOGO_MILO_ILLUSTRATOR.jpg"} className="justify-self-start h-[80px] md:h-[100px]"></img>
                 </Link>
-                <div className="hidden lg:grid grid-cols-[24%_24%_26%_18%_2%] xl:grid-cols-[20%_20%_20%_15%_25%] w-full items-center justify-items-center md:overflow-y-hidden text-[18px] lg:text-[22px] grid-rows-1 h-full">
+                <div className="hidden lg:grid grid-cols-[24%_24%_26%_18%_2%] xl:grid-cols-[20%_20%_20%_15%_25%] w-full items-center justify-items-center md:overflow-y-hidden text-[18px] xl:text-[22px] grid-rows-1 h-full">
                 <div className="flex   items-center relative">
                     <Link to="/EspaceMilo" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceMilo" ? "after:!w-[94%]" : ""} after:!bg-main-pink relative`}>La mission locale</Link>
                 </div>
                 <div className="flex items-center  relative">
-                    <Link to="/EspaceJeune" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceJeune" ? "after:!w-[94%]" : ""} after:!bg-main-orange relative`}>Espace jeune</Link>
+                    <Link to="/EspaceJeune" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceJeune" ? "after:!w-[94%]" : ""} after:!bg-main-orange relative`}>Jeune 16/25 ans</Link>
                 </div>
                 <div className="flex  items-center relative">
-                    <Link to="/EspaceEntreprise" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceEntreprise" ? "after:!w-[94%]" : ""} after:!bg-main-green relative`}>Espace entreprise</Link>
+                    <Link to="/EspaceEntreprise" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceEntreprise" ? "after:!w-[94%]" : ""} after:!bg-main-green relative`}>Entreprise/Partenaire</Link>
                 </div>
                 <div className="flex   items-center relative">
-                    <Link to="/PourTous" className={`font-caviar animate-nav ${urlName.pathname == "/pourTous" ? "after:!w-[94%]" : ""} after:!bg-main-blue relative`}>Tous publics</Link>
+                    <Link to="/OneForAll" className={`font-caviar animate-nav ${urlName.pathname == "/pourTous" ? "after:!w-[94%]" : ""} after:!bg-main-blue relative`}>Tous publics</Link>
                 </div>
                 <div className="flex  items-center text-2xl lg:text-3xl relative">
                     <Link to="tel:03 24 38 29 17" className="font-caviar italic text-main-pink uppercase font-bold w-full">
@@ -63,7 +63,7 @@ export default function Nav()
             </div>
 
             </nav>
-                <div ref={navMobile} id="navMobile" className=" lg:hidden fixed bg-main-white z-50 top-[86px] flex flex-col h-[100vh] w-[99vw]
+                <div ref={navMobile} id="navMobile" className=" lg:hidden fixed bg-main-white z-50 top-[80px] md:top-[100px] flex flex-col h-[100vh] w-[99vw]
                 transition-all right-0 border-main-pink border-l-2 translate-x-[99vw] items-center justify-start gap-8
                 text-[32px] sm:text-[45px]">
             <div className="flex items-center mt-8 relative">
@@ -76,7 +76,7 @@ export default function Nav()
                    <Link to="/EspaceMilo" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-pink relative">La mission locale</Link>
             </div>
             <div className="flex   items-center relative">
-                    <Link to="/PourTous" className={`font-caviar animate-nav ${urlName.pathname == "/pourTous" ? "after:!w-[94%]" : ""} after:!bg-main-blue relative`}>Tous public</Link>
+                    <Link to="/OneForAll" onClick={toggleDisplayNavMobile} className={`font-caviar animate-nav ${urlName.pathname == "/pourTous" ? "after:!w-[94%]" : ""} after:!bg-main-blue relative`}>Tous public</Link>
                 </div>
             <div className="flex  items-center text-[32px] sm:text-[45px] relative">
                 <a href="tel:03 24 38 29 17" className="font-caviar italic text-main-pink uppercase font-bold w-full">

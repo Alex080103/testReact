@@ -69,7 +69,7 @@ const EspaceJeune = () => {
                 </div>
             </section>
             <section className="text mt-8 min-h-[20vh]" >
-            <h2 class="md:block font-title text-3xl md:text-5xl py-4 md:pt-4 pb-8 text-center">Touts nos Accompagnements</h2>
+            <h2 class="md:block font-title text-3xl md:text-5xl py-4 md:pt-4 pb-8 text-center">Tous nos Accompagnements</h2>
             <p class="text-md md:text-xl font-bold max-w-[90%] mx-auto">Selon ta situation, tu peux être accompagné de manière individuelle « classique » mais il est aussi possible de t’engager dans un accompagnement plus intensif.
                     Ton conseiller te donnera toutes les infos et t’orientera vers la solution la plus adaptée à ta situation !
                     Parmi l’éventail des possibilités, zoom sur quelques dispositifs :</p>

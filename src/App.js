@@ -9,6 +9,7 @@ import EspaceJeune from "./pages/EspaceJeune.js";
 import Crud from "./pages/Crud";
 import Contact from "./pages/Contact";
 import Mentions from "./components/admin/Connect";
+import OneForAll from "./pages/OneForAll.js";
 
 import { BrowserRouter, Router, useLocation } from "react-router-dom";
 import { Routes } from "react-router-dom";
@@ -36,11 +37,9 @@ export default function App() {
         <Route path='/Crud/:name' element= {<Crud/>} />
         <Route path='/Contact' element={<Contact/>}/>
         <Route path='/Mentions' element={<Mentions/>}/>
-
-
-
-
+        <Route path='/OneForAll' element={<OneForAll/>}/>
         <Route path='/' element= {<Home/>} />
+        <Route path='*' element={<Home/>}/>
       </Routes>
     <Footer/>
     </BrowserRouter>
