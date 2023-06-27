@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 
-import UnderAccordion from "../UnderAccordion";
-import UnderAccordionContent from "../UnderAccordionContent";
+import UnderAccordionContainer from "../UnderAccordionContainer";
 
 const Cie = () => {
     const [isUnderClicked, setIsUnderClicked] = useState("0");
@@ -9,10 +8,9 @@ const Cie = () => {
 
     return (
         <section>
-            <UnderAccordion title="Le CIE (Contrat Initiative Emploi)" id="3" setIsClicked={setIsUnderClicked} isClicked={isUnderClicked}/>
-            <UnderAccordionContent  id="3" isClicked={isUnderClicked}>
-                <UnderAccordion title="Qu'est ce que c'est ?" id="1" setIsClicked={setIsUnderUnderClicked} isClicked={isUnderUnderClicked} marginLeft={8}/>
-                <UnderAccordionContent id="1" isClicked={isUnderUnderClicked}>
+                <UnderAccordionContainer title="Le CIE (Contrat Initiative Emploi)" >
+
+                <UnderAccordionContainer title="Qu'est ce que c'est ?" marginLeft={8}> 
                     <div class="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md [&>div>ul]:text-sm [&>div>ul]:md:text-md">
                         <div className="border-4 border-main-green p-4">
                             <h3 class="text-xl sm:text-3xl">C'est quoi ?</h3>
@@ -41,9 +39,9 @@ const Cie = () => {
                             </p>
                         </div>
                     </div>
-                </UnderAccordionContent>
-                <UnderAccordion title="Informations complémentaires" id="2" setIsClicked={setIsUnderUnderClicked} isClicked={isUnderUnderClicked} marginLeft={8}/>
-                <UnderAccordionContent id="2" isClicked={isUnderUnderClicked}>
+                </UnderAccordionContainer>
+                <UnderAccordionContainer title="Les aides financières" marginLeft={8}> 
+
                 <div class="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md [&>div>ul]:text-sm [&>div>ul]:md:text-md">
                         <div className="border-4 border-main-green p-4">
                             <h3 class="text-xl sm:text-3xl">Quel type de contrat et quelle durée ?</h3>
@@ -68,8 +66,8 @@ const Cie = () => {
                         </div>
 
                     </div>
-                </UnderAccordionContent>
-            </UnderAccordionContent>
+                </UnderAccordionContainer>
+            </UnderAccordionContainer>
         </section>
     )
 }

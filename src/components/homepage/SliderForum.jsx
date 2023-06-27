@@ -1,6 +1,6 @@
 const SliderForum = ({forums}) => {
     return (
-        <section id="forums">
+        <section id="forums" className="mb-4 md:mb-8">
             <div className="w-11/12 justify-self-center mx-auto md:justify-self-auto pt-8 pb-12">
                 {forums.length > 0 ?
                 <swiper-container slides-per-view="1" speed="1500" loop="true" navigation="true"    

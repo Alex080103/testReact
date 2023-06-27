@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import UnderAccordion from "../UnderAccordion";
 import UnderAccordionContent from "../UnderAccordionContent";
+import UnderAccordionContainer from "../UnderAccordionContainer";
 
 const Apprentissage = () => {
     const [isUnderClicked, setIsUnderClicked] = useState("0");
@@ -9,11 +10,10 @@ const Apprentissage = () => {
 
     return (
         <section>
-            <UnderAccordion title="Contrat d'apprentissage" id="3" setIsClicked={setIsUnderClicked} isClicked={isUnderClicked}/>
-            <UnderAccordionContent  id="3" isClicked={isUnderClicked}>
-                <UnderAccordion title="Qu'est ce que c'est" id="1" setIsClicked={setIsUnderUnderClicked} isClicked={isUnderUnderClicked} marginLeft={8}/>
-                <UnderAccordionContent id="1" isClicked={isUnderUnderClicked}>
-                    <div class="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
+            <UnderAccordionContainer title="Contrat d'apprentissage">
+
+                <UnderAccordionContainer title="Qu'est ce que c'est ?" marginLeft={8}> 
+                <div class="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                     <div className="border-4 border-main-green p-4">
                         <h3 class="text-xl sm:text-3xl">C'est quoi ?</h3>
                         <p>L'apprentissage, c'est former un jeune à vos méthodes de travail,
@@ -65,9 +65,10 @@ const Apprentissage = () => {
                         </ul>
                     </div>
                     </div>
-                </UnderAccordionContent>
-                <UnderAccordion title="Les aides disponibles" id="2" setIsClicked={setIsUnderUnderClicked} isClicked={isUnderUnderClicked} marginLeft={8}/>
-                <UnderAccordionContent id="2" isClicked={isUnderUnderClicked}>
+                </UnderAccordionContainer>
+                
+                <UnderAccordionContainer title="Les aides disponibles" marginLeft={8}> 
+
                     <div class="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>ul]:text-sm [&>div>ul]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                         <div className="border-4 border-main-green p-4">
                             <h3 class="text-xl sm:text-3xl">Aide à l'embauche du 1er janvier au 31 décembre 2023</h3>
@@ -91,8 +92,9 @@ const Apprentissage = () => {
                                 </strong> Les employeurs publics peuvent remplir et télétransmettre aux services administratifs leurs contrats d'apprentissage grâce à la plateforme digitale dédiée à l'apprentissage public développée par la DGEFP.</p>
                         </div>
                     </div>
-                </UnderAccordionContent>
-            </UnderAccordionContent>
+                </UnderAccordionContainer>
+            </UnderAccordionContainer>
+
         </section>
     )
 }

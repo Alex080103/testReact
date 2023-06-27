@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import UnderAccordion from "../UnderAccordion";
 import UnderAccordionContent from "../UnderAccordionContent";
+import UnderAccordionContainer from "../UnderAccordionContainer";
 
 const PMSP = () => {
     const [isUnderClicked, setIsUnderClicked] = useState("0");
@@ -10,8 +11,8 @@ const PMSP = () => {
 
     return (
         <section>
-            <UnderAccordion title="Qu'est ce que c'est ?" id="3" setIsClicked={setIsUnderClicked} isClicked={isUnderClicked}/>
-            <UnderAccordionContent  id="3" isClicked={isUnderClicked}>
+            <UnderAccordionContainer title="Qu'est ce que c'est ?">  
+
                 <div class="grid gap-4 w-full md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                     <div className="border-4 border-main-green p-4">
                         <h3 className="text-xl sm:text-3xl">C'est quoi ?</h3>
@@ -37,9 +38,9 @@ const PMSP = () => {
                         </ul>
                     </div>
                 </div>
-            </UnderAccordionContent>
-            <UnderAccordion title="Les conditions de la PMSP" id="1" setIsClicked={setIsUnderClicked} isClicked={isUnderClicked}/>
-            <UnderAccordionContent id="1" isClicked={isUnderClicked}>
+            </UnderAccordionContainer>
+            <UnderAccordionContainer title="Les conditions de la PMSP">  
+
                 <div class="grid gap-4 md:w-11/12 mt-4 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                     <div className="border-4 border-main-orange p-4">
                         <h3 className="text-xl sm:text-3xl">Quels conditions ?</h3>
@@ -77,7 +78,7 @@ const PMSP = () => {
                             maladie professionnelle.</p>
                     </div>
                 </div>
-                </UnderAccordionContent>
+                </UnderAccordionContainer>
         </section>
 
     )

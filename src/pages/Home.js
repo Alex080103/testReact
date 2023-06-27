@@ -136,10 +136,10 @@ const Home =  () =>
         {/* Partie comportant les réseaux et un slider avec l'équipe */}
         <Socials persons={persons}>
         </Socials>
-        <section className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed">
+        <section className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed text-center">
             <SliderForum forums={forums}>
             </SliderForum>
-            <button>Ajoutez réseaux</button>
+            <a href="https://www.facebook.com/milosudardennes" className="bg-main-pink p-4 md:p-8 text-lg md:text-2xl text-main-white">Découvrez nos réseaux</a>
             <BanniereSuperficie/>
             {/* <SliderPosts posts={posts}>
             </SliderPosts> */}

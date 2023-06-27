@@ -10,6 +10,7 @@ import ContratPro from "../components/espaceEntreprise/ContratPro";
 import Cie from "../components/espaceEntreprise/Cie";
 import PMSP from "../components/espaceEntreprise/PMSP";
 import Parrainage from "../components/espaceEntreprise/Parrainage";
+import UnderAccordionContainer from "../components/UnderAccordionContainer";
 
 const EspaceEntreprise = () => {
     const [isClicked, setIsClicked] = useState("0");
@@ -19,7 +20,7 @@ const EspaceEntreprise = () => {
 
 
     return (
-<section id="" className="pb-8">
+<section id="" className="pb-8 min-h-[80vh]">
     <h1 class="font-title text-4xl md:text-5xl py-8 md:pt-12 md:pb-8 xl:py-16 text-center">L'espace Entreprise / Partenaire</h1>
 
         <div className="grid grid-cols-1 gap-4 xl:gap-0 xl:grid-cols-2">
@@ -27,7 +28,7 @@ const EspaceEntreprise = () => {
 
                 <Accordion title="Vous recrutez ou souhaitez faire connaître votre activité ?" id="1" setIsClicked={setIsClicked} isClicked={isClicked}/>
                 <AccordionContent id="1" isClicked={isClicked} height={200}>
-                <div class="md:w-11/12 mx-auto">
+                <div class="md:w-11/12 mx-auto ml-4 md:ml-16">
                     <p className="text-lg">
                         Vous pouvez nous faire part de vos offres en nous les envoyant par mail (contact@mlsudardennes.fr), nous appeler au
                         <a href="tel:03 24 38 29 17" className="underline"><em> 03 24 38 29 17</em></a> ou la poster directement sur notre groupe <a href="https://www.facebook.com/groups/994160127762101/." class="text-main-blue underline">facebook JOB EMPLOI Rethel et alentours (08-51-02).</a>

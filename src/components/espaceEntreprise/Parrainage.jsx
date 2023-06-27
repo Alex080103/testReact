@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import UnderAccordion from "../UnderAccordion";
 import UnderAccordionContent from "../UnderAccordionContent";
+import UnderAccordionContainer from "../UnderAccordionContainer";
 
 const Parrainage = () => {
     const [isUnderClicked, setIsUnderClicked] = useState("0");
@@ -10,8 +11,8 @@ const Parrainage = () => {
 
     return (
         <section>
-            <UnderAccordion title="Qu'est ce que c'est ?" id="3" setIsClicked={setIsUnderClicked} isClicked={isUnderClicked}/>
-            <UnderAccordionContent  id="3" isClicked={isUnderClicked}>
+                <UnderAccordionContainer title="Qu'est ce que c'est">  
+
                 <div class="grid gap-4 md:w-11/12 border-2 border-main-blue p-4 ">
                     <p class="text-lg sm:text-xl uppercase text-center italic font-bold">Chaque parcours est particulier en fonction des contextes, des personnes et des objectifs à atteindre. Il n'y a pas de "Recette" idéale en matière de parrainage.</p>
                     <p class="text-2xl text-center">Quel est le rôle <span className="text-main-orange font-bold">du parrain et de la marraine?</span></p>
@@ -33,9 +34,9 @@ const Parrainage = () => {
                         <li><span className="text-main-orange">Aider à rétablir</span> la confiance en soi</li>                    
                     </ul>
                 </div>
-            </UnderAccordionContent>
-            <UnderAccordion title="Un engagement réciproque" id="1" setIsClicked={setIsUnderClicked} isClicked={isUnderClicked}/>
-            <UnderAccordionContent id="1" isClicked={isUnderClicked}>
+            </UnderAccordionContainer>
+            <UnderAccordionContainer title="Un engagement réciproque">  
+
                 <div class="grid gap-4 md:w-11/12 mt-4 border-2 border-main-green p-4 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                         <h3 class="text-3xl text-center">Le parrainage, <span className="text-main-orange">un engagement réciproque</span></h3>
                         <p><span className="text-main-purple text-lg font-bold">Les parrains et marraines ne sont pas seuls:</span> ils font parties intégrante du réseau des Missions Locales.</p>
@@ -68,7 +69,7 @@ const Parrainage = () => {
                         </ul>
                     </div>
                 </div>
-                </UnderAccordionContent>
+                </UnderAccordionContainer>
         </section>
 
     )
