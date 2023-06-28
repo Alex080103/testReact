@@ -10,7 +10,7 @@ const ContratPro = () => {
 
     return (
         <section>
-                <UnderAccordionContainer title="Contrat de Professionnalisation">
+                <UnderAccordionContainer title="Contrat de Professionnalisation"  marginLeft={4}>
 
                 <UnderAccordionContainer title="Qu'est ce que c'est" marginLeft={8}>  
 

@@ -139,7 +139,7 @@ const Home =  () =>
         <section className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed text-center">
             <SliderForum forums={forums}>
             </SliderForum>
-            <a href="https://www.facebook.com/milosudardennes" className="bg-main-pink p-4 md:p-8 text-lg md:text-2xl text-main-white">Découvrez nos réseaux</a>
+            <a href="https://www.facebook.com/milosudardennes" className="bg-main-pink whitespace-nowrap p-4 md:p-6 text-md sm:text-lg font-bold md:text-2xl text-main-white">Découvrez toutes nos publications</a>
             <BanniereSuperficie/>
             {/* <SliderPosts posts={posts}>
             </SliderPosts> */}

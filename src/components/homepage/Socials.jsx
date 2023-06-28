@@ -2,12 +2,12 @@ const Socials = ({persons}) => {
     
     return (
         <section id="socials" className="bg-[url('assets/img/homepage/photoReseaux.jpg')] bg-center md:bg-fixed bg-cover" title="photo de personnes en groupe">
-        <div className="h-auto md:h-auto w-full relative bg-gray-600 bg-opacity-60 ">
+        <div className="h-auto md:h-auto w-full relative bg-gray-600 bg-opacity-70 ">
             <div className="grid grid-cols-1 md:grid-cols-2 grid-row-1 items-center pt-[50px] text-main-white  md:py-12">
-                <div className="flex ml-8 gap-8">
-                    <img src="/assets/img/homepage/288f6585103987.5d716fde758fd.gif" className="hidden xl:block w-[250px]">
-                    </img>
-                    <div className="w-[99%] lg:w-10/12 ml-auto flex flex-col gap-4 text-xl h-fit">
+                <div className="flex ml-8 gap-8 items-center">
+                    {/* <img src="/assets/img/homepage/288f6585103987.5d716fde758fd.gif" className="hidden xl:block w-[250px]">
+                    </img> */}
+                    <div className="w-[99%] lg:w-10/12 ml-auto flex flex-col md:mb-12 gap-4 text-xl h-fit">
                         <h3 className="font-title text-4xl italic tracking-[0.1em]">Rejoignez la communauté</h3>
                         <div>
                             <i className="fa-brands fa-square-facebook mr-2 text-main-blue"></i>

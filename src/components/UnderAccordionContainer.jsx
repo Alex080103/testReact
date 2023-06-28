@@ -2,7 +2,7 @@ import { useState } from "react";
 import UnderAccordion from "./UnderAccordion"
 import UnderAccordionContent from "./UnderAccordionContent"
 
-const UnderAccordionContainer = ({title, marginLeft, children}) => {
+const AccordionContainer = ({title, marginLeft, children}) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div>
@@ -14,4 +14,4 @@ const UnderAccordionContainer = ({title, marginLeft, children}) => {
 
     )
 }
-export default UnderAccordionContainer;
+export default AccordionContainer;
