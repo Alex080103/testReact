@@ -6,17 +6,23 @@ const Team = () => {
     const [persons, setPersons] = useState([]);
 
     function fetchTeam() {
-        axios.get('http://localhost:8000/public/php/crudTeam.php').then(function(response) {
+        axios.post('http://localhost:8000/public/php/index.php', {
+            action: "showAllUsers"
+        }).then(function(response) {
             setPersons(response.data);
         })
     }   
     useEffect(() => {
         fetchTeam();
+
       }, [])
+    console.log(persons);
+
     return (
         <section id="team" class="mt-8 md:mt-16">
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 justify-items-center">
                 {persons.map((person, index) => {
+                    console.log(person.user_name)
                     return (
                         <CardTeam content={person} key={index}></CardTeam>
                     )

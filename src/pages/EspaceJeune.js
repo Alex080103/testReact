@@ -44,7 +44,7 @@ const EspaceJeune = () => {
     return (
         <main>
             <section class="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed">
-                <h1 class="hidden md:block font-title text-4xl md:text-5xl md:pt-16 text-center">Espace Jeune de 16 à 25 ans</h1>
+                <h1 class="hidden md:block font-title text-4xl md:text-5xl md:pt-16 text-center">Espace Jeunes de 16 à 25 ans</h1>
                 <div className="h-auto md:max-w-[100%] lg:max-w-[100vw] mx-auto aspect-video relative ">
                     <div id="branchContainer" className='hidden md:block h-full w-full'>
                         {/* <button id="1" onClick={() => handleClick(1)} className=" w-[47%] h-[170px] z-10 absolute top-[4%] right-[10%]"></button> */}
@@ -71,7 +71,7 @@ const EspaceJeune = () => {
             <section className="text mt-8 min-h-[20vh]" >
             <h2 class="md:block font-title text-3xl md:text-5xl py-4 md:pt-4 pb-8 text-center">Tous nos Accompagnements</h2>
             <p class="text-md md:text-xl font-bold max-w-[95%] md:max-w-[85%] mx-auto">Selon ta situation, tu peux être accompagné de manière individuelle « classique » mais il est aussi possible de t’engager dans un accompagnement plus intensif.
-                    Ton conseiller te donnera toutes les infos et t’orientera vers la solution la plus adaptée à ta situation !
+                    Ton/ta conseiller/conseillère te donnera toutes les infos et t’orientera vers la solution la plus adaptée à ta situation !
                     Parmi l’éventail des possibilités, zoom sur quelques dispositifs :</p>
                 <div class="md:flex mx-auto w-auto justify-center mt-8 font-bold">
 

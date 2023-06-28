@@ -34,10 +34,10 @@ export default function Nav()
                     <Link to="/EspaceMilo" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceMilo" ? "after:!w-[94%]" : ""} after:!bg-main-pink relative`}>La mission locale</Link>
                 </div>
                 <div className="flex items-center  relative">
-                    <Link to="/EspaceJeune" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceJeune" ? "after:!w-[94%]" : ""} after:!bg-main-orange relative`}>Jeune 16/25 ans</Link>
+                    <Link to="/EspaceJeune" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceJeune" ? "after:!w-[94%]" : ""} after:!bg-main-orange relative`}>Jeunes 16/25 ans</Link>
                 </div>
                 <div className="flex  items-center relative">
-                    <Link to="/EspaceEntreprise" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceEntreprise" ? "after:!w-[94%]" : ""} after:!bg-main-green relative`}>Entreprise/Partenaire</Link>
+                    <Link to="/EspaceEntreprise" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceEntreprise" ? "after:!w-[94%]" : ""} after:!bg-main-green relative`}>Entreprises/Partenaires</Link>
                 </div>
                 <div className="flex   items-center relative">
                     <Link to="/OneForAll" className={`font-caviar animate-nav ${urlName.pathname == "/pourTous" ? "after:!w-[94%]" : ""} after:!bg-main-blue relative`}>Tous publics</Link>
@@ -67,10 +67,10 @@ export default function Nav()
                 transition-all right-0 border-main-pink border-l-2 translate-x-[99vw] items-center justify-start gap-8
                 text-[32px] sm:text-[45px]">
             <div className="flex items-center mt-8 relative">
-                   <Link to="/EspaceJeune" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-orange relative">Espace jeune</Link>
+                   <Link to="/EspaceJeune" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-orange relative">Jeunes 16/25 ans</Link>
             </div>
             <div className="flex  items-center relative">
-                    <Link to="/EspaceEntreprise" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-green relative">Espace entreprise</Link>
+                    <Link to="/EspaceEntreprise" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-green relative">Espace entreprises</Link>
             </div>
             <div className="flex   items-center relative">
                    <Link to="/EspaceMilo" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-pink relative">La mission locale</Link>

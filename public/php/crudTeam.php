@@ -1,8 +1,18 @@
 <?php
 
-// $req = $bdd->prepare("SELECT * FROM persons");
-// $req->execute();
-// $datas-> $req->fetchAll(PDO::FETCH_ASSOC);
+
+// class FetchDonnees extends ConnectBdd 
+// {
+//     function showUsers ()
+//     {
+//         $req = $this->bdd->prepare("SELECT * FROM user");
+//         $req->execute();
+//         $datas = $req->fetchAll(PDO::FETCH_ASSOC);
+//         return $datas;
+//     }
+// }
+
+
 
 // $req = $bdd->prepare("UPDATE nom, prenom, photo FROM persons WHERE person_id = ?");
 // $req->execute([$id]);
@@ -80,6 +90,9 @@ $persons = array(
         'role' => 'Conseillère Formation Emploi'
     )
 );
+
+// $fetchRepository = new FetchDonnees;
+// $persons = $fetchRepository->showUsers();
 
 echo(json_encode($persons));
 

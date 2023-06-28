@@ -26,7 +26,7 @@ const EspaceMilo = () => {
                     <div className="px-4 pb-2 mx-auto w-[90%] lg:w-auto -order-1 lg:order-1">
                         <h2 className="font-title text-3xl md:text-4xl py-6">La Mission Locale, c'est quoi ?</h2>
                             <p>
-                                Une mission locale est un espace pour les 16-25 ans. Chaque jeune accueilli est aidé au niveau de l’emploi, de la formation, du logement et de la santé.
+                                Une mission locale est un espace pour les jeunes de 16 à 25 ans. Chaque jeune accueilli est aidé au niveau de l’emploi, de la formation, du logement et de la santé.
                                 <br></br><br></br><span className="italic font-bold">Les Missions Locales, <span className="text-main-orange">c’est </span>
                                  <span className="text-main-pink">pour</span> <span className="text-main-green"> tout</span> <span className="text-main-blue">le monde !</span></span><br></br><br></br>
                                 Peu importe tes diplômes, peu importe ton genre, peu importe tes croyances, peu importe ta situation. La seule condition pour être accompagné par une Mission Locale, c’est d’avoir entre 16 et 25 ans.
