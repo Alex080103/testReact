@@ -8,23 +8,31 @@ import Modal from "../components/Modal";
 
 const Crud = () =>
 {
-    const [posts, setPosts] = useState([]);
+    const [datas, setDatas] = useState([]);
     const [isLoad, setIsLoad] = useState(false);
     const {name} = useParams();
 
       useEffect(() => {
-        name == ":team" ? fetchTeam() : fetchPost();
+            if (name == ":team") {
+                fetchTeam()
+            } else {
+                fetchPost();
+            }
         }, [name]);
 
-        function fetchPost() {
-            axios.get('http://localhost:8000/public/php/crudPost.php').then(function(response) {
-                setPosts(response.data);
+        function fetchTeam() {
+            axios.post('http://localhost:8000/public/php/index.php', {
+                action : 'showAllUsers'
+            }).then(function(response) {
+                setDatas(response.data);
                 setIsLoad((isLoad) => !isLoad);
             })
         }   
-        function fetchTeam() {
-            axios.get('http://localhost:8000/public/php/crudTeam.php').then(function(response) {
-                setPosts(response.data);
+        function fetchPost() {
+            axios.post('http://localhost:8000/public/php/index.php', {
+                action: 'showAllPosts'
+            }).then(function(response) {
+                setDatas(response.data);
                 setIsLoad((isLoad) => !isLoad);
             })
         }   
@@ -38,7 +46,7 @@ const Crud = () =>
                         <div className="bg-white  relative shadow-md sm:rounded-lg overflow-hidden">
                             <Search  urlName={name}></Search>
                             <div className="overflow-x-auto">
-                                {posts.length !== 0 ? <Table datas={posts} render={isLoad} urlName={name} ></Table> : <div>Loading</div>}
+                                {datas.length !== 0 ? <Table datas={datas} render={isLoad} urlName={name} fetchs={{fetchTeam, fetchPost}}></Table> : <div>Loading</div>}
                             </div>
                             <Pagination></Pagination>
                         </div>

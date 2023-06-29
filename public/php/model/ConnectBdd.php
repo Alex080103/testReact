@@ -1,6 +1,7 @@
 <?php 
 require_once ('./controller/frontController.php');
-
+require_once ('./controller/adminController.php');
+require_once ('./functions/functions.php');
 class ConnectBdd
 {
     public $bdd;
