@@ -3,7 +3,7 @@ import Modal from "../Modal";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Table = ({datas, onload, urlName,}) => {
+const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
     const [showDatas, setDatas] = useState(datas);
     const [contentToModal, setModalContent] = useState({});
     const [isOpenModal, setIsOpenModal] = useState(false);
@@ -13,9 +13,15 @@ const Table = ({datas, onload, urlName,}) => {
             action : action,
             id : id
         }).then(function(response) {
-            console.log(response);
+            if (response.data == true) {
+                if (urlName == ":post") {
+                    fetchPost();
+                } else {
+                    fetchTeam();
+                }
+            } 
         })
-          
+
     }
     
     function setContentToModal(content, index) {
@@ -117,7 +123,9 @@ const Table = ({datas, onload, urlName,}) => {
 
                 </tbody>
             </table>
-                <Modal isOpen={isOpenModal} type={urlName} action={"modif"} contentToModal={contentToModal} setIsOpen={setIsOpenModal} showDatas={showDatas} setDatas={setDatas}></Modal>
+                <Modal isOpen={isOpenModal} type={urlName} action={"modif"} contentToModal={contentToModal} 
+                setIsOpen={setIsOpenModal} showDatas={showDatas} 
+                setDatas={setDatas} fetchTeam={fetchTeam} fetchPost={fetchPost} setError={setError}></Modal>
         </div>
 
     )

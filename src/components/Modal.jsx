@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useRef, useState } from "react";
 
-const Modal = ({isOpen, type, action, contentToModal, setIsOpen, showDatas, setDatas}) => {
+const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetchPost, setError}) => {
     // const [modalIsOpen, setModalIsOpen] = useState(false);
     // function handleClick {
     //     setModalIsOpen((modalIsOpen) => !modalIsOpen);
@@ -20,14 +20,29 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, showDatas, setD
         form,
          {headers: { 'Content-Type': 'multipart/form-data' }}).then(function(response) {
             setResponse(response.data);
-        })
-        if (response == true) {
-        setIsOpen((isOpen) => !isOpen);
-        setDatas(showDatas.push(content));
-        console.log(response);
-        } 
+            console.log(response.data);
+            if (response.data == true) {
+                setIsOpen((isOpen) => !isOpen);
+                // setDatas(showDatas.push(content));
+                if (type == ":post") {
+                    fetchPost();
+                } else {
+                    fetchTeam();
+                }
+            } else if (response.data == false) {
+                setError("Erreur de traitement");
+            } else if (response.data.error !== null) {
+                console.log(response.data.error);
+                setError(response.data.error);
+            }
+        }).catch (error => {
+            setError("Une erreur est survenue");
+            console.log(error);
+        }
+        )
+
     }
-    
+    console.log(content);
     return (
     <div id={type == ":team" && action == "add" ? "add-modal-team" : type == ":post" && action == "add" ? "add-modal-post" :
         type == ":team" && action == "modif" ? "modif-modal-team" : type == ":post" && action == "modif" ? "modif-modal-post" : "default-modal"
@@ -48,6 +63,11 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, showDatas, setD
                             <div>
                                 <label htmlFor="financeur" className="block mb-2 text-sm font-medium text-white">Modifier l'image des logos financeurs</label>
                                 <input type="file" name="founder" id="financeur" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                                </input>
+                            </div>
+                            <div>
+                                <label htmlFor="financeurMobil" className="block mb-2 text-sm font-medium text-white">Modifier l'image mobile des logos financeurs</label>
+                                <input type="file" name="founderMobil" id="financeurMobil" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                                 </input>
                             </div>
                             <div>

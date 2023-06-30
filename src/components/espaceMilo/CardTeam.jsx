@@ -8,7 +8,7 @@ const CardTeam = ({content}) => {
             </div>
             <div className="h-1/4 text-center border-2 border-gray-800 flex flex-wrap content-center justify-center  border-t-0 rounded-b-xl">
                 <h4 className="font-extrabold text-[28px] w-[100%]">{content.surname} <span className="uppercase italic">{content.name}</span></h4>
-                <p className="italic">{content.role_id}<span className="italic font-bold"> - Vouziers</span></p>
+                <p className="italic">{content.poste}<span className="italic font-bold"> - Vouziers</span></p>
             </div>
             <a href="" className="absolute top-3 left-4 bg-main-white p-2 px-3 rounded-full hover:animate-pulse">
                 <i className="fa-brands fa-linkedin-in text-gray-800 text-xl rounded-full >"></i>

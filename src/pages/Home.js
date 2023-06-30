@@ -97,6 +97,31 @@ const Home =  () =>
             setPersons(response.data);
         })
     }   
+
+    // useEffect(() => {
+    //     if (name == ":team") {
+    //         fetchTeam()
+    //     } else {
+    //         fetchPost();
+    //     }
+    // }, [name]);
+
+    // function fetchTeam() {
+    //     axios.post('http://localhost:8000/public/php/index.php', {
+    //         action : 'showAllUsers'
+    //     }).then(function(response) {
+    //         setDatas(response.data);
+    //         setIsLoad((isLoad) => !isLoad);
+    //     })
+    // }   
+    // function fetchPost() {
+    //     axios.post('http://localhost:8000/public/php/index.php', {
+    //         action: 'showAllPosts'
+    //     }).then(function(response) {
+    //         setDatas(response.data);
+    //         setIsLoad((isLoad) => !isLoad);
+    //     })
+    // }   
     useEffect(() => {
         appearAll();
         fetchTeam();

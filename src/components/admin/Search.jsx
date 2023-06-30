@@ -2,10 +2,40 @@ import { Link } from "react-router-dom";
 import Modal from "../Modal";
 import { useState } from "react";
 
-const Search = ({urlName}) => {
+const Search = ({urlName, datas, setDatas, fetchTeam, fetchPost, setError}) => {
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [isOpenFinanceurModal, setIsOpenFinanceurModal] = useState(false);
 
+    function handleChange(event) {
+        let text = event.target.value;
+        console.log(event.target.value)
+        if (event.target.value.length == 0) {
+            if (urlName == ":team") {
+                fetchTeam();
+            } else {
+                fetchPost();
+            }
+        }
+        datas.map((data, index)=> {
+            const isGood = (text); 
+            let y = 0;
+            const array = Object.entries(data);
+            var find = [];
+            for (let i=0; i < array.length; i++) {
+                let result = array[i].indexOf(text, 0);
+                if (result !== -1) {
+                    find.push(index);
+                }
+                y++;
+            }
+            if (find.length > 0) {
+                console.log(find[0]);
+                setDatas([datas[index]]);
+            }
+        })
+
+    }
+    // console.log(datas);
     return (
         <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
             <div className="w-full md:w-1/2">
@@ -17,7 +47,7 @@ const Search = ({urlName}) => {
                                 <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
                             </svg>
                         </div>
-                        <input type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 " placeholder="Search" required="">
+                        <input onChange={() => handleChange(event)} type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 " placeholder="Search" required="">
                             </input>
                     </div>
                 </form>
@@ -41,7 +71,8 @@ const Search = ({urlName}) => {
                     Financeurs
                 </button>
             </div>
-            <Modal isOpen={isOpenModal} type={urlName} action={"add"}  setIsOpen={setIsOpenModal}></Modal>
+            <Modal isOpen={isOpenModal} type={urlName} action={"add"}  setIsOpen={setIsOpenModal} 
+            fetchTeam={fetchTeam} fetchPost={fetchPost} setError={setError}></Modal>
             <Modal isOpen={isOpenFinanceurModal} type={"financeur"} setIsOpen={setIsOpenFinanceurModal}/>
         </div>
 
