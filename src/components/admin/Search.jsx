@@ -5,10 +5,18 @@ import { useState } from "react";
 const Search = ({urlName, datas, setDatas, fetchTeam, fetchPost, setError}) => {
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [isOpenFinanceurModal, setIsOpenFinanceurModal] = useState(false);
+    let [previousLength, setPreviousLength] = useState(0);
 
-    function handleChange(event) {
+    function handleChange(event, previousLength) {
         let text = event.target.value;
-        console.log(event.target.value)
+        if (event.target.value.length < previousLength) {
+            if (urlName == ":team") {
+                fetchTeam();
+            } else {
+                fetchPost();
+            }
+        }
+        setPreviousLength((previousLength) => previousLength = event.target.value.length);
         if (event.target.value.length == 0) {
             if (urlName == ":team") {
                 fetchTeam();
@@ -16,21 +24,26 @@ const Search = ({urlName, datas, setDatas, fetchTeam, fetchPost, setError}) => {
                 fetchPost();
             }
         }
-        datas.map((data, index)=> {
+        var find = [];
+
+        datas.map((data, index) => {
             const isGood = (text); 
             let y = 0;
             const array = Object.entries(data);
-            var find = [];
             for (let i=0; i < array.length; i++) {
                 let result = array[i].indexOf(text, 0);
+                // console.log(array[i]);
                 if (result !== -1) {
                     find.push(index);
                 }
                 y++;
             }
             if (find.length > 0) {
-                console.log(find[0]);
-                setDatas([datas[index]]);
+                let newDatas = [];
+                find.forEach(index => {
+                    newDatas.push(datas[index]);
+                })
+                setDatas(newDatas);
             }
         })
 
@@ -47,7 +60,7 @@ const Search = ({urlName, datas, setDatas, fetchTeam, fetchPost, setError}) => {
                                 <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
                             </svg>
                         </div>
-                        <input onChange={() => handleChange(event)} type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 " placeholder="Search" required="">
+                        <input onChange={() => handleChange(event, previousLength)} type="text" id="simple-search" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2 " placeholder="Search" required="">
                             </input>
                     </div>
                 </form>

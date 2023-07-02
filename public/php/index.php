@@ -15,6 +15,21 @@ require_once('model/ConnectBdd.php');
             $users = showAllUsers();
             echo json_encode($users);
             break;
+        case 'showAllPosts':
+            $posts = showAllPosts();
+            echo json_encode($posts);
+            break;
+        case 'connect': 
+            $isConnect = connect($_POST);
+            if ($isConnect['connect'] == "Connexion réussie") {
+                $_SESSION['user'] = [ "name" => $_POST['email']];
+            }
+            echo json_encode($isConnect);
+            break;
+        if (!isset($_SESSION['user']) && empty($_SESSION['user'])
+         && !isset($_SESSION['user']['name']) && empty($_SESSION['user']['name']) )  {
+            break;
+        }
         case 'addUser':
             $userIsAdd = addUser($_POST, $_FILES);
             echo json_encode($userIsAdd);
@@ -27,10 +42,7 @@ require_once('model/ConnectBdd.php');
             $userIsDelete = deleteUser($obj->id);
             echo json_encode($userIsDelete);
             break;
-        case 'showAllPosts':
-            $posts = showAllPosts();
-            echo json_encode($posts);
-            break;
+
         case 'addPost':
             $postIsAdd = addPost($_POST, $_FILES);
             echo json_encode($postIsAdd);
@@ -47,5 +59,6 @@ require_once('model/ConnectBdd.php');
             $isUpdate = modifFunders($_POST, $_FILES);
             echo json_encode($isUpdate);
             break;
+
         
     }

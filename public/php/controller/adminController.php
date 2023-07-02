@@ -2,10 +2,15 @@
 
 function connect(array $post)
 {
-    if ((isset($post['name']) && !empty($post['name'])) && (isset($post['mdp']) && !empty($post['mdp']))) {
-        $admin = new Admin(0, $post['name'], $post['mdp']);
+    if ((isset($post['email']) && !empty($post['email'])) && (isset($post['password']) && !empty($post['password']))) {
+        $admin = new Admin(0, $post['email'], $post['password']);
         $adminRepository = new AdminRepository;
-        $IsConnect = $adminRepository->connnect($admin);
+        $IsConnect = $adminRepository->connect($admin);
+        return $IsConnect;
+    } else {
+        return [
+            "error" => "Un des champs n'est pas rempli"
+        ];
     }
 }
 

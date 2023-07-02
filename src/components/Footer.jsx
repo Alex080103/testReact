@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import Connect from "./admin/Connect";
 
-const Footer = () => {
+const Footer = ({setIsConnected}) => {
+  const urlName = useLocation();
     return (
         <footer
           class="animateBackground bg-main-white border-main-pink border-t-2 w-full  first-letter:text-center  lg:text-left">
@@ -14,8 +16,9 @@ const Footer = () => {
             <p
               class=" w-full"
               >Tous droits réservés : Mission Locale Sud Ardennes</p>
+            { urlName.pathname == "/Mentions" ? 
+            <Connect setIsConnected={setIsConnected}/> : ""}; 
 
-            
           </div>
         </footer>
     )

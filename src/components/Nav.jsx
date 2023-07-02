@@ -26,10 +26,10 @@ export default function Nav()
         <header>
             <nav id="nav" className="fixed transition-all duration-[0.8s] ease-out top-0 bg-main-white z-50 shadow-2 border-b-2">
             <div className="grid grid-cols-2 lg:grid-cols-[15%_85%] ld:grid-cols-[30%_70%] z-50  w-[100vw]">
-                <Link to="/" onClick={closeDisplayNavMobile}>
+                <Link to="/Accueil" onClick={closeDisplayNavMobile}>
                     <img src={"/assets/img/LOGO_MILO_ILLUSTRATOR.jpg"} className="justify-self-start h-[80px] md:h-[100px]"></img>
                 </Link>
-                <div className="hidden lg:grid grid-cols-[24%_24%_26%_18%_2%] xl:grid-cols-[20%_20%_20%_15%_25%] w-full items-center justify-items-center md:overflow-y-hidden text-[18px] xl:text-[22px] grid-rows-1 h-full">
+                <div className="hidden lg:grid grid-cols-[22%_24%_28%_18%_2%] xl:grid-cols-[18%_20%_22%_15%_25%] w-full items-center justify-items-center md:overflow-y-hidden text-[18px] xl:text-[22px] grid-rows-1 h-full">
                 <div className="flex   items-center relative">
                     <Link to="/EspaceMilo" className={`font-caviar animate-nav ${urlName.pathname == "/EspaceMilo" ? "after:!w-[94%]" : ""} after:!bg-main-pink relative`}>La mission locale</Link>
                 </div>

@@ -1,5 +1,4 @@
 const InfoPanel = ({error, setError}) => {
-    console.log(error);
     return (
         <div className={`fixed  top-[85px] md:top-[105px] z-[999] right-2 ${ error !== undefined ? "" : "translate-x-[100vw]"} 
         transition-transform bg-main-red ease-in text-main-white p-8 text-xl`}>

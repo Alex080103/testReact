@@ -24,7 +24,7 @@ class Admin
 
 class AdminRepository extends ConnectBdd 
 {
-    function connnect(object $admin) : array
+    function connect(object $admin) : array
     {
         $name = htmlspecialchars($admin->getName(), ENT_QUOTES);
         $mdp = htmlspecialchars($admin->getMdp(), ENT_QUOTES);

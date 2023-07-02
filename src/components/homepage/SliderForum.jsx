@@ -9,7 +9,7 @@ const SliderForum = ({forums}) => {
                     {forums.map((forum, index) =>{
                         return (
             <swiper-slide key={index}>
-                <div className="bg-main-white grid md:grid-cols-[60%_40%] border-2 w-[95%] sm:w-[95%] h-auto md:max-w-auto lg:max-w-[80%] xl:w-2/3 mx-auto border-main-gray shadow-xl shadow-main-gray">
+                <div className="bg-main-white grid md:grid-cols-[60%_40%] border-2 w-[95%] sm:w-[95%] rounded-r-xl h-auto md:max-w-auto lg:max-w-[80%] xl:w-2/3 mx-auto border-main-gray shadow-xl shadow-main-gray">
                     <div className=" h-full border-b md:border-b-0 border-r-2 border-gray-800">
                         <img src={forum.image} className="object-cover object-center w-full aspect-[181/256]"></img>
                     </div>

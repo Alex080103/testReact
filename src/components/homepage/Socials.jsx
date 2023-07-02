@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Socials = ({persons}) => {
     
     return (
@@ -48,9 +50,9 @@ const Socials = ({persons}) => {
                                             </div>
                                             <p className="py-2 sm:text-lg text-gray-700 text-center line-clamp-5">""{person['description']}""</p>
                                             <div className="flex justify-center w-full items-center">
-                                                <a href="#" className="bg-main-pink py-2 px-4 w-[98%] sm:w-4/6  rounded-full text-center text-main-white my-2 border border-main-white hover:bg-main-white hover:text-main-pink hover:border hover:border-main-red">
+                                                <Link to="/EspaceMilo" className="bg-main-pink py-2 px-4 w-[98%] sm:w-4/6  rounded-full text-center text-main-white my-2 border border-main-white hover:bg-main-white hover:text-main-pink hover:border hover:border-main-red">
                                                     Découvrir toute notre équipe
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

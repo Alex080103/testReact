@@ -7,6 +7,8 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
     const [showDatas, setDatas] = useState(datas);
     const [contentToModal, setModalContent] = useState({});
     const [isOpenModal, setIsOpenModal] = useState(false);
+    const [showPictures, setShowPictures] = useState(-1);
+    // console.log(showPictures);
 
     function handleDelete(action, id) {
         axios.post('http://localhost:8000/public/php/index.php', {
@@ -21,7 +23,6 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                 }
             } 
         })
-
     }
     
     function setContentToModal(content, index) {
@@ -36,8 +37,8 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
     return (
         <div>
             <table className="w-full text-sm text-left text-gray-500 " onLoad={onload}>
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50  ">
-                    { urlName == ":post" ? 
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                    { urlName == ":post" ?
                     <tr>
                         <th scope="col" className="px-4 py-3">Date</th>
                         <th scope="col" className="px-4 py-3">Description</th>
@@ -49,8 +50,7 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                             <span className="sr-only">Actions</span>
                         </th>
                     </tr>
-                    : 
-                    urlName == ":team" ? 
+                    : urlName == ":team" ?
                     <tr>
                         <th scope="col" className="px-4 py-3">Nom/Prénom</th>
                         <th scope="col" className="px-4 py-3">Poste</th>
@@ -62,19 +62,30 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                             <span className="sr-only">Actions</span>
                         </th>
                     </tr>
-                    : ""}
+                    : <tr>
+                        <th>null</th>
+                    </tr> }
                 </thead>
                 <tbody>
-                    { 
-                        
-
-                     showDatas.map((content, index) => {            
+                    {showDatas.map((content, index) => {            
                         return (
                             urlName == ":team" ? 
                         <tr className="border-b max-h-[10px]" key={index}>
-                            <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{content['surname']}. {content['name']}</th>
+                            <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{content['surname']}.{content['name']}</th>
                             <td className="px-4 py-3">{content['poste']}</td>
-                            <td className="px-4 py-3 "><img className="max-h-40" src={content['photo']}></img><img className="max-h-40" src={content['photo_accueil']}></img></td>
+                            <td className="px-4 py-3 min-w-[200px] max-w-[350px]">
+                                {showPictures !== index ? 
+                                <button className="w-full bg-blue-700 p-2 text-main-white" onClick={() => setShowPictures(index)}>Afficher les images</button>
+                                : 
+                                <button className="w-full bg-blue-700 p-2 text-main-white" onClick={() => setShowPictures(-1)}>Cacher les images</button>
+                                }
+                                { showPictures !== index ? "" : 
+                                <div className={`grid grid-cols-2 items-center gap-4}`}>
+                                    <img className="max-h-40" src={content['photo']}></img>
+                                    <img className="max-h-40" src={content['photo_accueil']}></img>
+                                </div>
+                                }
+                            </td>
                             <td className="px-4 py-3">{content['description']}</td>
                             <td className="px-4 py-3">{content['localisation']}</td>
                             <td className="px-4 py-3">{content['linkedin']}</td>
