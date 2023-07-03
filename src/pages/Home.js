@@ -97,6 +97,31 @@ const Home =  () =>
             setPersons(response.data);
         })
     }   
+
+    // useEffect(() => {
+    //     if (name == ":team") {
+    //         fetchTeam()
+    //     } else {
+    //         fetchPost();
+    //     }
+    // }, [name]);
+
+    // function fetchTeam() {
+    //     axios.post('http://localhost:8000/public/php/index.php', {
+    //         action : 'showAllUsers'
+    //     }).then(function(response) {
+    //         setDatas(response.data);
+    //         setIsLoad((isLoad) => !isLoad);
+    //     })
+    // }   
+    // function fetchPost() {
+    //     axios.post('http://localhost:8000/public/php/index.php', {
+    //         action: 'showAllPosts'
+    //     }).then(function(response) {
+    //         setDatas(response.data);
+    //         setIsLoad((isLoad) => !isLoad);
+    //     })
+    // }   
     useEffect(() => {
         appearAll();
         fetchTeam();
@@ -117,13 +142,13 @@ const Home =  () =>
                 <div className="redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
                     bg-[url('/assets/img/homepage/photoBulle4Cut.jpg')] bg-center bg-cover bg-opacity-50 " title="photo de jeunes motivés">
                 </div>
-                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">Espace jeune</h2>
+                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">Jeunes 16/25 ans</h2>
             </Link>
             <Link to="/EspaceEntreprise" className="flex justify-start mt-4 md:mt-0 flex-col">
                 <div className="redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
                     bg-[url('/assets/img/homepage/photoBulle8.jpg')] bg-center bg-cover bg-opacity-50 " title="photo de personnes en entreprise">
                 </div>
-                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">Espace entreprise</h2>
+                    <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">Entreprises/Partenaires</h2>
             </Link>
             <Link to="/OneForAll" className="flex justify-start mt-4 md:mt-0 flex-col">
                 <div className="redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
@@ -139,7 +164,7 @@ const Home =  () =>
         <section className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed text-center">
             <SliderForum forums={forums}>
             </SliderForum>
-            <a href="https://www.facebook.com/milosudardennes" className="bg-main-pink p-4 md:p-8 text-lg md:text-2xl text-main-white">Découvrez nos réseaux</a>
+            <a href="https://www.facebook.com/milosudardennes" className="bg-main-pink whitespace-nowrap p-4 rounded-full md:p-6 text-md sm:text-lg font-bold border md:text-2xl text-main-white hover:bg-main-white hover:text-main-pink hover:border transition-all hover:border-main-pink">Découvrez toutes nos publications</a>
             <BanniereSuperficie/>
             {/* <SliderPosts posts={posts}>
             </SliderPosts> */}

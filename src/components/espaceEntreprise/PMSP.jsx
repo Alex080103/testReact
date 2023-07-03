@@ -11,7 +11,7 @@ const PMSP = () => {
 
     return (
         <section>
-            <UnderAccordionContainer title="Qu'est ce que c'est ?">  
+            <UnderAccordionContainer title="Le PMSP, qu'est ce que c'est ?" marginLeft={4}>  
 
                 <div class="grid gap-4 w-full md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                     <div className="border-4 border-main-green p-4">
@@ -39,7 +39,7 @@ const PMSP = () => {
                     </div>
                 </div>
             </UnderAccordionContainer>
-            <UnderAccordionContainer title="Les conditions de la PMSP">  
+            <UnderAccordionContainer title="Les conditions de la PMSP" marginLeft={4}>  
 
                 <div class="grid gap-4 md:w-11/12 mt-4 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                     <div className="border-4 border-main-orange p-4">

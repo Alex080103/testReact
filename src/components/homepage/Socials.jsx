@@ -1,14 +1,16 @@
+import { Link } from "react-router-dom";
+
 const Socials = ({persons}) => {
     
     return (
         <section id="socials" className="bg-[url('assets/img/homepage/photoReseaux.jpg')] bg-center md:bg-fixed bg-cover" title="photo de personnes en groupe">
-        <div className="h-auto md:h-auto w-full relative bg-gray-600 bg-opacity-60 ">
+        <div className="h-auto md:h-auto w-full relative bg-gray-600 bg-opacity-70 ">
             <div className="grid grid-cols-1 md:grid-cols-2 grid-row-1 items-center pt-[50px] text-main-white  md:py-12">
-                <div className="flex ml-8 gap-8">
-                    <img src="/assets/img/homepage/288f6585103987.5d716fde758fd.gif" className="hidden xl:block w-[250px]">
-                    </img>
-                    <div className="w-[99%] lg:w-10/12 ml-auto flex flex-col gap-4 text-xl h-fit">
-                        <h3 className="font-title text-4xl italic tracking-[0.1em]">Rejoignez la communauté</h3>
+                <div className="flex ml-8 gap-8 items-center">
+                    {/* <img src="/assets/img/homepage/288f6585103987.5d716fde758fd.gif" className="hidden xl:block w-[250px]">
+                    </img> */}
+                    <div className="w-[99%] lg:w-10/12 ml-auto flex flex-col md:mb-12 gap-4 text-xl lg:text-2xl h-fit">
+                        <h3 className="font-title text-4xl lg:text-5xl italic mb-6 tracking-[0.1em]">Rejoignez la communauté</h3>
                         <div>
                             <i className="fa-brands fa-square-facebook mr-2 text-main-blue"></i>
                             <a href="#"> Sur Facebook</a>
@@ -48,9 +50,9 @@ const Socials = ({persons}) => {
                                             </div>
                                             <p className="py-2 sm:text-lg text-gray-700 text-center line-clamp-5">""{person['description']}""</p>
                                             <div className="flex justify-center w-full items-center">
-                                                <a href="#" className="bg-main-pink py-2 px-4 w-[98%] sm:w-4/6  rounded-full text-center text-main-white my-2 border border-main-white hover:bg-main-white hover:text-main-pink hover:border hover:border-main-red">
+                                                <Link to="/EspaceMilo" className="bg-main-pink py-2 px-4 w-[98%] sm:w-4/6 transition-all  rounded-full text-center text-main-white my-2 border border-main-white hover:bg-main-white hover:text-main-pink hover:border hover:border-main-red">
                                                     Découvrir toute notre équipe
-                                                </a>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

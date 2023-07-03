@@ -8,7 +8,7 @@ const Cie = () => {
 
     return (
         <section>
-                <UnderAccordionContainer title="Le CIE (Contrat Initiative Emploi)" >
+                <UnderAccordionContainer title="Le CIE (Contrat Initiative Emploi)"  marginLeft={4}>
 
                 <UnderAccordionContainer title="Qu'est ce que c'est ?" marginLeft={8}> 
                     <div class="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md [&>div>ul]:text-sm [&>div>ul]:md:text-md">

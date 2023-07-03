@@ -10,7 +10,7 @@ const Apprentissage = () => {
 
     return (
         <section>
-            <UnderAccordionContainer title="Contrat d'apprentissage">
+            <UnderAccordionContainer title="Contrat d'apprentissage" marginLeft={4}>
 
                 <UnderAccordionContainer title="Qu'est ce que c'est ?" marginLeft={8}> 
                 <div class="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">

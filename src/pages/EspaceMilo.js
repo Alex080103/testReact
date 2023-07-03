@@ -3,6 +3,7 @@ import Tab from "../components/Tab.jsx";
 import TabContent from "../components/TabContent.jsx";
 import Team from "../components/espaceMilo/Team.jsx";
 import SocialsContent from "../components/espaceMilo/SocialsContent.jsx";
+import Contact from "../components/Contact.jsx";
 
 
 const EspaceMilo = () => {
@@ -26,7 +27,7 @@ const EspaceMilo = () => {
                     <div className="px-4 pb-2 mx-auto w-[90%] lg:w-auto -order-1 lg:order-1">
                         <h2 className="font-title text-3xl md:text-4xl py-6">La Mission Locale, c'est quoi ?</h2>
                             <p>
-                                Une mission locale est un espace pour les 16-25 ans. Chaque jeune accueilli est aidé au niveau de l’emploi, de la formation, du logement et de la santé.
+                                Une mission locale est un espace pour les jeunes de 16 à 25 ans. Chaque jeune accueilli est aidé au niveau de l’emploi, de la formation, du logement et de la santé.
                                 <br></br><br></br><span className="italic font-bold">Les Missions Locales, <span className="text-main-orange">c’est </span>
                                  <span className="text-main-pink">pour</span> <span className="text-main-green"> tout</span> <span className="text-main-blue">le monde !</span></span><br></br><br></br>
                                 Peu importe tes diplômes, peu importe ton genre, peu importe tes croyances, peu importe ta situation. La seule condition pour être accompagné par une Mission Locale, c’est d’avoir entre 16 et 25 ans.
@@ -49,16 +50,24 @@ const EspaceMilo = () => {
                     <SocialsContent/>
                 </TabContent>
                 <TabContent id="tab3" activeTab={activeTab} value="1">
-                    <picture>
-                        <source media="(max-width: 500px)" srcSet="assets/img/miloPage/financeurs_mobile.jpg"></source>
-                        <source media="(min-width: 500px)" srcSet="assets/img/miloPage/financeurs.jpg"></source>
-                        <img src="assets/img/miloPage/Plan_de_travail_2.png"
-                            className="w-[95%] mx-auto rounded-lg"
-                            alt ="visuel décrivant les missions de la mission locale (emploi, mobilité, formation, santé, 
-                            Orientation, Logement, Formations, Promotions des métier), et le public visé (Jeunes 16/25 ans vor tout 
-                            puvlic sur certaines aides)"></img>
-                    </picture>
+                    <div className="relative">
+                        <a href="download/Rapport_2022.pdf" download="Rapport_D'activité_Mission_Locale_Sud_Ardennes_2022.pdf"
+                            className="absolute -bottom-10 md:bottom-auto md:top-10 lg:top-16 xl:top-20 right-8 font-bold italic text-md lg:text-xl bg-main-pink p-1 px-2 lg:p-2 lg:px-4 text-main-white rounded-lg">Rapport d'activité 2022 
+                            <i class="fa-solid fa-download bg-main-pink text-main-white p-2 lg:p-4"></i>
+                        </a>
+                        <picture>
+                            <source media="(max-width: 500px)" srcSet="assets/img/miloPage/financeurs_mobile.jpg"></source>
+                            <source media="(min-width: 500px)" srcSet="assets/img/miloPage/financeurs.jpg"></source>
+                            <img src="assets/img/miloPage/Plan_de_travail_2.png"
+                                className="w-[95%] mx-auto rounded-lg"
+                                alt ="visuel décrivant les missions de la mission locale (emploi, mobilité, formation, santé,
+                                Orientation, Logement, Formations, Promotions des métier), et le public visé (Jeunes 16/25 ans vor tout
+                                puvlic sur certaines aides)"></img>
+                        </picture>
+                    </div>
                 </TabContent>
+            <Contact></Contact>
+
         </main>
     )
 }

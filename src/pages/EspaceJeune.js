@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import AccordionContent from "../components/AccordionContent";
+import Contact from "../components/Contact";
 
 function appearAllBranch() {
     const redirect = document.getElementById("branchContainer");
@@ -43,10 +44,11 @@ const EspaceJeune = () => {
     }
     return (
         <main>
-            <section class="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed">
-                <h1 class="hidden md:block font-title text-4xl md:text-5xl md:pt-16 text-center">Espace Jeune de 16 à 25 ans</h1>
-                <div className="h-auto md:max-w-[100%] lg:max-w-[100vw] mx-auto aspect-video relative ">
-                    <div id="branchContainer" className='hidden md:block h-full w-full'>
+            <section class="bg-[url('assets/img/homepage/bulles.jpg')] z-0 relative after:z-0 after:bg-gray-400 after:content-['] 
+            after:opacity-10 after:w-full after:h-full after:absolute after:top-0 bg-cover bg-fixed">
+                <h1 class="hidden md:block font-title text-4xl z-40 md:text-5xl md:pt-16 text-center">Espace Jeunes de 16 à 25 ans</h1>
+                <div className="h-auto md:max-w-[100%] z-20 lg:max-w-[90vw] mx-auto aspect-video relative ">
+                    <div id="branchContainer" className='hidden md:block  h-full w-full'>
                         {/* <button id="1" onClick={() => handleClick(1)} className=" w-[47%] h-[170px] z-10 absolute top-[4%] right-[10%]"></button> */}
                         <img src="assets\img\jeunePage\1-_SHEMA_ORIENTATION.png" className="branch transition-all opacity-0 absolute w-full bg-transparent h-full" alt="schéma retracant les objectifs de la mission locale"></img>
 
@@ -70,23 +72,23 @@ const EspaceJeune = () => {
             </section>
             <section className="text mt-8 min-h-[20vh]" >
             <h2 class="md:block font-title text-3xl md:text-5xl py-4 md:pt-4 pb-8 text-center">Tous nos Accompagnements</h2>
-            <p class="text-md md:text-xl font-bold max-w-[90%] mx-auto">Selon ta situation, tu peux être accompagné de manière individuelle « classique » mais il est aussi possible de t’engager dans un accompagnement plus intensif.
-                    Ton conseiller te donnera toutes les infos et t’orientera vers la solution la plus adaptée à ta situation !
+            <p class="text-md md:text-xl font-bold max-w-[95%] md:max-w-[85%] mx-auto">Selon ta situation, tu peux être accompagné de manière individuelle « classique » mais il est aussi possible de t’engager dans un accompagnement plus intensif.
+                    Ton/ta conseiller/conseillère te donnera toutes les infos et t’orientera vers la solution la plus adaptée à ta situation !
                     Parmi l’éventail des possibilités, zoom sur quelques dispositifs :</p>
-                <div class="md:flex mx-auto w-auto justify-center mt-8 font-bold">
+                <div class="md:flex mx-auto w-auto justify-center  mt-8 font-bold">
 
-                    <button onClick={() => handleOpen()} className="w-full md:w-auto flex items-center bg-main-pink px-4 py-2 text-main-white text-2xl mr-4">Voir nos Accompagnements <i ref={rotateArrow} className="fa-solid fa-arrow-right duration-[1s] -rotate-180 ease-out  transition-transform ml-2 mt-[1%]"></i> </button>
-                    <ol ref={openList} className={`list-disc flex flex-col md:flex-row gap-8 pl-8 bg-main-pink px-4 py-6 md:py-2 text-main-white items-center text-2xl md:text-xl relative after:duration-[1s] ease-out justify-center after:content-[""] after:w-[110%] after:bg-main-white
+                    <button onClick={() => handleOpen()} className="w-full sm:w-auto  justify-center flex items-center bg-main-pink px-4 lg:px-6 py-2 lg:py-4 text-main-white text-2xl lg:text-3xl mr-4">Voir nos Accompagnements <i ref={rotateArrow} className="fa-solid fa-arrow-right duration-[1s] -rotate-180 ease-out  transition-transform ml-2 mt-[1%]"></i> </button>
+                    <ol ref={openList} className={`list-disc flex flex-col md:flex-row gap-8 pl-8 bg-main-pink px-4 py-6 md:py-2 text-main-white items-center text-2xl md:text-xl lg:text-2xl relative after:duration-[1s] ease-out justify-center after:content-[""] after:w-[110%] after:bg-main-white
                     transition-all after:z-30 after:transition-all after:h-[105%] after:absolute after:-top-[0.8px] after:-left-0
-                    ${ isOpen == true ? "after:translate-x-full" : ""}`}>
+                    ${ isOpen == true ? "block after:translate-x-full" : "hidden md:flex"}`}>
                         <li >
-                            <button className={`${ isClicked == 1 ? "italic" : "" }`} onClick={() => handleClick(1)}>CEJ</button>
+                            <button className={`${ isClicked == 1 ? "italic" : "animate-pulse" }`} onClick={() => handleClick(1)}>CEJ</button>
                         </li>
                         <li >
-                            <button className={`${ isClicked == 2 ? "italic" : "" }`} onClick={() => handleClick(2)}>PACEA</button>
+                            <button className={`${ isClicked == 2 ? "italic" : "animate-pulse" }`} onClick={() => handleClick(2)}>PACEA</button>
                         </li>
                         <li>
-                            <button className={`${ isClicked == 3 ? "italic" : "" }`} onClick={() => handleClick(3)}>Parrainage</button>
+                            <button className={`${ isClicked == 3 ? "italic" : "animate-pulse" }`} onClick={() => handleClick(3)}>Parrainage</button>
                         </li>
                     </ol>
                 </div>
@@ -103,7 +105,7 @@ const EspaceJeune = () => {
 
                                 </iframe>
                             </div>
-                            <img src="assets/img/jeunePage/CEJ.jpg" className="w-full sm:w-3/4 lg:w-full"></img>
+                            <img src="assets/img/jeunePage/CEJ.jpg" className="w-full md:w-[50%] sm:w-3/4 lg:w-full"></img>
                         </div>
                     </AccordionContent>
                     <AccordionContent id="2" isClicked={isClicked}>
@@ -142,6 +144,8 @@ const EspaceJeune = () => {
                     </AccordionContent>
                 </div>
             </section>
+        <Contact></Contact>
+
         </main>
     )
 }

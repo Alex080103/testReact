@@ -11,11 +11,11 @@ const Parrainage = () => {
 
     return (
         <section>
-                <UnderAccordionContainer title="Qu'est ce que c'est">  
+                <UnderAccordionContainer title="Qu'est ce que c'est"  marginLeft={4}>  
 
                 <div class="grid gap-4 md:w-11/12 border-2 border-main-blue p-4 ">
                     <p class="text-lg sm:text-xl uppercase text-center italic font-bold">Chaque parcours est particulier en fonction des contextes, des personnes et des objectifs à atteindre. Il n'y a pas de "Recette" idéale en matière de parrainage.</p>
-                    <p class="text-2xl text-center">Quel est le rôle <span className="text-main-orange font-bold">du parrain et de la marraine?</span></p>
+                    <p class="text-2xl text-center">Quel est le rôle <span className="text-main-pink font-bold">du parrain et de la marraine?</span></p>
                     <div className="border-4 border-main-green p-4">
                         <p class="text-xl strong font-bold italic">Par exemple c'est : </p>
                         <ul className="ml-4">
@@ -35,7 +35,7 @@ const Parrainage = () => {
                     </ul>
                 </div>
             </UnderAccordionContainer>
-            <UnderAccordionContainer title="Un engagement réciproque">  
+            <UnderAccordionContainer title="Un engagement réciproque"  marginLeft={4}>  
 
                 <div class="grid gap-4 md:w-11/12 mt-4 border-2 border-main-green p-4 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                         <h3 class="text-3xl text-center">Le parrainage, <span className="text-main-orange">un engagement réciproque</span></h3>

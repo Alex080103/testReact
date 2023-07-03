@@ -1,64 +1,142 @@
 import { Link } from "react-router-dom";
 import Modal from "../Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-const Table = ({datas, onload, urlName}) => {
-    
-    const [contentToModal, setContentToModal] = useState({});
+const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
+    const [showDatas, setDatas] = useState(datas);
+    const [contentToModal, setModalContent] = useState({});
+    const [isOpenModal, setIsOpenModal] = useState(false);
+    const [showPictures, setShowPictures] = useState(-1);
+    // console.log(showPictures);
 
-    function salut()
-    {
-        alert('Salut');
+    function handleDelete(action, id) {
+        axios.post('http://localhost:8000/public/php/index.php', {
+            action : action,
+            id : id
+        }).then(function(response) {
+            if (response.data == true) {
+                if (urlName == ":post") {
+                    fetchPost();
+                } else {
+                    fetchTeam();
+                }
+            } 
+        })
     }
-
+    
+    function setContentToModal(content, index) {
+        setIsOpenModal((isOpenModal) => !isOpenModal);
+        setModalContent(content);
+    }
+    useEffect(() => {
+        setDatas(datas);
+    }, [datas]);
+    
 
     return (
         <div>
             <table className="w-full text-sm text-left text-gray-500 " onLoad={onload}>
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50  ">
+                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                    { urlName == ":post" ?
                     <tr>
                         <th scope="col" className="px-4 py-3">Date</th>
                         <th scope="col" className="px-4 py-3">Description</th>
                         <th scope="col" className="px-4 py-3">Affiche</th>
                         <th scope="col" className="px-4 py-3">Screen vidéo</th>
-                        <th scope="col" className="px-4 py-3">lien vidéo</th>
-                        <th scope="col" className="px-4 py-3 text-center">lien</th>
+                        <th scope="col" className="px-4 py-3">Lien vidéo</th>
+                        <th scope="col" className="px-4 py-3 text-center">Lien de la publication</th>
                         <th scope="col" className="px-4 py-3">
                             <span className="sr-only">Actions</span>
                         </th>
                     </tr>
+                    : urlName == ":team" ?
+                    <tr>
+                        <th scope="col" className="px-4 py-3">Nom/Prénom</th>
+                        <th scope="col" className="px-4 py-3">Poste</th>
+                        <th scope="col" className="px-4 py-3">Photos</th>
+                        <th scope="col" className="px-4 py-3">Description</th>
+                        <th scope="col" className="px-4 py-3">Localisation</th>
+                        <th scope="col" className="px-4 py-3 text-center">Linkedin</th>
+                        <th scope="col" className="px-4 py-3">
+                            <span className="sr-only">Actions</span>
+                        </th>
+                    </tr>
+                    : <tr>
+                        <th>null</th>
+                    </tr> }
                 </thead>
                 <tbody>
-            
-                    {datas.map((content, index) => {
+                    {showDatas.map((content, index) => {            
                         return (
+                            urlName == ":team" ? 
                         <tr className="border-b max-h-[10px]" key={index}>
-                            <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{content['prenom']}</th>
-                            <td className="px-4 py-3">{content['nom']}</td>
-                            <td className="px-4 py-3">{content['prenom']}</td>
-                            <td className="px-4 py-3"><img src={content['prenom']}></img></td>
-                            <td className="px-4 py-3">{content['prenom']}</td>
+                            <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{content['surname']}.{content['name']}</th>
+                            <td className="px-4 py-3">{content['poste']}</td>
+                            <td className="px-4 py-3 min-w-[200px] max-w-[350px]">
+                                {showPictures !== index ? 
+                                <button className="w-full bg-blue-700 p-2 text-main-white" onClick={() => setShowPictures(index)}>Afficher les images</button>
+                                : 
+                                <button className="w-full bg-blue-700 p-2 text-main-white" onClick={() => setShowPictures(-1)}>Cacher les images</button>
+                                }
+                                { showPictures !== index ? "" : 
+                                <div className={`grid grid-cols-2 items-center gap-4}`}>
+                                    <img className="max-h-40" src={content['photo']}></img>
+                                    <img className="max-h-40" src={content['photo_accueil']}></img>
+                                </div>
+                                }
+                            </td>
+                            <td className="px-4 py-3">{content['description']}</td>
+                            <td className="px-4 py-3">{content['localisation']}</td>
+                            <td className="px-4 py-3">{content['linkedin']}</td>
+
                             <td  className="px-4 py-3 flex items-center justify-center text-center z-0">
                                 <div className="w-44 z-10 bg-white rounded divide-y divide-gray-100 shadow  ">
                                     <ul className="py-1 text-sm text-gray-700 w-full">
                                         <li>
-                                            <button onClick={() => setContentToModal(content)} data-modal-target={urlName == ":team" ? "add-modal-team" : urlName == ":post" ? "modif-modal-post" : "default-modal"}
-                                            data-modal-show={urlName == ":team" ? "add-modal-team" : urlName == ":post" ? "modif-modal-post" : "default-modal"}
+                                            <button onClick={() => setContentToModal(content, index)}
                                             className="block py-2 px-4 hover:bg-gray-100 w-full">Edit</button>
                                         </li>
                                     </ul>
                                     <div className="py-1">
-                                        <a href="#" className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 ">Delete</a>
+                                        <button onClick={() => handleDelete("deleteUser", content['id'])} className="block py-2 px-4 text-sm w-full text-gray-700 hover:bg-gray-100 ">Delete</button>
                                     </div>
                                 </div>
                             </td>
                         </tr>
+                        : urlName == ":post" ?
+                        <tr className="border-b max-h-[10px]" key={index}>
+                            <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{content['date']}</th>
+                            <td className="px-4 py-3">{content['description']}</td>
+                            <td className="px-4 py-3 "><img className="max-h-40" src={content['poster']}></img></td>
+                            <td className="px-4 py-3"><img className="max-h-40" src={content['video']}></img></td>
+                            <td className="px-4 py-3">{content['video_link']}</td>
+                            <td className="px-4 py-3">{content['link']}</td>
+
+                            <td  className="px-4 py-3 flex items-center justify-center text-center z-0">
+                                <div className="w-44 z-10 bg-white rounded divide-y divide-gray-100 shadow  ">
+                                    <ul className="py-1 text-sm text-gray-700 w-full">
+                                        <li>
+                                            <button onClick={() => setContentToModal(content, index)}
+                                            className="block py-2 px-4 hover:bg-gray-100 w-full">Edit</button>
+                                        </li>
+                                    </ul>
+                                    <div className="py-1">
+                                        <button onClick={() => handleDelete("deletePost", content['id'])} className="block py-2 px-4 text-sm w-full text-gray-700 hover:bg-gray-100 ">Delete</button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        : ""
                         )
                         })
                     }
+
                 </tbody>
             </table>
-                <Modal type={urlName} action={"modif"} content={contentToModal}></Modal>
+                <Modal isOpen={isOpenModal} type={urlName} action={"modif"} contentToModal={contentToModal} 
+                setIsOpen={setIsOpenModal} showDatas={showDatas} 
+                setDatas={setDatas} fetchTeam={fetchTeam} fetchPost={fetchPost} setError={setError}></Modal>
         </div>
 
     )

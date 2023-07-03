@@ -9,7 +9,7 @@ const SliderForum = ({forums}) => {
                     {forums.map((forum, index) =>{
                         return (
             <swiper-slide key={index}>
-                <div className="bg-main-white grid md:grid-cols-[60%_40%] border-2 w-[95%] sm:w-[95%] h-auto md:max-w-auto lg:max-w-[80%] xl:w-2/3 mx-auto border-main-gray shadow-xl shadow-main-gray">
+                <div className="bg-main-white grid md:grid-cols-[60%_40%] border-2 w-[95%] sm:w-[95%] rounded-r-xl h-auto md:max-w-auto lg:max-w-[80%] xl:w-2/3 mx-auto border-main-gray shadow-xl shadow-main-gray">
                     <div className=" h-full border-b md:border-b-0 border-r-2 border-gray-800">
                         <img src={forum.image} className="object-cover object-center w-full aspect-[181/256]"></img>
                     </div>
@@ -23,9 +23,9 @@ const SliderForum = ({forums}) => {
                         </div>
                         <p className="mt-4 text-right hidden sm:inline mr sm:!line-clamp-3 md:!line-clamp-[10]">{forum.texte}</p>
                         <div className="flex md:flex-wrap justify-center">
-                            <button className="w-1/2 sm:w-auto bg-blue-600 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la publication</button>
+                            <button className="w-1/2 sm:w-auto bg-blue-600 hover:bg-blue-700 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la publication</button>
                             <a href="https://www.facebook.com/milosudardennes" className="mx-auto hidden lg:block"><img src={forum.screen} className="aspect-video h-32  mx-auto mt-8"/></a>
-                            <button className="w-1/2 sm:w-auto bg-red-600 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la vidéo</button>
+                            <button className="w-1/2 sm:w-auto bg-red-600 hover:bg-red-700 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la vidéo</button>
                         </div>
                     </div>
                 </div>

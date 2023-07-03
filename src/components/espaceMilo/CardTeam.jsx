@@ -4,11 +4,11 @@ const CardTeam = ({content}) => {
     const [showText, setShowText] = useState(false);
     return (
         <div className="flex-col mx-auto flex h-[400px] md:h-[500px] w-[310px] md:w-[350px] lg:w-[380px] relative">
-            <div className={`h-3/4 bg-[url('${content.portrait}')] bg-cover w-[310px] md:w-[350px] lg:w-[380px] bg-[center_top_-2.3rem] rounded-tr-[15%] rounded-t-xl relative`}>
+            <div className={`h-3/4 bg-[url('${content.photo}')] bg-cover w-[310px] md:w-[350px] lg:w-[380px] bg-[center_top_-2.3rem] rounded-tr-[15%] rounded-t-xl relative`}>
             </div>
             <div className="h-1/4 text-center border-2 border-gray-800 flex flex-wrap content-center justify-center  border-t-0 rounded-b-xl">
-                <h4 className="font-extrabold text-[28px] w-[100%]">{content.prenom} <span className="uppercase italic">{content.nom}</span></h4>
-                <p className="italic">{content.role}<span className="italic font-bold"> - Vouziers</span></p>
+                <h4 className="font-extrabold text-[28px] w-[100%]">{content.surname} <span className="uppercase italic">{content.name}</span></h4>
+                <p className="italic">{content.poste}<span className="italic font-bold"> - Vouziers</span></p>
             </div>
             <a href="" className="absolute top-3 left-4 bg-main-white p-2 px-3 rounded-full hover:animate-pulse">
                 <i className="fa-brands fa-linkedin-in text-gray-800 text-xl rounded-full >"></i>
