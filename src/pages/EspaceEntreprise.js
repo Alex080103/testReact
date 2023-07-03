@@ -7,6 +7,7 @@ import Cie from "../components/espaceEntreprise/Cie";
 import PMSP from "../components/espaceEntreprise/PMSP";
 import Parrainage from "../components/espaceEntreprise/Parrainage";
 import UnderAccordionContainer from "../components/UnderAccordionContainer";
+import Contact from "../components/Contact";
 
 const EspaceEntreprise = () => {
     const [isClicked, setIsClicked] = useState("0");
@@ -55,7 +56,8 @@ const EspaceEntreprise = () => {
             </div>
             <img src="assets\img\homepage\pexels-jopwell-2422294.jpg" class="w-[80%] mx-auto"></img>
         </div>
-        </section>
+        <Contact></Contact>
+    </section>
     );
 }
 

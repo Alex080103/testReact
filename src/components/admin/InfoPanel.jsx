@@ -1,7 +1,7 @@
-const InfoPanel = ({error, setError}) => {
+const InfoPanel = ({error, setError, connect}) => {
     return (
-        <div className={`fixed  top-[85px] md:top-[105px] z-[999] right-2 ${ error !== undefined ? "" : "translate-x-[100vw]"} 
-        transition-transform bg-main-red ease-in text-main-white p-8 text-xl`}>
+        <div className={`fixed  ${ connect !== true ? "top-[85px] md:top-[105px] " : "-top-[70vh]"} z-[999]  ${ error !== undefined ? "" : "translate-x-[100vw]"} 
+        transition-transform bg-main-red ease-in rounded-md text-main-white right-2 md:right-4 p-8 text-xl`}>
             <button onClick={() => setError()} className="w-6 h-6 absolute top-2 right-2">
                 <svg aria-hidden="true"  fill="currentColor" viewBox="0 0 20 20"
                 xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd"

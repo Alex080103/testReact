@@ -3,6 +3,7 @@ import Tab from "../components/Tab.jsx";
 import TabContent from "../components/TabContent.jsx";
 import Team from "../components/espaceMilo/Team.jsx";
 import SocialsContent from "../components/espaceMilo/SocialsContent.jsx";
+import Contact from "../components/Contact.jsx";
 
 
 const EspaceMilo = () => {
@@ -65,6 +66,8 @@ const EspaceMilo = () => {
                         </picture>
                     </div>
                 </TabContent>
+            <Contact></Contact>
+
         </main>
     )
 }

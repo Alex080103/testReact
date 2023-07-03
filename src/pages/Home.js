@@ -164,7 +164,7 @@ const Home =  () =>
         <section className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed text-center">
             <SliderForum forums={forums}>
             </SliderForum>
-            <a href="https://www.facebook.com/milosudardennes" className="bg-main-pink whitespace-nowrap p-4 rounded-full md:p-6 text-md sm:text-lg font-bold border md:text-2xl text-main-white hover:bg-main-white hover:text-main-pink hover:border hover:border-main-red">Découvrez toutes nos publications</a>
+            <a href="https://www.facebook.com/milosudardennes" className="bg-main-pink whitespace-nowrap p-4 rounded-full md:p-6 text-md sm:text-lg font-bold border md:text-2xl text-main-white hover:bg-main-white hover:text-main-pink hover:border transition-all hover:border-main-pink">Découvrez toutes nos publications</a>
             <BanniereSuperficie/>
             {/* <SliderPosts posts={posts}>
             </SliderPosts> */}

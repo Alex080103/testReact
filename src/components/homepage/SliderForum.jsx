@@ -23,9 +23,9 @@ const SliderForum = ({forums}) => {
                         </div>
                         <p className="mt-4 text-right hidden sm:inline mr sm:!line-clamp-3 md:!line-clamp-[10]">{forum.texte}</p>
                         <div className="flex md:flex-wrap justify-center">
-                            <button className="w-1/2 sm:w-auto bg-blue-600 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la publication</button>
+                            <button className="w-1/2 sm:w-auto bg-blue-600 hover:bg-blue-700 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la publication</button>
                             <a href="https://www.facebook.com/milosudardennes" className="mx-auto hidden lg:block"><img src={forum.screen} className="aspect-video h-32  mx-auto mt-8"/></a>
-                            <button className="w-1/2 sm:w-auto bg-red-600 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la vidéo</button>
+                            <button className="w-1/2 sm:w-auto bg-red-600 hover:bg-red-700 text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la vidéo</button>
                         </div>
                     </div>
                 </div>
