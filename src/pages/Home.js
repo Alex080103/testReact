@@ -93,7 +93,7 @@ const Home =  () =>
     const [persons, setPersons] = useState([]);
     
     function fetchTeam() {
-        axios.get('http://localhost:8000/public/php/crudTeam.php').then(function(response) {
+        axios.get('php/crudTeam.php').then(function(response) {
             setPersons(response.data);
         })
     }   
