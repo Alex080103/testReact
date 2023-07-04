@@ -21,6 +21,7 @@ import Error404 from "./pages/Error404";
 
 
 
+
 export default function App() {
 
   const [isConnected, setIsConnected] = useState(false);
@@ -32,7 +33,7 @@ export default function App() {
   
   return (
     <BrowserRouter>
-    <Nav/>
+    <Nav isConnected={isConnected}/>
       <Routes>
         <Route path='/EspaceEntreprise' element= {<EspaceEntreprise/>} />
         <Route path='/EspaceMilo' element= {<EspaceMilo/>} />

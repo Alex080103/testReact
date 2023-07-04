@@ -6,6 +6,7 @@ import Pagination from "../components/admin/Pagination";
 import Table from "../components/admin/Table";
 import Modal from "../components/Modal";
 import InfoPanel from "../components/admin/InfoPanel";
+import { Helmet } from "react-helmet-async";
 
 const Crud = () =>
 {
@@ -13,7 +14,7 @@ const Crud = () =>
     const [datas, setDatas] = useState([]);
     const [isLoad, setIsLoad] = useState(false);
     const name = useParams();
-    console.log("salut");
+    // console.log("salut");
       useEffect(() => {
             if (name.team == ":team") {
                 fetchTeam();
@@ -43,6 +44,10 @@ const Crud = () =>
         return (
             
             <main>
+                <Helmet>
+                    <title>Gestion Admin</title>
+                    <meta name="robots" content="noindex"/>
+                </Helmet>
                 <section className="bg-main-white mt-8 mb-16 pr-2">
                     <InfoPanel error={error} setError={setError}/>
                     <h2 className="text-center text-4xl my-8 font-title"> Gestion { name.team == ":team" ? "Equipe" : "Post"}</h2>

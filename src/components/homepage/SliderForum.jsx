@@ -1,3 +1,6 @@
+import {register} from 'swiper/element/bundle';
+register();
+
 const SliderForum = ({forums}) => {
     return (
         <section id="forums" className="mb-4 md:mb-8">

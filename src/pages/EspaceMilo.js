@@ -4,6 +4,7 @@ import TabContent from "../components/TabContent.jsx";
 import Team from "../components/espaceMilo/Team.jsx";
 import SocialsContent from "../components/espaceMilo/SocialsContent.jsx";
 import Contact from "../components/Contact.jsx";
+import { Helmet } from "react-helmet-async";
 
 
 const EspaceMilo = () => {
@@ -11,6 +12,11 @@ const EspaceMilo = () => {
 
     return (
         <main>
+            <Helmet>
+                <meta name="description" content="Apprends en plus sur la Mission Locale Sud Ardennes, les horaires, les réseaux et sur l'équipe qui la compose!"/>
+                <title>La Mission Locale</title>
+                <link rel="canonical" href="/EspaceMilo"/>
+            </Helmet>
             <section id="visual">
                 <h1 className="font-title text-4xl md:text-5xl py-8 md:py-16 text-center">La Mission Locale Sud Ardennes</h1>
                 <div className="grid md:grid-cols-1 lg:grid-cols-[40%_60%] items-center xl:grid-cols-[57%_40%] gap-8 lg:mb-16">
@@ -32,10 +38,10 @@ const EspaceMilo = () => {
                                  <span className="text-main-pink">pour</span> <span className="text-main-green"> tout</span> <span className="text-main-blue">le monde !</span></span><br></br><br></br>
                                 Peu importe tes diplômes, peu importe ton genre, peu importe tes croyances, peu importe ta situation. La seule condition pour être accompagné par une Mission Locale, c’est d’avoir entre 16 et 25 ans.
                                 <br></br><br></br><span className="font-bold">Les Missions Locales, <span className="text-main-green">ce n’est pas que pour l’emploi !</span></span><br></br><br></br>
-                                <span className="italic">On qualifie souvent les Missions Locales de « Pôle emploi pour les jeunes ». Ce n’est pas vrai.</span><br></br>
+                                <span className="italic">On qualifie souvent les Missions Locales de « Pôle emploi pour les jeunes » ... détrompez-vous...</span><br></br>
                                 <span className="font-bold italic">En effet, la Mission Locale accompagne aussi les 16-25 ans dans des thématiques sociales comme le logement, l’accès aux soins, la mobilité, la formation etc.</span>
-                            </p>
-                        </div>
+                        </p>
+                    </div>
                 </div>
             </section>
             <section id="tabulationContainer" className="grid grid-cols-1 sm:grid-cols-3 w-full text-2xl sm:text-xl lg:text-2xl font-bold text-main-white ">

@@ -8,6 +8,7 @@ import PMSP from "../components/espaceEntreprise/PMSP";
 import Parrainage from "../components/espaceEntreprise/Parrainage";
 import UnderAccordionContainer from "../components/UnderAccordionContainer";
 import Contact from "../components/Contact";
+import { Helmet } from "react-helmet-async";
 
 const EspaceEntreprise = () => {
     const [isClicked, setIsClicked] = useState("0");
@@ -18,7 +19,12 @@ const EspaceEntreprise = () => {
 
     return (
 <section id="" className="pb-8 min-h-[80vh]">
-    <h1 class="font-title text-4xl md:text-5xl py-8 md:pt-12 md:pb-8 xl:py-16 text-center">L'espace Entreprise / Partenaire</h1>
+    <Helmet>
+        <meta name="description" content="Découvrez nos services sur mesure dédiés aux entreprises : recrutement, formation, conseils et soutien pour favoriser votre croissance et contribuer au développement économique de notre région. Ensemble, construisons un avenir prometteur pour votre entreprise "/>
+        <title>Entreprises / Partenaires</title>
+        <link rel="canonical" href="/EspaceEntreprise"/>
+    </Helmet>
+    <h1 class="font-title text-4xl md:text-5xl py-8 md:pt-12 md:pb-8 xl:py-16 text-center">L'espace Entreprises / Partenaires</h1>
 
         <div className="grid grid-cols-1 gap-4 xl:gap-0 xl:grid-cols-2">
             <div className="w-[99%] sm:w-11/12 flex mt-8 flex-col gap-4 ml-auto">

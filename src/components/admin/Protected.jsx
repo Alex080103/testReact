@@ -6,7 +6,7 @@ const Protected = ({isConnected, children }) => {
     console.log(isConnected);
         if (isConnected !== true) {
             useEffect(() => {
-                navigate("/Home");
+                navigate("/Accueil");
 
             })
         } else {

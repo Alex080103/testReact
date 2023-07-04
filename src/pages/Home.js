@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import SliderPosts from "../components/homepage/SliderPosts";
 import SliderForum from "../components/homepage/SliderForum";
 import Socials from "../components/homepage/Socials";
 import Contact from "../components/Contact";
 import BanniereSuperficie from "../components/homepage/BanniereSuperficie";
+import { Helmet } from "react-helmet-async";
 
 function appearAll() {
     const redirect = document.getElementById("redirect");
@@ -31,46 +31,6 @@ function appearAll() {
 
 const Home =  () =>
 {
-
-        const [posts, setPosts ]= useState([
-       {
-         date: '2023-06-01',
-         texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
-
-         image: 'https://picsum.photos/325/360?random=1'
-       },
-       {
-         date: '2023-06-10',
-         texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
-
-         image: 'https://picsum.photos/325/360?random=2'
-
-       },
-       {
-         date: '2023-06-15',
-         texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
-         image: 'https://picsum.photos/325/360?random=3'
-
-       },
-       {
-        date: '2023-06-15',
-        texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
-        image: 'https://picsum.photos/325/360?random=4'
-
-      },        
-      {
-        date: '2023-06-15',
-        texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
-        image: 'https://picsum.photos/325/360?random=5'
-
-      },
-      {
-        date: '2023-06-15',
-        texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
-        image: 'https://picsum.photos/325/360?random=6'
-
-      }
-     ]);
      const forums = [
         {
             id : 1,
@@ -98,19 +58,11 @@ const Home =  () =>
         })
     }   
 
-    // useEffect(() => {
-    //     if (name == ":team") {
-    //         fetchTeam()
-    //     } else {
-    //         fetchPost();
-    //     }
-    // }, [name]);
-
     // function fetchTeam() {
     //     axios.post('http://localhost:8000/public/php/index.php', {
     //         action : 'showAllUsers'
     //     }).then(function(response) {
-    //         setDatas(response.data);
+    //         setPersons(response.data);
     //         setIsLoad((isLoad) => !isLoad);
     //     })
     // }   
@@ -118,16 +70,24 @@ const Home =  () =>
     //     axios.post('http://localhost:8000/public/php/index.php', {
     //         action: 'showAllPosts'
     //     }).then(function(response) {
-    //         setDatas(response.data);
+    //         setPosts(response.data);
     //         setIsLoad((isLoad) => !isLoad);
     //     })
     // }   
+
     useEffect(() => {
         appearAll();
         fetchTeam();
+        // fetchPost();
       }, [urlName])
     return (
       <main>
+        <Helmet>
+            <meta name="description" content="Bienvenue à la Mission Locale Sud Ardennes : votre partenaire pour construire votre avenir professionnel et 
+            personnel dans les Ardennes. Découvrez nos services d'accompagnement, de formation et d'insertion pour les jeunes."/>
+            <title>Accueil</title>
+            <link rel="canonical" href="/Accueil"/>
+        </Helmet>
         <section id="redirect" aria-label="fond avec des bulles" className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed pt-8 sm:pt-16 pb-16 md:pb-24">
         <h1 className="text-4xl px-4 sm:text-5xl mb-8 md:mb-16 text-center font-title">Mission Locale <span className="italic">Sud Ardennes</span></h1>
         {/* Apparition des éléments au fur et à mesure grâce au script appearAll */}

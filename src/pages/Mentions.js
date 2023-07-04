@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 export default function Mentions () 
 {
@@ -6,7 +7,12 @@ export default function Mentions ()
 
     return (
         <div>
-            <h1 className="text-3xl md:text-5xl font-title text-center my-8">Voici les mentions légales </h1>
+            <Helmet>
+                <meta name="description" content="Voici les mentions légales de la Mission Locale Sud 08"/>
+                <title>Mentions légales</title>
+                <link rel="canonical" href="/Mentions"/>
+            </Helmet>
+            <h1 className="text-3xl md:text-5xl font-title text-center my-8">Mentions légales </h1>
             <div className="grid grid-cols-2 max-w-[95%] mx-auto pt-8">
                 <div className="ml-8 grid grid-cols-2 [&>div]:mb-8 my-auto [&>div>h3]:text-xl md:[&>div>h3]:text-3xl [&>div>h3]:italic [&>div>h3]:font-bold">
                     <div>
@@ -34,6 +40,12 @@ export default function Mentions ()
                         <p>DERRIERE Alexandre</p>
                         <p>derriere.alexandre0103@gmail.com</p>
                         <p>tél : 06.07.38.30.28</p>
+                    </div>
+                    <div>
+                        <h3>Crédit Photos</h3>
+                        <p>Hubert <em>LAPINTE</em></p>
+                        <p>Christine <em>BINET</em></p>
+                        <p><a href="https://fr.freepik.com/" className="text-main-blue underline italic">Freepik</a></p>
                     </div>
                 </div>
                 <img src="/assets/img/Mentions/mentions-legales-loupe.png" className="h-auto aspect-video"></img>

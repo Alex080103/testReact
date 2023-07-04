@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import {register} from 'swiper/element/bundle';
 
 register();
 
@@ -44,7 +43,7 @@ const SliderPosts = ({posts}) => {
                                       </p><a href="http.fauxlien.com " className="text-blue-500 underline">Voir plus</a>
                                     </div>
                                     <div className="w-full h-auto overflow-y">
-                                      <img src={post.image} className="object-contain object-center h-auto" alt="$description['malvoyant']"></img>
+                                      <img src={post.image} className="object-contain object-center h-auto" alt="affiche pour le forum"></img>
                                     </div>
                                   </div>
                                 </div>

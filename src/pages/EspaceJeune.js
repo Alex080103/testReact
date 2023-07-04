@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react"
 import AccordionContent from "../components/AccordionContent";
 import Contact from "../components/Contact";
+import { Helmet } from "react-helmet-async";
+import {register} from 'swiper/element/bundle';
+register();
+
+
 
 function appearAllBranch() {
     const redirect = document.getElementById("branchContainer");
@@ -19,6 +24,7 @@ function appearAllBranch() {
   }
 
 
+
 const EspaceJeune = () => {
 
     const [isClicked, setIsClicked] = useState("1");
@@ -26,8 +32,21 @@ const EspaceJeune = () => {
     const openList = useRef();
     const rotateArrow = useRef();
 
+    const [allPhotos, setAllPhotos] = useState([
+    ]);
+
+    function addPhotos() {
+        if (allPhotos.length == 0) {
+            for (let i = 1; i < 19; i++) {
+                let newElement = "plaquette" + i + ".jpg";
+                setAllPhotos(allPhotos => [...allPhotos, newElement]);
+            };
+        }
+    }
+    console.log(allPhotos);
     useEffect(() => {
         appearAllBranch();
+        addPhotos();
     }, [])
     const handleClick = (id) => {
         if (isClicked == id ) {
@@ -44,6 +63,13 @@ const EspaceJeune = () => {
     }
     return (
         <main>
+            <Helmet>
+                <meta name="description" content="La Mission Locale Sud Ardennes : ton alliée dédiée pour concrétiser tes ambitions professionnelles.
+                Découvre nos services d'accompagnement sur mesure, de formations adaptées et d'aide à l'insertion pour te guider vers un avenir prometteur. 
+                Ensemble, donnons vie à tes projets et ouvrons les portes de l'emploi et de l'épanouissement"/>
+                <title>Jeunes 16/25 ans</title>
+                <link rel="canonical" href="/EspaceJeune"/>
+            </Helmet>
             <section class="bg-[url('assets/img/homepage/bulles.jpg')] z-0 relative after:z-0 after:bg-gray-400 after:content-['] 
             after:opacity-10 after:w-full after:h-full after:absolute after:top-0 bg-cover bg-fixed">
                 <h1 class="hidden md:block font-title text-4xl z-40 md:text-5xl md:pt-16 text-center">Espace Jeunes de 16 à 25 ans</h1>
@@ -71,24 +97,29 @@ const EspaceJeune = () => {
                 </div>
             </section>
             <section className="text mt-8 min-h-[20vh]" >
-            <h2 class="md:block font-title text-3xl md:text-5xl py-4 md:pt-4 pb-8 text-center">Tous nos Accompagnements</h2>
+            <h2 class="md:block font-title text-3xl md:text-5xl py-4 md:pt-4 pb-8 text-center">Nos Accompagnements</h2>
             <p class="text-md md:text-xl font-bold max-w-[95%] md:max-w-[85%] mx-auto">Selon ta situation, tu peux être accompagné de manière individuelle « classique » mais il est aussi possible de t’engager dans un accompagnement plus intensif.
                     Ton/ta conseiller/conseillère te donnera toutes les infos et t’orientera vers la solution la plus adaptée à ta situation !
                     Parmi l’éventail des possibilités, zoom sur quelques dispositifs :</p>
                 <div class="md:flex mx-auto w-auto justify-center  mt-8 font-bold">
 
-                    <button onClick={() => handleOpen()} className="w-full sm:w-auto  justify-center flex items-center bg-main-pink px-4 lg:px-6 py-2 lg:py-4 text-main-white text-2xl lg:text-3xl mr-4">Voir nos Accompagnements <i ref={rotateArrow} className="fa-solid fa-arrow-right duration-[1s] -rotate-180 ease-out  transition-transform ml-2 mt-[1%]"></i> </button>
-                    <ol ref={openList} className={`list-disc flex flex-col md:flex-row gap-8 pl-8 bg-main-pink px-4 py-6 md:py-2 text-main-white items-center text-2xl md:text-xl lg:text-2xl relative after:duration-[1s] ease-out justify-center after:content-[""] after:w-[110%] after:bg-main-white
+                    {/* <button onClick={() => handleOpen()} className="w-full sm:w-auto  justify-center flex items-center bg-main-pink px-4 lg:px-6 py-2 lg:py-4 text-main-white text-2xl lg:text-3xl mr-4">Voir nos Accompagnements <i ref={rotateArrow} className="fa-solid fa-arrow-right duration-[1s] -rotate-180 ease-out  transition-transform ml-2 mt-[1%]"></i> </button> */}
+                    <ol ref={openList} className={`list-disc flex flex-col xl:w-[90%] md:flex-row justify-around gap-8 pl-8 bg-main-pink px-4 py-6 
+                    md:py-2 text-main-white items-center text-2xl md:text-xl lg:text-3xl md:px-16 text-center relative after:duration-[1s] 
+                    ease-out after:content-[""] after:w-[110%] after:bg-main-white
                     transition-all after:z-30 after:transition-all after:h-[105%] after:absolute after:-top-[0.8px] after:-left-0
                     ${ isOpen == true ? "block after:translate-x-full" : "hidden md:flex"}`}>
                         <li >
-                            <button className={`${ isClicked == 1 ? "italic" : "animate-pulse" }`} onClick={() => handleClick(1)}>CEJ</button>
+                            <button className={`${ isClicked == 1 ? "italic underline" : "" }`} onClick={() => handleClick(1)}>CEJ</button>
                         </li>
                         <li >
-                            <button className={`${ isClicked == 2 ? "italic" : "animate-pulse" }`} onClick={() => handleClick(2)}>PACEA</button>
+                            <button className={`${ isClicked == 2 ? "italic underline" : "" }`} onClick={() => handleClick(2)}>PACEA</button>
                         </li>
                         <li>
-                            <button className={`${ isClicked == 3 ? "italic" : "animate-pulse" }`} onClick={() => handleClick(3)}>Parrainage</button>
+                            <button className={`${ isClicked == 3 ? "italic underline" : "" }`} onClick={() => handleClick(3)}>Parrainage</button>
+                        </li>
+                        <li>
+                            <button className={`${ isClicked == 4 ? "italic underline" : "" }`} onClick={() => handleClick(4)}>Guide logement</button>
                         </li>
                     </ol>
                 </div>
@@ -99,8 +130,8 @@ const EspaceJeune = () => {
                                 <h3 className="text-3xl md:text-4xl gap-2 mb-8">
                                     Le Contrat d’Engagement <br></br>Jeune <span className="font-">(CEJ)</span> :
                                 </h3>
-                                <p className="text-lg md:text-2xl "> un accompagnement personnalisé avec un conseiller dédié, un programme intensif, une allocation possible.</p>
-                                <a href="https://www.1jeune1solution.gouv.fr/contrat-engagement-jeune" className="text-2xl underline text-main-blue mb-8">En savoir plus</a>
+                                <p className="text-lg md:text-2xl "> Un accompagnement personnalisé avec un conseiller dédié, un programme intensif, une allocation possible.</p>
+                                <a href="https://www.1jeune1solution.gouv.fr/contrat-engagement-jeune" target="_blank" className="text-2xl underline text-main-blue mb-8">En savoir plus</a>
                                 <iframe src="https://www.youtube.com/embed/c2RQR84BrMk" className="h-50 md:h-64 aspect-video mt-8 mx-auto">
 
                                 </iframe>
@@ -116,7 +147,7 @@ const EspaceJeune = () => {
                                 </h3>
                                 <p className="text-lg md:text-2xl "> Le PACEA se déroule en différentes « Phases », l’accompagnement peut durer jusqu’à 24 mois d’affilé.<br></br>
                                 C’est le conseiller qui détermine la durée et le nombre de phases d’accompagnement.<br></br> L’idée étant d’être en phase avec le jeune accompagné, <span class="italic">une allocation peut être versée.</span></p>
-                                <a href="https://travail-emploi.gouv.fr/emploi-et-insertion/mesures-jeunes/pacea " className="text-2xl underline text-main-blue mb-8">En savoir plus</a>
+                                <a href="https://travail-emploi.gouv.fr/emploi-et-insertion/mesures-jeunes/pacea " target="_blank" className="text-2xl underline text-main-blue mb-8">En savoir plus</a>
                             </div>
                             <img src="assets/img/jeunePage/pacea.png" className="w-full sm:w-3/4 lg:w-full mx-auto"></img>
                         </div>
@@ -126,8 +157,7 @@ const EspaceJeune = () => {
                             Le parrainage :
                         </h3>
                         <div className="grid gap-8 items-center mx-6 xl:w-10/12 xl:mx-auto">
-                            <iframe loading="lazy" src="https://www.youtube.com/embed/Cob8lspOv8g" className="w-full bg-black border-red border-2 h-auto aspect-video mt-8" >
-                            </iframe>
+                           
                             <div>
 
                                 <p className="text-lg md:text-2xl "> C’est un accompagnement bénévole et personnalisé d’une durée maximum de 6 mois,
@@ -140,8 +170,17 @@ const EspaceJeune = () => {
                                  <br></br>
                                  <span class="font-bold italic">Le parrainage vise à faciliter l’accès et le maintien dans l’emploi des jeunes de 16 à 25 ans.</span></p>
                             </div>
+                            <iframe loading="lazy" src="https://www.youtube.com/embed/Cob8lspOv8g" className="w-full bg-black border-red border-2 h-auto aspect-video mt-8" >
+                            </iframe>
                         </div>
                     </AccordionContent>
+                    {/* <AccordionContent id="4" isClicked={isClicked}>
+                    <swiper-container>
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+</swiper-container>
+                    </AccordionContent> */}
                 </div>
             </section>
         <Contact></Contact>

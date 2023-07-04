@@ -1,0 +1,4 @@
+# https://www.robotstxt.org/robotstxt.html
+User-Agent: *
+Disallow: /Crud/:team 
+Disallow: /Crud/:post 

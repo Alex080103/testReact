@@ -1,6 +1,13 @@
+import { Helmet } from "react-helmet-async"
+
 const Contact = () => {
     return (
         <section className=" bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed">
+            <Helmet>
+                <meta name="description" content="Contactes la Mission Locale Sud Ardennes pour en apprendre plus sur nos accompagnements et trouvez celui qui te convient !"/>
+                <title>Contact</title>
+                <link rel="canonical" href="/Contact"/>
+            </Helmet>
           <div className="py-8 lg:py-16 px-4 mx-auto md:max-w-screen-md lg:max-w-screen-md">
               <h2 className="mb-4 text-5xl text-center text-main-pink font-title ">Nous Contacter</h2>
               <p className="mb-4 lg:mb-8 font-light text-center text-gray-500 italic sm:text-xl">Si vous avez besoin d'informations on souhaiter être recontacté par l'un de nos conseillers n'hésitez pas.</p>
@@ -11,11 +18,11 @@ const Contact = () => {
                       <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900  rounded-lg border border-gray-600 shadow-sm focus:ring-main-pink focus:border-main-pink " placeholder="nom@gmail.com" required></input>
                   </div>
                   <div className="mt-0">
-                      <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 ">Votre numéro de téléphone</label>
+                      <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 ">Votre numéro de téléphone (pas obligatoire)</label>
                       <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900  rounded-lg border border-gray-600 shadow-sm focus:ring-main-pink focus:border-main-pink " placeholder="Votre téléphone" required></input>
                   </div>
                   <div>
-                      <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 ">Votre adresse</label>
+                      <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 ">Votre ville de résidence</label>
                       <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900  rounded-lg border border-gray-600 shadow-sm focus:ring-main-pink focus:border-main-pink " placeholder="Votre adresse" required></input>
                   </div>
                   <div>

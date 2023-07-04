@@ -36,8 +36,8 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
 
     return (
         <div>
-            <table className="w-full text-sm text-left text-gray-500 " onLoad={onload}>
-                <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+            <table className="w-full text-sm text-left text-black " onLoad={onload}>
+                <thead className="text-xs text-gray-800 uppercase bg-gray-50">
                     { urlName == ":post" ?
                     <tr>
                         <th scope="col" className="px-4 py-3">Date</th>
@@ -66,25 +66,25 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                         <th>null</th>
                     </tr> }
                 </thead>
-                <tbody>
+                <tbody className="[&>td]">
                     {showDatas.map((content, index) => {            
                         return (
                             urlName == ":team" ? 
                         <tr className="border-b max-h-[10px]" key={index}>
                             <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{content['surname']}.{content['name']}</th>
                             <td className="px-4 py-3">{content['poste']}</td>
-                            <td className="px-4 py-3 min-w-[200px] max-w-[350px]">
+                            <td className="px-4 py-3 min-w-[250px] max-w-[350px] ">
                                 {showPictures !== index ? 
                                 <button className="w-full bg-blue-700 p-2 text-main-white" onClick={() => setShowPictures(index)}>Afficher les images</button>
                                 : 
                                 <button className="w-full bg-blue-700 p-2 text-main-white" onClick={() => setShowPictures(-1)}>Cacher les images</button>
                                 }
-                                { showPictures !== index ? "" : 
-                                <div className={`grid grid-cols-2 items-center gap-4}`}>
+                                
+                                <div className={`grid  ${ showPictures !== index ? "max-h-0 opacity-0" : "max-h-[100%] opacity-100"} grid-cols-2 overflow-hidden items-center gap-4 transition-opacity tranision-[height] ease-out duration-[0.6s]`}>
                                     <img className="max-h-40" src={content['photo']}></img>
                                     <img className="max-h-40" src={content['photo_accueil']}></img>
                                 </div>
-                                }
+                                
                             </td>
                             <td className="px-4 py-3">{content['description']}</td>
                             <td className="px-4 py-3">{content['localisation']}</td>
@@ -95,11 +95,11 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                                     <ul className="py-1 text-sm text-gray-700 w-full">
                                         <li>
                                             <button onClick={() => setContentToModal(content, index)}
-                                            className="block py-2 px-4 hover:bg-gray-100 w-full">Edit</button>
+                                            className="block py-2 px-4 hover:bg-gray-100 w-full">Modifier</button>
                                         </li>
                                     </ul>
                                     <div className="py-1">
-                                        <button onClick={() => handleDelete("deleteUser", content['id'])} className="block py-2 px-4 text-sm w-full text-gray-700 hover:bg-gray-100 ">Delete</button>
+                                        <button onClick={() => handleDelete("deleteUser", content['id'])} className="block py-2 px-4 text-sm w-full text-gray-700 hover:bg-gray-100 ">Supprimer</button>
                                     </div>
                                 </div>
                             </td>
@@ -113,16 +113,16 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                             <td className="px-4 py-3">{content['video_link']}</td>
                             <td className="px-4 py-3">{content['link']}</td>
 
-                            <td  className="px-4 py-3 flex items-center justify-center text-center z-0">
+                            <td  className="px-4 py-3 flex items-center justify-center mx-auto text-center z-0">
                                 <div className="w-44 z-10 bg-white rounded divide-y divide-gray-100 shadow  ">
                                     <ul className="py-1 text-sm text-gray-700 w-full">
                                         <li>
                                             <button onClick={() => setContentToModal(content, index)}
-                                            className="block py-2 px-4 hover:bg-gray-100 w-full">Edit</button>
+                                            className="block py-2 px-4 hover:bg-gray-100 w-full">Modifier</button>
                                         </li>
                                     </ul>
                                     <div className="py-1">
-                                        <button onClick={() => handleDelete("deletePost", content['id'])} className="block py-2 px-4 text-sm w-full text-gray-700 hover:bg-gray-100 ">Delete</button>
+                                        <button onClick={() => handleDelete("deletePost", content['id'])} className="block py-2 px-4 text-sm w-full text-gray-700 hover:bg-gray-100 ">Supprimer</button>
                                     </div>
                                 </div>
                             </td>

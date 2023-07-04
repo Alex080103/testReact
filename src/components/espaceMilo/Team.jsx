@@ -14,7 +14,7 @@ const Team = () => {
     }   
     useEffect(() => {
         fetchTeam();
-        console.log(persons)
+        // console.log(persons)
       }, [])
     console.log(persons);
 

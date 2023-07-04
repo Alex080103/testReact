@@ -20,12 +20,12 @@ const Socials = ({persons}) => {
                             <a href="#"> Sur Youtube</a>
                         </div>
                         <div>
-                            <i className="fa-brands fa-instagram mr-2 text-main-purple"></i>
+                            <i className="fa-brands fa-instagram mr-2 text-yellow-500"></i>
                             <a href="#"> Sur Instagram</a>
                         </div>
                         <div>
                             <i className="fa-brands fa-square-facebook mr-2 text-main-blue"></i>
-                            <a href="#"> Sur le groupe Facebook dédié</a>
+                            <a href="#"> Sur le groupe Job Emploi Rethel</a>
                         </div>
                     </div>
                 </div>

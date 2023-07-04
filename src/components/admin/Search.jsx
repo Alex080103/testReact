@@ -9,12 +9,14 @@ const Search = ({urlName, datas, setDatas, fetchTeam, fetchPost, setError}) => {
 
     function handleChange(event, previousLength) {
         let text = event.target.value;
+        
         if (event.target.value.length < previousLength) {
             if (urlName == ":team") {
                 fetchTeam();
             } else {
                 fetchPost();
             }
+            // return false;
         }
         setPreviousLength((previousLength) => previousLength = event.target.value.length);
         if (event.target.value.length == 0) {
@@ -24,28 +26,16 @@ const Search = ({urlName, datas, setDatas, fetchTeam, fetchPost, setError}) => {
                 fetchPost();
             }
         }
-        var find = [];
-
-        datas.map((data, index) => {
-            const isGood = (text); 
-            let y = 0;
-            const array = Object.entries(data);
-            for (let i=0; i < array.length; i++) {
-                let result = array[i].indexOf(text, 0);
-                // console.log(array[i]);
-                if (result !== -1) {
-                    find.push(index);
-                }
-                y++;
-            }
-            if (find.length > 0) {
-                let newDatas = [];
-                find.forEach(index => {
-                    newDatas.push(datas[index]);
-                })
-                setDatas(newDatas);
-            }
-        })
+        const searchResults = datas.filter(data => {
+            return Object.values(data).some(value => {
+              if (typeof value === 'string') {
+                return value.toLowerCase().includes(text.toLowerCase());
+              }
+              return false;
+            });
+          }
+          );
+          setDatas(searchResults);
 
     }
     // console.log(datas);
