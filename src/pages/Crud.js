@@ -24,7 +24,7 @@ const Crud = () =>
         }, [name.team]);
 
         function fetchTeam() {
-            axios.post('http://localhost:8000/public/php/index.php', {
+            axios.post('php/index.php', {
                 action : 'showAllUsers'
             }).then(function(response) {
                 setDatas(response.data);
@@ -32,7 +32,7 @@ const Crud = () =>
             })
         }   
         function fetchPost() {
-            axios.post('http://localhost:8000/public/php/index.php', {
+            axios.post('php/index.php', {
                 action: 'showAllPosts'
             }).then(function(response) {
                 setDatas(response.data);
