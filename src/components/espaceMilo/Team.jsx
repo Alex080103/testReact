@@ -33,7 +33,7 @@ const Team = () => {
         fetchTeam();
         // console.log(persons)
       }, [])
-    console.log(persons);
+    // console.log(persons);
 
     return (
         <section id="team" class="mt-8 md:mt-16">

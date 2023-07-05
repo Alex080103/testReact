@@ -112,6 +112,13 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
                                     <input type="file" name="screen" id="screen" placeholder="Ajouter une screen de la vidéo youtube" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
                                     </input>
                                 </div>
+                                <div>
+                                    <label htmlFor="status" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier le statut` : "Ajouter un statut"}</label>
+                                    <select name="status" id="status" placeholder="Ajoutez un status" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                        <option value="A venir" selected>A venir</option>
+                                        <option value="Rétrospective">Rétrospective</option>
+                                    </select>
+                                </div>
                                 <input type="hidden" name="action" value={`${action == "modif" ? "modifPost" : 'addPost'}`} />
 
                                 { action == "modif" ?

@@ -52,20 +52,19 @@ const Home =  () =>
     const urlName = useParams();
     const [persons, setPersons] = useState([]);
     
+    // function fetchTeam() {
+    //     axios.get('php/crudTeam.php').then(function(response) {
+    //         setPersons(response.data);
+    //     })
+    // }   
+
     function fetchTeam() {
-        axios.get('php/crudTeam.php').then(function(response) {
+        axios.post('/php/index.php', {
+            action : 'showRandomUsers'
+        }).then(function(response) {
             setPersons(response.data);
         })
     }   
-
-    // function fetchTeam() {
-    //     axios.post('http://localhost:8000/public/php/index.php', {
-    //         action : 'showAllUsers'
-    //     }).then(function(response) {
-    //         setPersons(response.data);
-    //         setIsLoad((isLoad) => !isLoad);
-    //     })
-    // }   
     // function fetchPost() {
     //     axios.post('http://localhost:8000/public/php/index.php', {
     //         action: 'showAllPosts'

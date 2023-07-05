@@ -46,7 +46,7 @@ export default function App() {
         <Route path='/Mentions' element={<Mentions isConnected={isConnected} setIsConnected={setIsConnected}/>}/>
         <Route path='/OneForAll' element={<OneForAll/>}/>
         <Route path='/Accueil' element= {<Home/>} />
-        <Route path='*' element={<Error404/>}/>
+        <Route path='*' element={<Home/>}/>
 
       </Routes>
     <Footer setIsConnected={setIsConnected}/>

@@ -46,6 +46,7 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                         <th scope="col" className="px-4 py-3">Screen vidéo</th>
                         <th scope="col" className="px-4 py-3">Lien vidéo</th>
                         <th scope="col" className="px-4 py-3 text-center">Lien de la publication</th>
+                        <th scope="col" className="px-4 py-3">Statut</th>
                         <th scope="col" className="px-4 py-3">
                             <span className="sr-only">Actions</span>
                         </th>
@@ -112,6 +113,7 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                             <td className="px-4 py-3"><img className="max-h-40" src={content['video']}></img></td>
                             <td className="px-4 py-3">{content['video_link']}</td>
                             <td className="px-4 py-3">{content['link']}</td>
+                            <td className="px-4 py-3">{content['status']}</td>
 
                             <td  className="px-4 py-3 flex items-center justify-center mx-auto text-center z-0">
                                 <div className="w-44 z-10 bg-white rounded divide-y divide-gray-100 shadow  ">

@@ -1,8 +1,5 @@
 <?php 
-            // var_dump("ca passe");
-
     require_once('controller/frontController.php');
-    // var_dump("ca passe");
 
     if (isset($_POST) && !empty ($_POST)) {
         $action = $_POST['action'];
@@ -17,12 +14,15 @@
             
         case 'showAllUsers':
             $users = showAllUsers();
-            // var_dump($users);
             echo json_encode($users);
             break;
         case 'showAllPosts':
             $posts = showAllPosts();
             echo json_encode($posts);
+            break;
+        case 'ShowRandomUsers':
+            $users = showRandomUsers();
+            echo json_encode($users);
             break;
         case 'connect': 
             $isConnect = connect($_POST);

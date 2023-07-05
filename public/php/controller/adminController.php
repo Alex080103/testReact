@@ -112,7 +112,7 @@ function addPost(array $post, array $files):bool | array
 
     $path = securizeImage($files['poster'], "/upload/poster/");
     $pathVideo = securizeImage($files['screen'], "/upload/screen/");
-    $post = new Post(0, 0, $post['post'], $post['link'], $post['linkYoutube'], $path, $pathVideo);
+    $post = new Post(0, 0, $post['post'], $post['link'], $post['linkYoutube'], $path, $pathVideo, $post['status']);
     $postRepository = new PostRepository;
     $postIsAdd = $postRepository->addPost($post);
     return $postIsAdd;
@@ -126,7 +126,9 @@ function modifPost(array $post, array $files):bool | array
     if ((!isset($post['id']) || empty($post['id']) || strlen($post['id']) == 0)  || 
     (!isset($post['link']) || empty($post['link']) || strlen($post['id']) == 0 )||
     (!isset($post['post']) || empty($post['post']) || strlen($post['post']) == 0 ) ||  
-    (!isset($post['linkYoutube'])  || empty($post['linkYoutube']) || strlen($post['linkYoutube']) == 0)) {
+    (!isset($post['linkYoutube'])  || empty($post['linkYoutube']) || strlen($post['linkYoutube']) == 0) ||
+    (!isset($post['status']) || empty($post['status']) || strlen($post['status']) == 0 )
+    ) {
         return [
             'error' => 'Un des fichiers est introuvable.'
         ];
@@ -150,7 +152,7 @@ function modifPost(array $post, array $files):bool | array
     // }
     // var_dump($files['poster']['name']);
 
-    $post = new Post($post['id'], 0, $post['post'], $post['link'], $post['linkYoutube'], $path, $pathVideo);
+    $post = new Post($post['id'], 0, $post['post'], $post['link'], $post['linkYoutube'], $path, $pathVideo, $post['status']);
     $postRepository = new PostRepository;
     $postIsUpdate = $postRepository->modifPost($post);
     return $postIsUpdate;

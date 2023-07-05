@@ -3,7 +3,9 @@ import { useState } from "react";
 const CardTeam = ({content}) => {
     const [showText, setShowText] = useState(false);
     return (
-        <div className="flex-col mx-auto flex h-[400px] md:h-[500px] w-[310px] md:w-[350px] lg:w-[380px] relative">
+        <div className={` ${ content.poste == "Directeur" ? "-order-50" : content.poste == "Responsable de secteur" ? "-order-49"
+        : content.poste == "Chargée de Projet et Communication" ? "-order-48" : content.poste == "Assistante de direction" ? "-order-47" : ""}
+        flex-col mx-auto flex h-[400px] md:h-[500px] w-[310px] md:w-[350px] lg:w-[380px] relative`}>
             <div className={`h-3/4 bg-[url('${content.photo}')] bg-cover w-[310px] md:w-[350px] lg:w-[380px] bg-[center_top_-2.3rem] rounded-tr-[15%] rounded-t-xl relative`}>
             </div>
             <div className="h-1/4 text-center border-2 border-gray-800 flex flex-wrap content-center justify-center  border-t-0 rounded-b-xl">

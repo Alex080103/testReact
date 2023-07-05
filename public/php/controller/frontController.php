@@ -7,14 +7,17 @@ require_once('./model/Admin.php');
 
     function showAllUsers()
     {    
-        // var_dump('salut');
         $userRepository = new UserRepository();
-        // var_dump("suite");
 
         $users = $userRepository->showAllUsers();
-        // var_dump($users);
 
-        // var_dump($users);
+        return $users;
+    }
+
+    function showRandomUsers() 
+    {
+        $userRepository = new UserRepository();
+        $users = $userRepository->showRandomUsers();
         return $users;
     }
 
