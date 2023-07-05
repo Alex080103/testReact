@@ -1,5 +1,7 @@
 <?php 
     require_once('controller/frontController.php');
+    require_once('controller/adminController.php');
+
 
     if (isset($_POST) && !empty ($_POST)) {
         $action = $_POST['action'];
@@ -21,7 +23,7 @@
             echo json_encode($posts);
             break;
         case 'ShowRandomUsers':
-            var_dump($action);
+            // var_dump($action);
             $users = showRandomUsers();
             echo json_encode($users);
             break;

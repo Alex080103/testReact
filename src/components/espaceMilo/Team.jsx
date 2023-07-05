@@ -36,11 +36,11 @@ const Team = () => {
     // console.log(persons);
 
     return (
-        <section id="team" class="mt-8 md:mt-16">
+        <section id="team" className="">
+                <h2 className="font-title text-3xl md:text-4xl py-8 md:py-16 text-center">Une équipe bienveillante qui vous accompagne dans vos projets</h2>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 justify-items-center">
-                <h2>Une équipe bienveillante qui vous accompagne dans vos projets</h2>
                 {persons.map((person, index) => {
-                    console.log(person.user_name)
+                    // console.log(person.user_name)
                     return (
                         <CardTeam content={person} key={index}></CardTeam>
                     )

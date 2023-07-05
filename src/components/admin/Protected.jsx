@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 
 const Protected = ({isConnected, children }) => {
     const navigate = useNavigate();
-    console.log(isConnected);
+    // console.log(isConnected);
         if (isConnected !== true) {
             useEffect(() => {
                 navigate("/Accueil");

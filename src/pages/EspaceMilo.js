@@ -58,8 +58,8 @@ const EspaceMilo = () => {
                 <TabContent id="tab3" activeTab={activeTab} value="1">
                     <div className="relative">
                         <a href="download/Rapport_2022.pdf" download="Rapport_D'activité_Mission_Locale_Sud_Ardennes_2022.pdf"
-                            className="absolute -bottom-10 md:bottom-auto md:top-10 lg:top-16 xl:top-20 right-8 font-bold italic text-md lg:text-xl bg-main-pink p-1 px-2 lg:p-2 lg:px-4 text-main-white rounded-lg">Rapport d'activité 2022 
-                            <i class="fa-solid fa-download bg-main-pink text-main-white p-2 lg:p-4"></i>
+                            className="absolute -bottom-10 md:bottom-auto inset-x-0 md:inset-auto text-center rounded-none md:top-10 lg:top-16 xl:top-20 md:right-8 font-bold italic text-md lg:text-xl bg-main-pink p-1 px-2 lg:p-2 lg:px-4 text-main-white md:rounded-lg">Rapport d'activité 2022 
+                            <i className="fa-solid fa-download bg-main-pink text-main-white p-2 lg:p-4"></i>
                         </a>
                         <picture>
                             <source media="(max-width: 500px)" srcSet="assets/img/miloPage/financeurs_mobile.jpg"></source>

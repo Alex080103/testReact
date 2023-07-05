@@ -27,7 +27,7 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
     
     function setContentToModal(content, index) {
         setIsOpenModal((isOpenModal) => !isOpenModal);
-        setModalContent(content);
+        setModalContent(showDatas[index]);
     }
     useEffect(() => {
         setDatas(datas);
@@ -87,7 +87,7 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                                 </div>
                                 
                             </td>
-                            <td className="px-4 py-3">{content['description']}</td>
+                            <td className="px-4 py-3 line-clamp-[5]">{content['description']}</td>
                             <td className="px-4 py-3">{content['localisation']}</td>
                             <td className="px-4 py-3">{content['linkedin']}</td>
 
@@ -108,15 +108,15 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                         : urlName == ":post" ?
                         <tr className="border-b max-h-[10px]" key={index}>
                             <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{content['date']}</th>
-                            <td className="px-4 py-3">{content['description']}</td>
+                            <td className="px-4 py-3 "><div className="max-w-[500px] line-clamp-[10]">{content['descriptionPost']}</div></td>
                             <td className="px-4 py-3 "><img className="max-h-40" src={content['poster']}></img></td>
                             <td className="px-4 py-3"><img className="max-h-40" src={content['video']}></img></td>
-                            <td className="px-4 py-3">{content['video_link']}</td>
-                            <td className="px-4 py-3">{content['link']}</td>
+                            <td className="px-4 py-3 "><div className="max-w-[100px] break-words">{content['video_link']}</div></td>
+                            <td className="px-4 py-3"><div className="max-w-[100px] break-words">{content['link']}</div></td>
                             <td className="px-4 py-3">{content['status']}</td>
 
-                            <td  className="px-4 py-3 flex items-center justify-center mx-auto text-center z-0">
-                                <div className="w-44 z-10 bg-white rounded divide-y divide-gray-100 shadow  ">
+                            <td  className="px-4 py-3 flex items-center justify-items-center mb-0 my-auto text-center min-h-[220px] max-h-[300px] z-0">
+                                <div className="w-44 z-10 bg-white rounded divide-y divide-gray-100 shadow ">
                                     <ul className="py-1 text-sm text-gray-700 w-full">
                                         <li>
                                             <button onClick={() => setContentToModal(content, index)}

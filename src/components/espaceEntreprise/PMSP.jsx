@@ -13,20 +13,20 @@ const PMSP = () => {
         <section>
             <UnderAccordionContainer title="Le PMSP, qu'est ce que c'est ?" marginLeft={4}>  
 
-                <div class="grid gap-4 w-full md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
+                <div className="grid gap-4 w-full md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                     <div className="border-4 border-main-green p-4">
                         <h3 className="text-xl sm:text-3xl">C'est quoi ?</h3>
-                        <p class="text-sm sm:text-md">La PMSMP est une <strong>immersion professionnelle au sein de votre entreprise.</strong> Vous accueillez pendant une durée limitée un jeune pour lui
+                        <p className="text-sm sm:text-md">La PMSMP est une <strong>immersion professionnelle au sein de votre entreprise.</strong> Vous accueillez pendant une durée limitée un jeune pour lui
                         permettre de découvrir vos métiers, votre secteur d'activité, valider son projet ou pour initer un projet de recrutement.</p>
                     </div>
-                    <div class="flex-wrap sm:flex-nowrap flex gap-4">
+                    <div className="flex-wrap sm:flex-nowrap flex gap-4">
                         <div className="border-4 border-main-purple p-4">
-                            <h3 class="text-xl sm:text-3xl">Quels publics ?</h3>
-                            <p class="text-sm sm:text-md"> <strong>Toute personne faisant l'objet d'un accompagnement professionnel personnalisé,</strong> sous réserve d'être orientée par le Service Public de l'Emploi (en l'occurence la Mission Locale).</p>
+                            <h3 className="text-xl sm:text-3xl">Quels publics ?</h3>
+                            <p className="text-sm sm:text-md"> <strong>Toute personne faisant l'objet d'un accompagnement professionnel personnalisé,</strong> sous réserve d'être orientée par le Service Public de l'Emploi (en l'occurence la Mission Locale).</p>
                         </div>
                         <div className="border-4 border-main-pink p-4">
-                            <h3 class="text-xl sm:text-3xl">Quels employeurs ?</h3>
-                            <p class="text-sm sm:text-md"> <strong>Toute personne moral disposant d'un SIRET </strong>peut accueillir un jeune en PMSMP si l'employeur déclare prendre les mesures nécessaires à l'organisation de cette immersion (entreprise, association, etc..).</p>
+                            <h3 className="text-xl sm:text-3xl">Quels employeurs ?</h3>
+                            <p className="text-sm sm:text-md"> <strong>Toute personne moral disposant d'un SIRET </strong>peut accueillir un jeune en PMSMP si l'employeur déclare prendre les mesures nécessaires à l'organisation de cette immersion (entreprise, association, etc..).</p>
                         </div>
                     </div>
                     <div className="border-4 border-main-blue p-4">
@@ -41,7 +41,7 @@ const PMSP = () => {
             </UnderAccordionContainer>
             <UnderAccordionContainer title="Les conditions de la PMSP" marginLeft={4}>  
 
-                <div class="grid gap-4 md:w-11/12 mt-4 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
+                <div className="grid gap-4 md:w-11/12 mt-4 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                     <div className="border-4 border-main-orange p-4">
                         <h3 className="text-xl sm:text-3xl">Quels conditions ?</h3>
                         <p className="text-sm sm:text-md">L'entreprise d'accueil doit désigner un <strong>tuteur responsable du suivi du stagiaire</strong>, qui

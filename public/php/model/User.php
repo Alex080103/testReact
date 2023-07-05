@@ -84,7 +84,7 @@ class UserRepository extends ConnectBdd
             $users = [];
             // var_dump($datas);
             foreach ( $datas as $data ) {
-                $user = new User($data['user_id'], $data['user_name'],$data['user_surname'], $data['user_poste'],
+                $user = new User($data['user_id'], $data['user_name'],$data['user_surname'], htmlspecialchars_decode($data['user_poste']),
                 htmlspecialchars_decode($data['user_description']), $data['user_photo'], $data['user_photo_accueil'], $data['user_localisation'], $data['user_linkedin']);
                 $user = $user->__serialize();
                 $users[] = $user;
@@ -94,13 +94,13 @@ class UserRepository extends ConnectBdd
 
         public function showRandomUsers() :array
         {
-            $req = $this->bdd->prepare("SELECT * FROM users ORDER BY RAND() LIMIT 5");
+            $req = $this->bdd->prepare("SELECT * FROM user ORDER BY RAND() LIMIT 5");
             $req->execute();
             $datas = $req->fetchAll(PDO::FETCH_ASSOC);
             $users = [];
             // var_dump($datas);
             foreach ( $datas as $data ) {
-                $user = new User($data['user_id'], $data['user_name'],$data['user_surname'], $data['user_poste'],
+                $user = new User($data['user_id'], $data['user_name'],$data['user_surname'], htmlspecialchars_decode($data['user_poste']),
                 htmlspecialchars_decode($data['user_description']), $data['user_photo'], $data['user_photo_accueil'], $data['user_localisation'], $data['user_linkedin']);
                 $user = $user->__serialize();
                 $users[] = $user;

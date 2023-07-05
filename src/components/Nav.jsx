@@ -46,7 +46,7 @@ export default function Nav({isConnected})
                 <div className="flex  items-center text-2xl lg:text-3xl relative">
                 { isConnected == true ?  
                     <Link to="/Crud/:team" className="font-caviar italic text-main-pink uppercase font-bold w-full">
-                        Gestion Admin
+                        Admin
                     </Link>
                 : 
                     <Link to="tel:03 24 38 29 17" className="font-caviar italic text-main-pink uppercase font-bold w-full">
@@ -87,10 +87,17 @@ export default function Nav({isConnected})
                     <Link to="/OneForAll" aria-label="Accédez à la page ouvert à tous" onClick={toggleDisplayNavMobile} className={`font-caviar animate-nav ${urlName.pathname == "/pourTous" ? "after:!w-[94%]" : ""} after:!bg-main-blue relative`}>Tous public</Link>
                 </div>
             <div className="flex  items-center text-[32px] sm:text-[45px] relative">
-                <a href="tel:03 24 38 29 17" className="font-caviar italic text-main-pink uppercase font-bold w-full">
-                    <i className="fa-solid fa-mobile-screen text-main-pink mr-2"></i>
-                    <span className="inline">03 24 38 29 17</span>
-                </a>
+                { isConnected == true ?  
+                    <Link to="/Crud/:team" className="font-caviar italic text-main-pink uppercase font-bold w-full">
+                        Admin
+                    </Link>
+                : 
+                    <a href="tel:03 24 38 29 17" className="font-caviar italic text-main-pink uppercase font-bold w-full">
+                        <i className="fa-solid fa-mobile-screen text-main-pink mr-2"></i>
+                        <span className="inline">03 24 38 29 17</span>
+                    </a>
+                }
+
             </div>
                 </div>
 

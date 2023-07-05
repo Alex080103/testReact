@@ -39,7 +39,7 @@ const Connect = ({setIsConnected}) => {
 
     return (
         
-        <section class="block static" >
+        <section className="block static" >
             {/* <h2 className="font-title w-full text-4xl md:text-5xl py-8 md:py-16 text-center">Mentions Légales</h2> */}
             
 

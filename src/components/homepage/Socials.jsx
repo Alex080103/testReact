@@ -44,8 +44,8 @@ const Socials = ({persons}) => {
                                                 src={person['photo']} alt="membre de l'équipe">
                                                 </img>
                                                 <div>
-                                                    <p className="text-2xl font-semibold text-gray-800 text-center italic">{person['nom']} <span>{person['prenom']}</span> </p>
-                                                    <p className="text-md text-blue-800 text-center italic"> {person['role']} </p>
+                                                    <p className="text-2xl font-semibold text-gray-800 text-center italic">{person['name']} <span>{person['surname']}</span> </p>
+                                                    <p className="text-md text-blue-800 text-center italic"> {person['poste']} </p>
                                                 </div>
                                             </div>
                                             <p className="py-2 sm:text-lg text-gray-700 text-center line-clamp-5">""{person['description']}""</p>

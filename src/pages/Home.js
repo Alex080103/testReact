@@ -31,26 +31,27 @@ function appearAll() {
 
 const Home =  () =>
 {
-     const forums = [
-        {
-            id : 1,
-            date : '2023-06-14',
-            image : '/assets/img/homepage/affiche_2023_sanitaire_social_-ecrans_rvb.jpg',
-            texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
-            lien : 'assets/img/homepage/affiche.jpg',
-            screen : "assets/img/homepage/video1.png"
-        },
-        {
-            id : 2,
-            date : '2023-06-13',
-            image : '/assets/img/homepage/affiche_NOV_2023_job_dating-ecrans.jpg',
-            texte : "C’est la 11ème édition… De nombreux postes sont à pourvoir dans les agences de travail temporaire. Un job dating leur est consacré le mardi 21 novembre à Rethel. Agent de conditionnement, peintre, assistant administratif, chaudronnier, maçon, électricien, boucher, assistant commercial, préparateur de commandes, conducteur routier… autant d’offres à pourvoir via les Agences pour l’emploi qui seront présentes. Cette manifestation se déroulera de 9h30 à 12h30 à la salle l’Atmosphère, 2 boulevard 4eme Armée à Rethel.", 
-            screen : 'assets/img/homepage/video2.png'
-        }
-    ]; 
+    //  const forums = [
+    //     {
+    //         id : 1,
+    //         date : '2023-06-14',
+    //         image : '/assets/img/homepage/affiche_2023_sanitaire_social_-ecrans_rvb.jpg',
+    //         texte : "Que vous soyez demandeur d’emploi, étudiant, jeune diplômé, collégien, lycéen, salarié, venez découvrir notre forum SANITAIRE ET SOCIAL le jeudi 21 septembre à la salle l’Atmosphère de Rethel. Plus de  60 exposants et des ateliers ! Cette 5ème édition réunira plus de  60 entreprises, centres de formation, structures de santé et d’insertion de la filière sanitaire et sociale : service à la personne, médico-social, petite enfance, paramédical, sport et animation, social et santé, entretien… Vous trouverez :",
+    //         lien : 'assets/img/homepage/affiche.jpg',
+    //         screen : "assets/img/homepage/video1.png"
+    //     },
+    //     {
+    //         id : 2,
+    //         date : '2023-06-13',
+    //         image : '/assets/img/homepage/affiche_NOV_2023_job_dating-ecrans.jpg',
+    //         texte : "C’est la 11ème édition… De nombreux postes sont à pourvoir dans les agences de travail temporaire. Un job dating leur est consacré le mardi 21 novembre à Rethel. Agent de conditionnement, peintre, assistant administratif, chaudronnier, maçon, électricien, boucher, assistant commercial, préparateur de commandes, conducteur routier… autant d’offres à pourvoir via les Agences pour l’emploi qui seront présentes. Cette manifestation se déroulera de 9h30 à 12h30 à la salle l’Atmosphère, 2 boulevard 4eme Armée à Rethel.", 
+    //         screen : 'assets/img/homepage/video2.png'
+    //     }
+    // ]; 
    
     const urlName = useParams();
     const [persons, setPersons] = useState([]);
+    const [forums, setForums] = useState([]);
     
     // function fetchTeam() {
     //     axios.get('php/crudTeam.php').then(function(response) {
@@ -60,25 +61,26 @@ const Home =  () =>
 
     function fetchTeam() {
         axios.post('http://localhost:8000/public/php/index.php', {
-            action : 'showRandomUsers'
+            action : 'ShowRandomUsers'
         }).then(function(response) {
             setPersons(response.data);
         })
     }   
-    // function fetchPost() {
-    //     axios.post('http://localhost:8000/public/http://localhost:8000/public/php/index.php', {
-    //         action: 'showAllPosts'
-    //     }).then(function(response) {
-    //         setPosts(response.data);
-    //         setIsLoad((isLoad) => !isLoad);
-    //     })
-    // }   
+    function fetchPost() {
+        axios.post('http://localhost:8000/public/php/index.php', {
+            action: 'showAllPosts'
+        }).then(function(response) {
+            setForums(response.data);
+        })
+    }   
 
     useEffect(() => {
         appearAll();
         fetchTeam();
-        // fetchPost();
+        fetchPost();
       }, [urlName])
+    //   console.log(forums);
+
     return (
       <main>
         <Helmet>
