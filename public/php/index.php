@@ -1,11 +1,8 @@
 <?php 
-header('Access-Control-Allow-Origin: *');
+            // var_dump("ca passe");
 
-header('Access-Control-Allow-Methods: GET, POST');
-
-header("Access-Control-Allow-Headers: X-Requested-With");
-
-require_once('model/ConnectBdd.php');
+    require_once('controller/frontController.php');
+    // var_dump("ca passe");
 
     if (isset($_POST) && !empty ($_POST)) {
         $action = $_POST['action'];
@@ -17,8 +14,10 @@ require_once('model/ConnectBdd.php');
 
     // $action = 'showAllUsers';
     switch ($action) {
+            
         case 'showAllUsers':
             $users = showAllUsers();
+            // var_dump($users);
             echo json_encode($users);
             break;
         case 'showAllPosts':

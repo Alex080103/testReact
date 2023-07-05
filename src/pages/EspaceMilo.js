@@ -19,7 +19,7 @@ const EspaceMilo = () => {
             </Helmet>
             <section id="visual">
                 <h1 className="font-title text-4xl md:text-5xl py-8 md:py-16 text-center">La Mission Locale Sud Ardennes</h1>
-                <div className="grid md:grid-cols-1 lg:grid-cols-[40%_60%] items-center xl:grid-cols-[57%_40%] gap-8 lg:mb-16">
+                <div className="grid md:grid-cols-1 lg:grid-cols-[40%_60%] items-center xl:grid-cols-[56%_41%] gap-8 lg:mb-16">
                     <picture>
                         <source media="(max-width: 500px)" srcSet="assets/img/miloPage/Plan_de_travail_2.png"></source>
                         <source media="(min-width: 500px)" srcSet="assets/img/miloPage/Plan_de_travail_1.png"></source>
