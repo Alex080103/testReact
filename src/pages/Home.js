@@ -59,14 +59,14 @@ const Home =  () =>
     // }   
 
     function fetchTeam() {
-        axios.post('/php/index.php', {
+        axios.post('http://localhost:8000/public/php/index.php', {
             action : 'showRandomUsers'
         }).then(function(response) {
             setPersons(response.data);
         })
     }   
     // function fetchPost() {
-    //     axios.post('http://localhost:8000/public/php/index.php', {
+    //     axios.post('http://localhost:8000/public/http://localhost:8000/public/php/index.php', {
     //         action: 'showAllPosts'
     //     }).then(function(response) {
     //         setPosts(response.data);

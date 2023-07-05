@@ -21,6 +21,7 @@
             echo json_encode($posts);
             break;
         case 'ShowRandomUsers':
+            var_dump($action);
             $users = showRandomUsers();
             echo json_encode($users);
             break;

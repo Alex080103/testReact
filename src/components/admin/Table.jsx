@@ -11,7 +11,7 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
     // console.log(showPictures);
 
     function handleDelete(action, id) {
-        axios.post('php/index.php', {
+        axios.post('http://localhost:8000/public/php/index.php', {
             action : action,
             id : id
         }).then(function(response) {
