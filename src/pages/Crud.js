@@ -24,6 +24,7 @@ const Crud = () =>
         }, [name.team]);
 
         function fetchTeam() {
+            // axios.post('../php/index.php', {
             axios.post('../php/index.php', {
                 action : 'showAllUsers'
             }).then(function(response) {
