@@ -29,12 +29,10 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
             } else if (response.data == false) {
                 setError("Erreur de traitement");
             } else if (response.data.error !== null) {
-                console.log(response.data.error);
                 setError(response.data.error);
             }
         }).catch (error => {
             setError("Une erreur est survenue");
-            console.log(error);
         }
         )
     }

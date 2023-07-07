@@ -16,7 +16,8 @@ const Connect = ({setIsConnected}) => {
         form = new FormData(event.target);
         form.append("action", "connect")
 
-        axios.post('php/index.php',
+        // axios.post('php/index.php',
+        axios.post('http://localhost:8000/public/php/index.php', 
         form,
          {headers: { 'Content-Type': 'multipart/form-data' }}).then(function(response) {
             setResponse(response.data);

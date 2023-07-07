@@ -224,3 +224,10 @@ function modifFunders(array $post, array $files):bool
     $isUpdate = $foundersRepository->modifFunders($founders);
     return $isUpdate;
 }
+
+function countUsers(): int
+{
+    $userRepository = new UserRepository;
+    $count = $userRepository->countUsers();
+    return $count;
+}

@@ -5,11 +5,11 @@ require_once('./model/Funders.php');
 require_once('./model/Post.php');
 require_once('./model/Admin.php');
 
-    function showAllUsers()
+    function showAllUsers($limit, $offset)
     {    
         $userRepository = new UserRepository();
 
-        $users = $userRepository->showAllUsers();
+        $users = $userRepository->showAllUsers($limit, $offset);
 
         return $users;
     }

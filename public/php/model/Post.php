@@ -59,9 +59,12 @@ class Post
 
 class PostRepository extends ConnectBdd
 {
-    function showAllPosts()
+    function showAllPosts($limit, $offset)
     {
         $req = $this->bdd->prepare("SELECT * FROM post");
+        if ($limit !== null && $offset !== null) {
+            $req = $this->bdd->prepare("SELECT * FROM post LIMIT $limit OFFSET $offset") ;
+        }
         $req->execute();
         $datas = $req->fetchAll(PDO::FETCH_ASSOC);
         $posts = [];

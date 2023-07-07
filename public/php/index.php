@@ -1,7 +1,8 @@
 <?php 
     require_once('controller/frontController.php');
     require_once('controller/adminController.php');
-
+    $limit = null;
+    $offset = null;
 
     if (isset($_POST) && !empty ($_POST)) {
         $action = $_POST['action'];
@@ -9,13 +10,19 @@
         $json = file_get_contents('php://input');
         $obj = json_decode($json);
         $action = $obj->action;
+        if (isset($obj->limit) && isset($obj->offset)) {
+            $limit = $obj->limit;
+            $offset = $obj->offset;
+        }
     }
-
     // $action = 'showAllUsers';
     switch ($action) {
             
         case 'showAllUsers':
-            $users = showAllUsers();
+            $users = showAllUsers($limit, $offset);
+            // if ($limit !== null && $offset !== null) {
+            //     $count = countUsers();
+            // }
             echo json_encode($users);
             break;
         case 'showAllPosts':

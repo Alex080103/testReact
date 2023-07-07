@@ -41,7 +41,8 @@ export default function App() {
         <Route path='/Crud/:team' element= {
           <Protected isConnected={isConnected}>
             <Crud/>
-          </Protected>} />
+          </Protected>
+        }/>
         <Route path='/Contact' element={<Contact/>}/>
         <Route path='/Mentions' element={<Mentions isConnected={isConnected} setIsConnected={setIsConnected}/>}/>
         <Route path='/OneForAll' element={<OneForAll/>}/>

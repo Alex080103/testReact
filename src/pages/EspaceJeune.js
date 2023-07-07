@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import AccordionContent from "../components/AccordionContent";
 import Contact from "../components/Contact";
 import { Helmet } from "react-helmet-async";
-import {register} from 'swiper/element/bundle';
-register();
+import SliderLogement from "../components/espaceJeune/sliderLogement";
 
 
 
@@ -126,7 +125,7 @@ const EspaceJeune = () => {
                 </div>
                 <div className=" mt-8 mb-8 md:mb-16 max-w-full xl:max-w-[90%] mx-auto grid justify-items-center">
                     <AccordionContent id="1" isClicked={isClicked} toggle={false}>
-                        <div className="grid items-center justify-items-center gap-4 mx-1 grid-cols-1 lg:grid-cols-2 md:mx-6 xl:gap-2 xl:w-11/12 xl:mx-auto">
+                        <div className="grid items-center justify-items-center gap-4 mx-1 grid-cols-1 md:p-2 lg:grid-cols-2 md:mx-6 xl:gap-2 xl:w-11/12 xl:mx-auto">
                             <div className="w-full md:w-2/3 lg:w-full mx-auto text-center">
                                 <h3 className="text-3xl md:text-4xl gap-2 mb-8">
                                     Le Contrat d’Engagement <br></br>Jeune <span className="font-">(CEJ)</span> :
@@ -175,17 +174,12 @@ const EspaceJeune = () => {
                             </iframe>
                         </div>
                     </AccordionContent>
-                    {/* <AccordionContent id="4" isClicked={isClicked}>
-                    <swiper-container>
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 2</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-</swiper-container>
-                    </AccordionContent> */}
+                    <AccordionContent id="4" isClicked={isClicked}>
+                        <SliderLogement/>
+                    </AccordionContent>
                 </div>
             </section>
-        <Contact></Contact>
-
+            <Contact></Contact>
         </main>
     )
 }

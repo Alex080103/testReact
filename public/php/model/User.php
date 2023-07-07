@@ -76,9 +76,12 @@ class User
 class UserRepository extends ConnectBdd
 {
 
-        public function showAllUsers (): array
+        public function showAllUsers ($limit, $offset): array
         {
             $req = $this->bdd->prepare("SELECT * FROM user");
+            // if ($limit !== null && $offset !== null) {
+            //     $req = $this->bdd->prepare("SELECT * FROM user LIMIT $limit OFFSET $offset") ;
+            // }
             $req->execute();
             $datas = $req->fetchAll(PDO::FETCH_ASSOC);
             $users = [];
@@ -169,5 +172,13 @@ class UserRepository extends ConnectBdd
             return $isDelete;
         }
 
+        function countUsers (): int
+        {
+            $req = $this->bdd->prepare("SELECT COUNT(user_name) FROM user");
+            $req->execute();
+            $count = $req->fetchAll(PDO::FETCH_COLUMN);
+            var_dump($count[0]);
+            return $count[0];
+        }
 
 }
