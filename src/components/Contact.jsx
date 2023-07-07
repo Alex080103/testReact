@@ -11,7 +11,7 @@ const Contact = () => {
 
     return (
             <div >
-                <div id="contactButton" onClick={toggleContact} className={`fixed  z-40 transition-all duration-[1.3s] ${ isOpen !== true ? "animate-pulse" : "translate-x-[220px] sm:translate-x-[350px]"} flex flex-col animate-pulse top-24 md:top-40 bg-main-pink cursor-pointer group`}>
+                <div id="contactButton" onClick={toggleContact} className={`fixed rounded-r-lg z-40 transition-all duration-[1.3s] ${ isOpen !== true ? "animate-pulse" : "translate-x-[220px] sm:translate-x-[350px]"} flex flex-col animate-pulse top-24 md:top-40 bg-main-pink cursor-pointer group`}>
                     <i className="fa-solid fa-circle-info text-3xl md:text-5xl  p-3 md:p-4 text-main-white"></i>
                 </div>
                 <div id="contactInfo" className={`fixed w-[220px] sm:w-[350px] top-24 md:top-40 z-40 ${ isOpen == true ? "" : " opacity-0 -translate-x-[220px] sm:-translate-x-[350px]"}  transition-all duration-[1.3s] bg-main-white group-hover:bg-slate-950 border-2 border-main-pink`}>

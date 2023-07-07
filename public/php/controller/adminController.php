@@ -33,14 +33,20 @@ function addUser (array $post, array $files) :bool | array
         ];
     }
     if (isset($files['photo']) && !empty($files['photo']) && $files['photo']['error'] == 0) {
-        $path = securizeImage($files['photo'], "/upload/team/");
+        $path = securizeImage($files['photo'], "upload/team/");
+        if ($path == false) {
+            return false;
+        }
     } else {
         return [
             'error' => "La photo d'équipe n'est pas présente."
         ];
     }
     if (isset($files['photoAccueil']) && !empty($files['photoAccueil']) && $files['photoAccueil']['error'] == 0) {
-        $pathAccueil = securizeImage($files['photoAccueil'], "/upload/team/");
+        $pathAccueil = securizeImage($files['photoAccueil'], "upload/team/");
+        if ($pathAccueil == false) {
+            return false;
+        }
     } else {
         return [
             'error' => "La photo d'équipe pour l'accueil n'est pas présente."
@@ -67,7 +73,10 @@ function modifUser(array $post, array $files) : bool | array
     }
 
     if (isset($files['photo']) && !empty($files['photo']) && $files['photo']['error'] == 0) {
-        $path = securizeImage($files['photo'], "/upload/team/");
+        $path = securizeImage($files['photo'], "upload/team/");
+        if ($path == false) {
+            return false;
+        }
     } 
     // else {
     //     return [
@@ -75,7 +84,10 @@ function modifUser(array $post, array $files) : bool | array
     //     ];
     // }
     if (isset($files['photoAccueil']) && !empty($files['photoAccueil']) && $files['photoAccueil']['error'] == 0) {
-        $pathAccueil = securizeImage($files['photoAccueil'], "/upload/team/");
+        $pathAccueil = securizeImage($files['photoAccueil'], "upload/team/");
+        if ($pathAccueil == false) {
+            return false;
+        }
     } 
     // else {
     //     return [
@@ -110,8 +122,14 @@ function addPost(array $post, array $files):bool | array
         ];
     } 
 
-    $path = securizeImage($files['poster'], "/upload/poster/");
-    $pathVideo = securizeImage($files['screen'], "/upload/screen/");
+    $path = securizeImage($files['poster'], "upload/poster/");
+    if ($path == false) {
+        return false;
+    }
+    $pathVideo = securizeImage($files['screen'], "upload/screen/");
+    if ($pathVideo == false) {
+        return false;
+    }
     $post = new Post(0, 0, $post['post'], $post['link'], $post['linkYoutube'], $path, $pathVideo, $post['status']);
     $postRepository = new PostRepository;
     $postIsAdd = $postRepository->addPost($post);
@@ -135,7 +153,10 @@ function modifPost(array $post, array $files):bool | array
     } 
 
     if (isset($files['poster']) && !empty($files['poster']) && $files['poster']['error'] == 0) {
-        $path = securizeImage($files['poster'], "/upload/poster/");
+        $path = securizeImage($files['poster'], "upload/poster/");
+        if ($path == false) {
+            return false;
+        }
     } 
     // else {
     //     return [
@@ -143,7 +164,10 @@ function modifPost(array $post, array $files):bool | array
     //     ];
     // }
     if (isset($files['screen']) && !empty($files['screen']) && $files['screen']['error'] == 0) {
-        $pathVideo = securizeImage($files['screen'], "/upload/screen/");        
+        $pathVideo = securizeImage($files['screen'], "upload/screen/");
+        if ($pathVideo == false) {
+            return false;
+        }      
     } 
     // else {
     //     return [
@@ -174,13 +198,22 @@ function modifFunders(array $post, array $files):bool
     var_dump($files['activity']);
 
     if (isset($files['founder']) && !empty($files['founder']) && $files['founder']['error'] == 0) {
-        $pathImage = securizeImage($files['founder'], "/upload/founders/");
+        $pathImage = securizeImage($files['founder'], "upload/founders/");
+        if ($pathImage == false) {
+            return false;
+        }
     } 
     if (isset($files['founderMobil']) && !empty($files['founderMobil']) && $files['founderMobil']['error'] == 0) {
-        $pathMobile = securizeImage($files['founderMobil'], "/upload/founders/");        
+        $pathMobile = securizeImage($files['founderMobil'], "upload/founders/");  
+        if ($pathMobile == false) {
+            return false;
+        }      
     }
     if (isset($files['activity']) && !empty($files['activity']) && $files['activity']['error'] == 0) {
-        $pathPdf = securizePdf($files['activity'], "/upload/activity/");        
+        $pathPdf = securizePdf($files['activity'], "upload/activity/");    
+        if ($pathPdf == false) {
+            return false;
+        }    
     }
     if (isset($post['year']) && !empty($post['year'])) {
         $year = $post['year'];

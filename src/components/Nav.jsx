@@ -71,35 +71,35 @@ export default function Nav({isConnected})
             </div>
 
             </nav>
-                <div ref={navMobile} id="navMobile" className=" lg:hidden fixed bg-main-white z-50 top-[80px] md:top-[100px] flex flex-col h-[100vh] w-[99vw]
+            <div ref={navMobile} id="navMobile" className=" lg:hidden fixed bg-main-white z-50 top-[80px] md:top-[100px] flex flex-col h-[100vh] w-[99vw]
                 transition-all right-0 border-main-pink border-l-2 translate-x-[99vw] items-center justify-start gap-8
                 text-[32px] sm:text-[45px]">
-            <div className="flex items-center mt-8 relative">
-                   <Link to="/EspaceJeune" aria-label="Accédez à la page parlant de la Mission locale" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-orange relative">Jeunes 16/25 ans</Link>
-            </div>
-            <div className="flex  items-center relative">
+                <div className="flex   items-center relative">
+                    <Link to="/EspaceMilo" aria-label="Accédez à la page dédiée aux entreprises et aux partenaires" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-pink relative">La mission locale</Link>
+                </div>
+                <div className="flex items-center mt-8 relative">
+                    <Link to="/EspaceJeune" aria-label="Accédez à la page parlant de la Mission locale" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-orange relative">Jeunes 16/25 ans</Link>
+                </div>
+                <div className="flex  items-center relative">
                     <Link to="/EspaceEntreprise" aria-label="Accédez à la page réservé aux jeunes" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-green relative">Espace entreprises</Link>
-            </div>
-            <div className="flex   items-center relative">
-                   <Link to="/EspaceMilo" aria-label="Accédez à la page dédiée aux entreprises et aux partenaires" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-pink relative">La mission locale</Link>
-            </div>
-            <div className="flex   items-center relative">
+                </div>
+                <div className="flex   items-center relative">
                     <Link to="/OneForAll" aria-label="Accédez à la page ouvert à tous" onClick={toggleDisplayNavMobile} className={`font-caviar animate-nav ${urlName.pathname == "/pourTous" ? "after:!w-[94%]" : ""} after:!bg-main-blue relative`}>Tous public</Link>
                 </div>
-            <div className="flex  items-center text-[32px] sm:text-[45px] relative">
-                { isConnected == true ?  
-                    <Link to="/Crud/:team" className="font-caviar italic text-main-pink uppercase font-bold w-full">
-                        Admin
-                    </Link>
-                : 
-                    <a href="tel:03 24 38 29 17" className="font-caviar italic text-main-pink uppercase font-bold w-full">
-                        <i className="fa-solid fa-mobile-screen text-main-pink mr-2"></i>
-                        <span className="inline">03 24 38 29 17</span>
-                    </a>
-                }
+                <div className="flex  items-center text-[32px] sm:text-[45px] relative">
+                    { isConnected == true ?  
+                        <Link to="/Crud/:team" className="font-caviar italic text-main-pink uppercase font-bold w-full">
+                            Admin
+                        </Link>
+                    : 
+                        <a href="tel:03 24 38 29 17" className="font-caviar italic text-main-pink uppercase font-bold w-full">
+                            <i className="fa-solid fa-mobile-screen text-main-pink mr-2"></i>
+                            <span className="inline">03 24 38 29 17</span>
+                        </a>
+                    }
 
-            </div>
                 </div>
+            </div>
 
         </header>
         );

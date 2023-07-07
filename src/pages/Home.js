@@ -60,14 +60,14 @@ const Home =  () =>
     // }   
 
     function fetchTeam() {
-        axios.post('http://localhost:8000/public/php/index.php', {
+        axios.post('php/index.php', {
             action : 'ShowRandomUsers'
         }).then(function(response) {
             setPersons(response.data);
         })
     }   
     function fetchPost() {
-        axios.post('http://localhost:8000/public/php/index.php', {
+        axios.post('php/index.php', {
             action: 'showAllPosts'
         }).then(function(response) {
             setForums(response.data);
@@ -78,6 +78,7 @@ const Home =  () =>
         appearAll();
         fetchTeam();
         fetchPost();
+        window.scrollTo(0, 0);
       }, [urlName])
     //   console.log(forums);
 
@@ -86,7 +87,7 @@ const Home =  () =>
         <Helmet>
             <meta name="description" content="Bienvenue à la Mission Locale Sud Ardennes : votre partenaire pour construire votre avenir professionnel et 
             personnel dans les Ardennes. Découvrez nos services d'accompagnement, de formation et d'insertion pour les jeunes."/>
-            <title>Accueil</title>
+            <title>Mission Locale Sud Ardennes / Accueil</title>
             <link rel="canonical" href="/Accueil"/>
         </Helmet>
         <section id="redirect" aria-label="fond avec des bulles" className="bg-[url('assets/img/homepage/bulles.jpg')] bg-cover bg-fixed pt-8 sm:pt-16 pb-16 md:pb-24">

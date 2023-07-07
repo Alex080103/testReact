@@ -15,13 +15,15 @@ const EspaceEntreprise = () => {
     // const [isUnderClicked, setIsUnderClicked] = useState("0");
     // const [isUnderUnderClicked, setIsUnderUnderClicked] = useState("0");
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
 
     return (
 <section id="" className="pb-8 min-h-[80vh] ">
     <Helmet>
         <meta name="description" content="Découvrez nos services sur mesure dédiés aux entreprises : recrutement, formation, conseils et soutien pour favoriser votre croissance et contribuer au développement économique de notre région. Ensemble, construisons un avenir prometteur pour votre entreprise "/>
-        <title>Entreprises / Partenaires</title>
+        <title>Mission Locale Sud Ardennes / Entreprises / Partenaires</title>
         <link rel="canonical" href="/EspaceEntreprise"/>
     </Helmet>
     <h1 className="font-title text-4xl md:text-5xl py-8 md:pt-12 md:pb-8 xl:py-16 text-center">L'espace Entreprises / Partenaires</h1>

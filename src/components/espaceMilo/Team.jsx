@@ -6,7 +6,7 @@ const Team = () => {
     const [persons, setPersons] = useState([]);
 
     function fetchTeam() {
-        axios.post('http://localhost:8000/public/php/index.php', {
+        axios.post('php/index.php', {
             action: "showAllUsers"
         }).then(function(response) {
             setPersons(response.data);
@@ -37,7 +37,7 @@ const Team = () => {
 
     return (
         <section id="team" className="">
-                <h2 className="font-title text-3xl md:text-4xl py-8 md:py-16 text-center">Une équipe bienveillante qui vous accompagne dans vos projets</h2>
+                <h2 className="font-title text-3xl md:text-5xl py-8 md:py-16 text-center">Une équipe bienveillante qui vous accompagne dans vos projets</h2>
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-8 justify-items-center">
                 {persons.map((person, index) => {
                     // console.log(person.user_name)

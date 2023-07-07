@@ -23,7 +23,7 @@ function securizeImage(array $filesImage, string $path){
             {
                 if($sizeFile <= $max_size && $errorFile == 0)
                 {
-                    if(move_uploaded_file($tmpFile, "../../public/".$path.$image = uniqid() . '.' . end($extension)) )
+                    if(move_uploaded_file($tmpFile, "../".$path.$image = uniqid() . '.' . end($extension)) )
                     {
                         // $response = array(
                         //     "status" => "success",

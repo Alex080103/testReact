@@ -6,7 +6,7 @@ const OneForAll = () => {
         <section>
             <Helmet>
                 <meta name="description" content="Peu importe votre situation, découvrez les dispositifs disponible pour booster votre parcours professionnel et votre épanouissement."/>
-                <title>Tous publics</title>
+                <title>Mission Locale Sud Ardennes / Tous publics</title>
                 <link rel="canonical" href="/OneForAll"/>
             </Helmet>
             <h1 className="font-title text-4xl md:text-5xl py-8 md:pt-12 md:pb-8 xl:py-16 text-center">Espace pour tous</h1>

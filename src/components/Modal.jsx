@@ -13,7 +13,7 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
         form = new FormData(event.target);
         // form.append("photo",form.photo);
         // console.log(...form);
-        axios.post('http://localhost:8000/public/php/index.php',
+        axios.post('../php/index.php',
         form,
          {headers: { 'Content-Type': 'multipart/form-data' }}).then(function(response) {
             setResponse(response.data);
@@ -105,7 +105,7 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
                                     </input>
                                 </div>
                                 <div>
-                                    <label htmlFor="poster" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier l'affiche (Taille max: 4mo)` : "Ajouter une affiche (Taille max: 4mo)"} hauteur recommandé (1000px)</label>
+                                    <label htmlFor="poster" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier l'affiche (Taille max: 4mo)` : "Ajouter une affiche (Taille max: 4mo)"} <em>hauteur recommandé (1000px)</em></label>
                                     <input type="file" name="poster" id="poster"  placeholder="Ajouter une affiche" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
                                     </input>
                                 </div>
@@ -149,7 +149,7 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
                                     </input>
                                 </div>
                                 <div>
-                                    <label htmlFor="descriptionUser" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier une description (max 135 caractères)` : "Ajoutez une description (max 135 caractères)"} </label>
+                                    <label htmlFor="descriptionUser" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier une description (max 250 caractères)` : "Ajoutez une description (max 250 caractères)"} </label>
                                     <textarea type="text" name="description" id="descriptionUser" 
                                     defaultValue={ action == "modif" ? content['description'] : ""} rows="5" 
                                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
@@ -158,20 +158,21 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
                                     </textarea>
                                 </div>
                                 <div>
-                                    <label htmlFor="screen" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la photo de l'accueil` : "Ajouter une photo pour l'accueil"}(format rond 142px/142px)</label>
+                                    <label htmlFor="screen" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la photo de l'accueil` : "Ajouter une photo pour l'accueil"}<em> (format rond 142px/142px)</em></label>
                                     <input type="file" name="photoAccueil" id="screen"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
                                     </input>
                                 </div>
                                 <div>
-                                    <label htmlFor="screen" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la photo général` : "Ajouter une photo général"}(format largeur 283px/ hauteur 425px)</label>
+                                    <label htmlFor="screen" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la photo général` : "Ajouter une photo général"}<em> (format largeur 283px/ hauteur 425px)</em></label>
                                     <input type="file" name="photo" id="screen"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
                                     </input>
                                 </div>
                                 <div>
                                     <label htmlFor="localisation" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la localisation` : "Ajouter une localisation"}</label>
                                     <select type="text" name="localisation" id="localisation" placeholder="Ajoutez une localisation" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
-                                        <option value="Rethel" selected>Rethel</option>
+                                        <option value="Rethel">Rethel</option>
                                         <option value="Vouziers">Vouziers</option>
+                                        <option value="null">null</option>
                                     </select>
                                 </div>
                                 <div>

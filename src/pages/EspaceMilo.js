@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tab from "../components/Tab.jsx";
 import TabContent from "../components/TabContent.jsx";
 import Team from "../components/espaceMilo/Team.jsx";
@@ -9,12 +9,14 @@ import { Helmet } from "react-helmet-async";
 
 const EspaceMilo = () => {
     const [activeTab, setActiveTab] = useState("tab1");
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     return (
         <main>
             <Helmet>
                 <meta name="description" content="Apprends en plus sur la Mission Locale Sud Ardennes, les horaires, les réseaux et sur l'équipe qui la compose!"/>
-                <title>La Mission Locale</title>
+                <title>Mission Locale Sud Ardennes / La Mission Locale</title>
                 <link rel="canonical" href="/EspaceMilo"/>
             </Helmet>
             <section id="visual">

@@ -47,6 +47,7 @@ const EspaceJeune = () => {
     useEffect(() => {
         appearAllBranch();
         addPhotos();
+        window.scrollTo(0, 0);
     }, [])
     const handleClick = (id) => {
         if (isClicked == id ) {
@@ -67,13 +68,13 @@ const EspaceJeune = () => {
                 <meta name="description" content="La Mission Locale Sud Ardennes : ton alliée dédiée pour concrétiser tes ambitions professionnelles.
                 Découvre nos services d'accompagnement sur mesure, de formations adaptées et d'aide à l'insertion pour te guider vers un avenir prometteur. 
                 Ensemble, donnons vie à tes projets et ouvrons les portes de l'emploi et de l'épanouissement"/>
-                <title>Jeunes 16/25 ans</title>
+                <title>Mission Locale Sud Ardennes / Jeunes 16/25 ans</title>
                 <link rel="canonical" href="/EspaceJeune"/>
             </Helmet>
             <section className="bg-[url('assets/img/homepage/bulles.jpg')] z-0 relative after:z-0 after:bg-gray-400 after:content-['] 
             after:opacity-10 after:w-full after:h-full after:absolute after:top-0 bg-cover bg-fixed">
                 <h1 className="hidden sm:block font-title text-4xl z-40 md:text-5xl md:pt-16 text-center">Espace Jeunes de 16 à 25 ans</h1>
-                <div className="h-auto md:max-w-[100%] z-20 lg:max-w-[90vw] mx-auto aspect-video relative ">
+                <div className="h-auto md:w-[100%] z-20 lg:w-[90vw] aspect-[16/10] mx-auto relative ">
                     <div id="branchContainer" className='hidden sm:block  h-full w-full'>
                         {/* <button id="1" onClick={() => handleClick(1)} className=" w-[47%] h-[170px] z-10 absolute top-[4%] right-[10%]"></button> */}
                         <img src="assets\img\jeunePage\1-_SHEMA_ORIENTATION.png" className="branch transition-all opacity-0 absolute w-full bg-transparent h-full" alt="schéma retracant les objectifs de la mission locale"></img>
