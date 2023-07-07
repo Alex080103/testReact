@@ -49,7 +49,7 @@ export default function Mentions ()
                         <p><a href="https://fr.freepik.com/" className="text-main-blue underline italic">Freepik</a></p>
                     </div>
                 </div>
-                <img src="/assets/img/Mentions/mentions-legales-loupe.png" className="h-auto aspect-video pb-8 max-h-[60vh] mx-auto"></img>
+                <img src="/assets/img/Mentions/mentions-legales-loupe.png" className="h-auto aspect-video pb-8 max-h-[60vh] mx-auto" alt="photo avec une loupe et une inscription 'mentions légales' "></img>
             </div>
         </div>
       );

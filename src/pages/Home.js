@@ -60,8 +60,8 @@ const Home =  () =>
     // }   
 
     function fetchTeam() {
-        axios.post('http://localhost:8000/public/php/index.php', {
-        // axios.post('php/index.php', {
+        // axios.post('http://localhost:8000/public/php/index.php', {
+        axios.post('php/index.php', {
             action : 'ShowRandomUsers'
         }).then(function(response) {
             setPersons(response.data);
@@ -97,7 +97,7 @@ const Home =  () =>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:gap-6 lg:gap-0 lg:grid-cols-4 w-full md:w-11/12 lg:w-[99%] xl:w-11/12 mx-auto">
             <Link to="/EspaceMilo" className="flex justify-start flex-col">
                 <div className={`redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
-                    bg-[url('/assets/img/homepage/photoBulle7.jpg')] bg-cover bg-opacity-50`} title="photo chaleureuse de l'équipe">
+                    bg-[url('/assets/img/homepage/photoBulle7.jpg')] bg-cover bg-opacity-50`} title="photo chaleureuse">
                 </div>
                     <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">La mission locale Sud 08</h2>
             </Link>
@@ -115,7 +115,7 @@ const Home =  () =>
             </Link>
             <Link to="/OneForAll" className="flex justify-start mt-4 md:mt-0 flex-col">
                 <div className="redirect-item hover:scale-110 transition-all opacity-0 mx-auto rounded-full w-[250px] h-[250px] border-2
-                    bg-[url('/assets/img/homepage/photoBulle3.jpg')] bg-cover bg-opacity-50 bg-bottom bg-left " title="photo de personnes heureuse">
+                    bg-[url('/assets/img/homepage/photoBulle3.jpg')] bg-cover bg-opacity-50 bg-left " title="photo d'un public varié">
                 </div>
                     <h2 className="opacity-0 uppercase mt-4 lg:mt-8 text-xl sm:text-2xl font-bold text-center">Tous publics</h2>
             </Link>

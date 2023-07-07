@@ -74,10 +74,10 @@ export default function Nav({isConnected})
             <div ref={navMobile} id="navMobile" className=" lg:hidden fixed bg-main-white z-50 top-[80px] md:top-[100px] flex flex-col h-[100vh] w-[99vw]
                 transition-all right-0 border-main-pink border-l-2 translate-x-[99vw] items-center justify-start gap-8
                 text-[32px] sm:text-[45px]">
-                <div className="flex   items-center relative">
+                <div className="flex  mt-8 items-center relative">
                     <Link to="/EspaceMilo" aria-label="Accédez à la page dédiée aux entreprises et aux partenaires" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-pink relative">La mission locale</Link>
                 </div>
-                <div className="flex items-center mt-8 relative">
+                <div className="flex items-center  relative">
                     <Link to="/EspaceJeune" aria-label="Accédez à la page parlant de la Mission locale" onClick={toggleDisplayNavMobile} className="font-caviar animate-nav after:bg-main-orange relative">Jeunes 16/25 ans</Link>
                 </div>
                 <div className="flex  items-center relative">

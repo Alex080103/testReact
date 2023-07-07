@@ -13,19 +13,19 @@ const Socials = ({persons}) => {
                         <h3 className="font-title text-4xl lg:text-5xl italic mb-6 tracking-[0.1em]">Rejoignez la communauté</h3>
                         <div>
                             <i className="fa-brands fa-square-facebook mr-2 text-main-blue"></i>
-                            <a href="#"> Sur Facebook</a>
+                            <a href="https://www.facebook.com/milosudardennes" target="_blank"> Sur Facebook</a>
                         </div>
                         <div>
                             <i className="fa-brands fa-youtube mr-2 text-main-red"></i>
-                            <a href="#"> Sur Youtube</a>
+                            <a href="https://www.youtube.com/@missionlocalesudardennes5003/videos" target="_blank"> Sur Youtube</a>
                         </div>
                         <div>
                             <i className="fa-brands fa-instagram mr-2 text-yellow-500"></i>
-                            <a href="#"> Sur Instagram</a>
+                            <a href="https://www.instagram.com/mission_locale_sud_ardennes/" target="_blank"> Sur Instagram</a>
                         </div>
                         <div>
                             <i className="fa-brands fa-square-facebook mr-2 text-main-blue"></i>
-                            <a href="#"> Sur le groupe Job Emploi Rethel</a>
+                            <a href="https://www.facebook.com/groups/994160127762101" target="_blank"> Sur le groupe Job Emploi Rethel</a>
                         </div>
                     </div>
                 </div>
