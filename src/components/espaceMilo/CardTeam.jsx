@@ -1,7 +1,7 @@
 import { useState } from "react";
 const CardTeam = ({content}) => {
     // console.log(content.linkedin);
-    console.log(content);
+    // console.log(content);
     const [showText, setShowText] = useState(false);
     return (
         <div className={` ${ content.poste == "Directeur" ? "-order-[50]" : content.poste == "Responsable de secteur" ? "-order-[49]"
@@ -25,7 +25,7 @@ const CardTeam = ({content}) => {
             </button>
             <div className={`absolute bottom-1/4 transition-all duration-[0.9s] ease-out ${ showText == false ? "translate-y-1/4 opacity-0" : "opacity-1" }`}>
                 <div className="bg-gray-800 text-main-white">
-                    <p className="p-4 text-sm md:text-xl">{content.description}</p>
+                    <p className="p-4 text-sm md:text-lg">{content.description}</p>
                 </div>
             </div>
         </div>

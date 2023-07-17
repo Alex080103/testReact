@@ -34,6 +34,10 @@
             $users = showRandomUsers();
             echo json_encode($users);
             break;
+        case 'ShowFunders':
+            $funders = showFunders();
+            echo json_encode($funders);
+            break;
         case 'connect': 
             $isConnect = connect($_POST);
             if ($isConnect['connect'] == "Connexion réussie") {

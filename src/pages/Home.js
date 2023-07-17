@@ -60,15 +60,16 @@ const Home =  () =>
     // }   
 
     function fetchTeam() {
-        // axios.post('http://localhost:8000/public/php/index.php', {
-        axios.post('php/index.php', {
+        axios.post('http://localhost:8000/public/php/index.php', {
+        // axios.post('php/index.php', {
             action : 'ShowRandomUsers'
         }).then(function(response) {
             setPersons(response.data);
         })
     }   
     function fetchPost() {
-        axios.post('php/index.php', {
+        axios.post('http://localhost:8000/public/php/index.php', {
+        // axios.post('php/index.php', {
             action: 'showAllPosts'
         }).then(function(response) {
             setForums(response.data);

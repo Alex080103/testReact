@@ -62,7 +62,7 @@ const EspaceEntreprise = () => {
 
 
             </div>
-            <img src="assets\img\homepage\pexels-jopwell-2422294.jpg" className="w-[80%] mx-auto"></img>
+            <img src="assets\img\homepage\photoBulle9.jpg" className="w-[80%] mx-auto"></img>
         </div>
         <Contact></Contact>
     </section>

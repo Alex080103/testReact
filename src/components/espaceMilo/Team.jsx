@@ -6,7 +6,8 @@ const Team = () => {
     const [persons, setPersons] = useState([]);
 
     function fetchTeam() {
-        axios.post('php/index.php', {
+        axios.post('http://localhost:8000/public/php/index.php', {
+        // axios.post('php/index.php', {
             action: "showAllUsers"
         }).then(function(response) {
             setPersons(response.data);

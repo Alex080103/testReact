@@ -27,3 +27,10 @@ require_once('./model/Admin.php');
         $posts = $postRepository->showAllPosts();
         return $posts;
     }
+
+    function showFunders()
+    {
+        $fundersRepository = new FundersRepository;
+        $funders = $fundersRepository->showFunders();
+        return $funders;
+    }

@@ -195,7 +195,6 @@ function modifFunders(array $post, array $files):bool
     $pathPdf = false;
     $year = false;
 
-    var_dump($files['activity']);
 
     if (isset($files['founder']) && !empty($files['founder']) && $files['founder']['error'] == 0) {
         $pathImage = securizeImage($files['founder'], "upload/founders/");

@@ -26,10 +26,11 @@ const OneForAll = () => {
                             </li>
                          </ul>
 
-                         <br></br>  Suivez nos évènements sur notre <a className="text-main-blue underline" href="">page facebook </a>
+                         <br></br>  Suivez nos évènements sur notre <a className="text-main-blue underline" href="https://www.facebook.com/milosudardennes">page facebook </a>
                          et consultez notre partage d’offres d’emploi sur le  <a href="https://www.facebook.com/groups/994160127762101/." className="text-main-blue underline"> groupe JOB EMPLOI Rethel et alentours (08-51-02) sur Facebook.</a>
                      </ul><br></br>
-                     <p>Vous pouvez également télécharger <strong>le guide de la reconversion</strong> pour en apprendre plus les différents dispositifs qui vout sont ouverts.</p>
+                     <p>Vous pouvez également télécharger <strong>le guide de la reconversion</strong> 
+                     pour en apprendre plus les différents dispositifs qui vout sont ouverts.</p>
                      <a href="download/guide_CEP_2023-MLSUDARDENNES-version_definitive (1).pdf" download="Guide_Reconversion_MLSUDARDENNES.pdf" className="font-bold bg-main-pink rounded-full text-main-white hover:bg-main-white hover:text-main-pink hover:border transition-all hover:border-main-pink mx-auto px-4 md:px-6 py-2 md:py-3 mt-4">Télécharger</a>
                  </div>
                  <img src="assets/img/homepage/pexels-fauxels-3184419(1).jpg" className="max-w-[90vw] md:max-w-[50vw] my-auto xl:max-w-[95%] mx-auto"></img>

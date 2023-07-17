@@ -13,7 +13,8 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
         form = new FormData(event.target);
         // form.append("photo",form.photo);
         // console.log(...form);
-        axios.post('../php/index.php',
+        axios.post('http://localhost:8000/public/php/index.php', 
+        // axios.post('../php/index.php',
         form,
          {headers: { 'Content-Type': 'multipart/form-data' }}).then(function(response) {
             setResponse(response.data);
@@ -27,12 +28,12 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
                     fetchTeam();
                 }
             } else if (response.data == false) {
-                setError("Erreur de traitement");
+                // setError("Erreur de traitement");
             } else if (response.data.error !== null) {
-                setError(response.data.error);
+                // setError(response.data.error);
             }
         }).catch (error => {
-            setError("Une erreur est survenue");
+            // setError("Une erreur est survenue");
         }
         )
     }

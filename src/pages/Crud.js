@@ -27,8 +27,8 @@ const Crud = () =>
         }, [name.team]);
 
         function fetchTeam(limit, offset) {
-            axios.post('../php/index.php', {
-            // axios.post('http://localhost:8000/public/php/index.php', {
+            // axios.post('../php/index.php', {
+            axios.post('http://localhost:8000/public/php/index.php', {
                 action : 'showAllUsers',
                 // limit: limit,
                 // offset: offset

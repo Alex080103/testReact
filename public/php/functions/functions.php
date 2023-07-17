@@ -109,7 +109,7 @@ function securizePdf(array $filesPdf, string $path)
         if(in_array($typeFile, $type)) {
             if(count($extension) <=2 && in_array(strtolower(end($extension)), $extensions)) {
                 if($sizeFile <= $max_size && $errorFile == 0) {
-                    if(move_uploaded_file($tmpFile, "../../public/".$path.$pdf = uniqid() . '.' . end($extension))) {
+                    if(move_uploaded_file($tmpFile, "../".$path.$pdf = uniqid() . '.' . end($extension))) {
                         // $response = array(
                         //     "status" => "",
                         //     "message" => "Le cahier des charges a bien été envoyé'"

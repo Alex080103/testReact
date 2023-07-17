@@ -8,6 +8,16 @@ class Funders
     private mixed $download;
     private mixed $year;
 
+    public function __serialize()
+    {
+        return [
+            'id' => $this->id,
+            'picture' => $this->picture,
+            'mobilPicture' => $this->mobilPicture,
+            'download' => $this->download,
+            'year' => $this->year,
+        ];
+    }
     public function __construct (int $id,mixed $picture, mixed $mobilPicture ,mixed $download, mixed $year)
     {
         $this->id = $id;
@@ -33,6 +43,15 @@ class Funders
 
 class FundersRepository extends ConnectBdd
 {
+    public function showFunders ():array 
+    {
+        $req = $this->bdd->prepare("SELECT * FROM funders");
+        $req->execute();
+        $datas = $req->fetchAll(PDO::FETCH_ASSOC);
+        $funders = new Funders($datas[0]['funders_id'], $datas[0]['funders_picture'], $datas[0]['funders_mobil_picture'], $datas[0]['funders_download'], $datas[0]['funders_activity_year']);
+        $funders->__serialize();
+        return $datas;
+    }
     function modifFunders (object $funders):bool
     {
         $query = "UPDATE funders SET funders_id = 1";
