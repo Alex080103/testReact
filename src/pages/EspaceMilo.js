@@ -17,7 +17,7 @@ const EspaceMilo = () => {
             <Helmet>
                 <meta name="description" content="Apprends en plus sur la Mission Locale Sud Ardennes, les horaires, les réseaux et sur l'équipe qui la compose!"/>
                 <title>Mission Locale Sud Ardennes / La Mission Locale</title>
-                <link rel="canonical" href="/EspaceMilo"/>
+                <link rel="canonical" href="https://mlsudardennes08.fr/EspaceMilo"/>
             </Helmet>
             <section id="visual">
                 <h1 className="font-title text-4xl md:text-5xl py-8 md:py-16 text-center">La Mission Locale Sud Ardennes</h1>

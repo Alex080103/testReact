@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import "../assets/js/navbar/nav";
+import ConnectUser from "./ConnectUser";
 
 
-export default function Nav({isConnected})
+export default function Nav({isConnected, setIsConnected})
 {
+    const [isOpenConnect, setIsOpenConnect] = useState(false);
     const[isOpen, setOpen] = useState(true);
     const navMobile = useRef();
 
@@ -49,10 +51,10 @@ export default function Nav({isConnected})
                         Admin
                     </Link>
                 : 
-                    <Link to="tel:03 24 38 29 17" className="font-caviar italic text-main-pink uppercase font-bold w-full">
-                        <i className="fa-solid fa-mobile-screen text-main-pink mr-2"></i>
-                        <span className="hidden xl:inline">03 24 38 29 17</span>
-                    </Link>
+                    <button onClick={() => setIsOpenConnect(!isOpenConnect)} className="font-caviar italic text-main-pink uppercase font-bold w-full">
+                        {/* <i className="fa-solid fa-mobile-screen text-main-pink mr-2"></i> */}
+                        <span className="hidden xl:inline">Connexion</span>
+                    </button>
                 }
 
                 </div>
@@ -100,7 +102,8 @@ export default function Nav({isConnected})
 
                 </div>
             </div>
-
+            <ConnectUser isOpenConnect={isOpenConnect} setIsOpenConnect={setIsOpenConnect} setIsConnected={setIsConnected}></ConnectUser>
         </header>
+
         );
 }

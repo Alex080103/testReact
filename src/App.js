@@ -33,7 +33,7 @@ export default function App() {
   
   return (
     <BrowserRouter>
-    <Nav isConnected={isConnected}/>
+    <Nav isConnected={isConnected} setIsConnected={setIsConnected}/>
       <Routes>
         <Route path='/EspaceEntreprise' element= {<EspaceEntreprise/>} />
         <Route path='/EspaceMilo' element= {<EspaceMilo/>} />

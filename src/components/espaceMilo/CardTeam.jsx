@@ -15,7 +15,7 @@ const CardTeam = ({content}) => {
                 <p className="italic">{content.poste}<span className="italic font-bold">{content.localisation == "null" ? "" :  " - " + content.localisation }</span></p>
             </div>
             
-                <a href={content.linkedin} className={`absolute top-3 left-4  p-2 px-3 rounded-full
+                <a href={content.linkedin !== null ? content.linkedin : "#"} className={`absolute top-3 left-4  p-2 px-3 rounded-full
                 ${ content.linkedin !== "" ?  "bg-main-white" : "bg-gray-500 cursor-default"} `}>
                     <i className="fa-brands fa-linkedin-in text-gray-800 text-xl rounded-full >"></i>
                 </a>
