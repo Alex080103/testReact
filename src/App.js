@@ -8,6 +8,7 @@ import EspaceMilo from "./pages/EspaceMilo.js";
 import EspaceJeune from "./pages/EspaceJeune.js";
 import Crud from "./pages/Crud";
 import Contact from "./pages/Contact";
+import CalendarPage from "./pages/CalendarPage";
 import Mentions from "./pages/Mentions.js";
 import OneForAll from "./pages/OneForAll.js";
 
@@ -48,7 +49,7 @@ export default function App() {
         <Route path='/OneForAll' element={<OneForAll/>}/>
         <Route path='/Accueil' element= {<Home/>} />
         <Route path='*' element={<Home/>}/>
-
+        <Route path='/Calendar' element={<CalendarPage/>}/>
       </Routes>
     <Footer setIsConnected={setIsConnected}/>
     </BrowserRouter>

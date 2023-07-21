@@ -6,7 +6,7 @@ const ConnectUser = ({setIsOpenConnect, isOpenConnect, setIsConnected}) => {
     const [response, setResponse] = useState(true);
     const [error, setError] = useState();
     const navigate = useNavigate();
-    console.log(isOpenConnect);
+    // console.log(isOpenConnect);
     let form = null;
 
     function handleSubmit (event) {
@@ -39,13 +39,6 @@ const ConnectUser = ({setIsOpenConnect, isOpenConnect, setIsConnected}) => {
     return (
         
         <section className="block static" >
-            {/* <h2 className="font-title w-full text-4xl md:text-5xl py-8 md:py-16 text-center">Mentions Légales</h2> */}
-            
-
-            {/* <button  className="block w-full bg-main-pink text-main-white hover:bg-main-white border transition-all hover:text-main-pink hover:border hover:border-main-pink font-medium rounded-lg text-sm px-5 py-2.5 text-center" type="button">
-              Connexion administrateur
-            </button> */}
-
             <div tabIndex="-1" aria-hidden="true" 
             className={`fixed mx-auto inset-x-0 inset-y-0 mt-[10%] z-[999] ${ isOpenConnect == false ? "hidden" : "" } 
             w-full p-4 
