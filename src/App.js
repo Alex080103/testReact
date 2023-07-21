@@ -8,7 +8,7 @@ import EspaceMilo from "./pages/EspaceMilo.js";
 import EspaceJeune from "./pages/EspaceJeune.js";
 import Crud from "./pages/Crud";
 import Contact from "./pages/Contact";
-import CalendarPage from "./pages/CalendarPage";
+import CalendarPageJeune from "./pages/CalendarPageJeune";
 import Mentions from "./pages/Mentions.js";
 import OneForAll from "./pages/OneForAll.js";
 
@@ -19,9 +19,8 @@ import { useEffect } from "react";
 import Footer from "./components/Footer";
 import Protected from "./components/admin/Protected";
 import Error404 from "./pages/Error404";
-
-
-
+import CalendarPageConseiller from "./pages/CalendarPageConseiller";
+import Formulaire from "./pages/Formulaire";
 
 export default function App() {
 
@@ -44,12 +43,16 @@ export default function App() {
             <Crud/>
           </Protected>
         }/>
+        <Route path='/CalendarJeune' element={<CalendarPageJeune/>}/>
+        <Route path='/CalendarConseiller' element={<CalendarPageConseiller/>}/>
+        <Route path='/Formulaire/:addMember' element={<Formulaire/>}/>
         <Route path='/Contact' element={<Contact/>}/>
         <Route path='/Mentions' element={<Mentions isConnected={isConnected} setIsConnected={setIsConnected}/>}/>
         <Route path='/OneForAll' element={<OneForAll/>}/>
         <Route path='/Accueil' element= {<Home/>} />
+        <Route path='/Error404' element={<Error404/>}/>
         <Route path='*' element={<Home/>}/>
-        <Route path='/Calendar' element={<CalendarPage/>}/>
+
       </Routes>
     <Footer setIsConnected={setIsConnected}/>
     </BrowserRouter>

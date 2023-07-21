@@ -5,7 +5,7 @@ import ModalRdv from "../components/calendar/ModalRdv";
 import MultiSteps from "../components/multiSteps/MultiSteps";
 
 
-const CalendarPage = () => {
+const CalendarPageJeune = () => {
     const [actualDate, setActualDate] = useState(new Date());
     const [clickedDate, setClickedDate] = useState(new Date());
     const [rdvDate, setRdvDate] = useState();
@@ -98,4 +98,4 @@ const CalendarPage = () => {
     );
 }
 
-export default CalendarPage;
+export default CalendarPageJeune;
