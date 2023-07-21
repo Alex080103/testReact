@@ -13,9 +13,9 @@ const Apprentissage = () => {
             <UnderAccordionContainer title="Contrat d'apprentissage" marginLeft={4}>
 
                 <UnderAccordionContainer title="Qu'est ce que c'est ?" marginLeft={8}> 
-                <div class="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
+                <div className="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                     <div className="border-4 border-main-green p-4">
-                        <h3 class="text-xl sm:text-3xl">C'est quoi ?</h3>
+                        <h3 className="text-xl sm:text-3xl">C'est quoi ?</h3>
                         <p>L'apprentissage, c'est former un jeune à vos méthodes de travail,
                             dans le cadre de <strong>
                             la préparation d'un
@@ -39,9 +39,9 @@ const Apprentissage = () => {
                               peut remplir cette fonction.
                         </p>
                     </div>
-                    <div class="flex flex-wrap sm:flex-nowrap gap-4">
+                    <div className="flex flex-wrap sm:flex-nowrap gap-4">
                         <div className="border-4 border-main-purple p-4">
-                            <h3 class="text-xl sm:text-3xl">Quels publics ?</h3>
+                            <h3 className="text-xl sm:text-3xl">Quels publics ?</h3>
                             <ul className="list-disc ml-8">
                                 <li> Les jeunes âgés de <strong>16 à 29 ans révolus</strong></li>
                                 <li><strong>Certains publics peuvent rentrer en apprentissage au-delà de 29 ans : </strong>
@@ -49,16 +49,16 @@ const Apprentissage = () => {
                             </ul>
                         </div>
                         <div className="border-4 border-main-pink p-4">
-                            <h3 class="text-xl sm:text-3xl">Quelle rémunération ?</h3>
+                            <h3 className="text-xl sm:text-3xl">Quelle rémunération ?</h3>
                             <p> <strong>La rémunération du jeune varie entre 27 et 100% du SMIC en fonction de l'âge et de la progression dans le cycle de formation.</strong></p>
                         </div>
                     </div>
                     <div className="border-4 border-main-blue p-4">
-                        <h3 class="text-xl sm:text-3xl">Quels employeurs?</h3>
+                        <h3 className="text-xl sm:text-3xl">Quels employeurs?</h3>
                         <p>Toute entreprise du secteur privé, y compris les associations, peuvent embaucher un apprenti Le secteur public non industriel et commercial</p>
                     </div>
                     <div className="border-4 border-main-orange p-4">
-                        <h3 class="text-xl sm:text-3xl">Quels type de contrat et quelle durée?</h3>
+                        <h3 className="text-xl sm:text-3xl">Quels type de contrat et quelle durée?</h3>
                         <ul className="list-disc ml-8">
                             <li> CDD de 6 mois à 3 ans (voire 4 ans dans certains cas)</li>
                             <li>ou CDI : le contrat débute alors par la période d'apprentissage d'une durée équivalente au cycle de la formation suivie. À l'issue de la période d'apprentissage, la relation contractuelle sera régie par les dispositions relatives au CDI de droit commun.</li>
@@ -69,9 +69,9 @@ const Apprentissage = () => {
                 
                 <UnderAccordionContainer title="Les aides disponibles" marginLeft={8}> 
 
-                    <div class="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>ul]:text-sm [&>div>ul]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
+                    <div className="grid gap-4 md:w-11/12 [&>div>p]:text-sm [&>div>p]:md:text-md [&>div>ul]:text-sm [&>div>ul]:md:text-md [&>div>div>p]:text-sm [&>div>div>p]:md:text-md">
                         <div className="border-4 border-main-green p-4">
-                            <h3 class="text-xl sm:text-3xl">Aide à l'embauche du 1er janvier au 31 décembre 2023</h3>
+                            <h3 className="text-xl sm:text-3xl">Aide à l'embauche du 1er janvier au 31 décembre 2023</h3>
                             <ul className="list-disc ml-8">
                                 <li><strong>6 000 € pour l'embauche d'un apprenti quel que soit son âge</strong> pour chaque contrat d'apprentissage conclu entre le 1er janvier 2023 et le 31 décembre 2023 préparant à un diplôme <strong>jusqu'au master (bac+5-niveau 7 du RNCP).</strong></li>
                                 <p><strong>Cette aide</strong> sera versée :</p>
@@ -82,7 +82,7 @@ const Apprentissage = () => {
                             <p className="font-bold italic mt-4">Cette aide concerne la première année d'exécution du contrat et se substitue totalement à l'aide unique aux employeurs d'apprentis. Les contrats d'apprentissage du secteur public non industriel et commercial ne sont pas éligibles à l'aide (à titre d'exemple : collectivité territoriale, établissement public administratif...). Cette aide est cumulable avec l'aide à l'embauche d'un altemant en situation de handicap (aide Agefiph)</p>
                         </div>
                         <div className="border-4 border-main-blue p-4">
-                            <h3 class="text-xl sm:text-3xl">Comment formaliser un contrat d'apprentissage?</h3>
+                            <h3 className="text-xl sm:text-3xl">Comment formaliser un contrat d'apprentissage?</h3>
                             <p>Le contrat d'apprentissage est conclu à l'aide d'un formulaire type (Cerfa) signé par l'employeur et l'apprenti 
                                 (ou son représentant légal).<strong>
                                      Avant le début de l'exécution du contrat ou, au plus tard, dans les

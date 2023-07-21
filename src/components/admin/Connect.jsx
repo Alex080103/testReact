@@ -16,7 +16,8 @@ const Connect = ({setIsConnected}) => {
         form = new FormData(event.target);
         form.append("action", "connect")
 
-        axios.post('http://localhost:8000/public/php/index.php',
+        // axios.post('php/index.php',
+        axios.post('http://localhost:8000/public/php/index.php', 
         form,
          {headers: { 'Content-Type': 'multipart/form-data' }}).then(function(response) {
             setResponse(response.data);
@@ -39,7 +40,7 @@ const Connect = ({setIsConnected}) => {
 
     return (
         
-        <section class="block static" >
+        <section className="block static" >
             {/* <h2 className="font-title w-full text-4xl md:text-5xl py-8 md:py-16 text-center">Mentions Légales</h2> */}
             
 
@@ -64,11 +65,11 @@ const Connect = ({setIsConnected}) => {
                             <form className="space-y-6" onSubmit={() => handleSubmit(event)}>
                                 <div>
                                     <label htmlFor="email" className="block mb-2 text-md md:text-xl font-medium text-gray-900 ">Votre mail</label>
-                                    <input type="text" name="email" id="email" className="bg-gray-50 border border-main-pink text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 " placeholder="name@company.com" required></input>
+                                    <input type="text" name="email" id="email" className="bg-gray-50 border border-main-pink text-gray-900 text-sm rounded-lg focus-visible:outline-main-pink block w-full p-2.5 " placeholder="name@company.com" required></input>
                                 </div>
                                 <div>
                                     <label htmlFor="password" className="block mb-2 text-md md:text-xl font-medium text-gray-900 ">Votre mot de passe</label>
-                                    <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-main-pink text-gray-900 text-sm rounded-lg focus:ring-pink-600 focus:border-pink-600 block w-full p-2.5 " required></input>
+                                    <input type="password" name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-main-pink text-gray-900 text-sm rounded-lg focus-visible:outline-main-pink block w-full p-2.5 " required></input>
                                 </div>
                                 <p className={`text-main-white bg-main-red italic p-4 ${ error !==undefined ? "" : "hidden"} text-xl`}>{error}</p>
                                 <button type="submit" className="w-full bg-main-pink text-main-white hover:bg-main-white border hover:text-main-pink hover:border hover:border-main-pink transition-all focus:outline-none  font-medium rounded-lg text-sm px-5 py-2.5 text-center ">Connectez vous</button>

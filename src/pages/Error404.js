@@ -6,7 +6,7 @@ const Error404 = () => {
         <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[70dvh] my-8 md:mt-16">
             <Helmet>
                 <meta name="description" content="Error 404"/>
-                <title>Erreur</title>
+                <title>Mission Locale Sud Ardennes / Erreur</title>
             </Helmet>
             <img src="/assets/img/error.jpg" className="md:w-1/2 lg:w-auto mx-auto"></img>
             <div className="flex flex-col gap-8">

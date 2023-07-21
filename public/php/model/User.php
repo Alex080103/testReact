@@ -1,6 +1,11 @@
 <?php
-require_once('ConnectBdd.php');
 
+// Test de la classe ConnectBdd
+// $connectBdd = new ConnectBdd();
+// $result = $connectBdd; // Appelez une méthode de la classe ConnectBdd
+
+// // Affichez le résultat pour vérifier si tout fonctionne correctement
+// var_dump($result);
 class User
 {
     private int $id;
@@ -14,7 +19,7 @@ class User
     private string $linkedin;
     private string $role;
 
-    public function __serialize() 
+    public function __serialize()
     {
         return [
             'id' => $this->id,
@@ -31,7 +36,7 @@ class User
     }
 
     public function __construct (int $id, string $name, string $surname, string $poste, string $description, mixed $photo, mixed $photo_accueil, string $localisation, string $linkedin)
-    {   
+    {
         $this->id = $id;
         $this->name = $name;
         $this->surname = $surname;
@@ -42,7 +47,7 @@ class User
         $this->localisation = $localisation;
         $this->linkedin = $linkedin;
         // $this->role = $role;
-    }   
+    }
 
     public function setId(int $id):void { $this->id = $id; }
     public function setName(string $name):void { $this->name = $name; }
@@ -71,15 +76,34 @@ class User
 class UserRepository extends ConnectBdd
 {
 
-        function showAllUsers ()
+        public function showAllUsers ($limit, $offset): array
         {
             $req = $this->bdd->prepare("SELECT * FROM user");
+            // if ($limit !== null && $offset !== null) {
+            //     $req = $this->bdd->prepare("SELECT * FROM user LIMIT $limit OFFSET $offset") ;
+            // }
             $req->execute();
             $datas = $req->fetchAll(PDO::FETCH_ASSOC);
             $users = [];
             // var_dump($datas);
             foreach ( $datas as $data ) {
-                $user = new User($data['user_id'], $data['user_name'],$data['user_surname'], $data['user_poste'], 
+                $user = new User($data['user_id'], $data['user_name'],$data['user_surname'], htmlspecialchars_decode($data['user_poste']),
+                htmlspecialchars_decode($data['user_description']), $data['user_photo'], $data['user_photo_accueil'], $data['user_localisation'], $data['user_linkedin']);
+                $user = $user->__serialize();
+                $users[] = $user;
+            }
+            return $users;
+        }
+
+        public function showRandomUsers() :array
+        {
+            $req = $this->bdd->prepare("SELECT * FROM user ORDER BY RAND() LIMIT 5");
+            $req->execute();
+            $datas = $req->fetchAll(PDO::FETCH_ASSOC);
+            $users = [];
+            // var_dump($datas);
+            foreach ( $datas as $data ) {
+                $user = new User($data['user_id'], $data['user_name'],$data['user_surname'], htmlspecialchars_decode($data['user_poste']),
                 htmlspecialchars_decode($data['user_description']), $data['user_photo'], $data['user_photo_accueil'], $data['user_localisation'], $data['user_linkedin']);
                 $user = $user->__serialize();
                 $users[] = $user;
@@ -98,7 +122,7 @@ class UserRepository extends ConnectBdd
             $localisation = htmlspecialchars($user->getLocalisation(),ENT_QUOTES);
             $linkedin = htmlspecialchars($user->getLinkedin(),ENT_QUOTES);
 
-            $req = $this->bdd->prepare("INSERT INTO user (user_name, user_surname, user_poste, user_description, 
+            $req = $this->bdd->prepare("INSERT INTO user (user_name, user_surname, user_poste, user_description,
             user_photo, user_photo_accueil, user_localisation, user_linkedin)
              VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             $userIsAdd = $req->execute([$name, $surname, $poste, $description, $photo, $photo_accueil, $localisation, $linkedin]);
@@ -107,8 +131,8 @@ class UserRepository extends ConnectBdd
 
         function modifUser(object $user): bool
         {
-            $query = "UPDATE user SET 
-            user_name = ?, user_surname = ?, user_poste = ?, 
+            $query = "UPDATE user SET
+            user_name = ?, user_surname = ?, user_poste = ?,
             user_description= ?";
             $id = htmlspecialchars($user->getId(), ENT_QUOTES);
             $name = htmlspecialchars($user->getName(),ENT_QUOTES);
@@ -148,5 +172,13 @@ class UserRepository extends ConnectBdd
             return $isDelete;
         }
 
-    
+        function countUsers (): int
+        {
+            $req = $this->bdd->prepare("SELECT COUNT(user_name) FROM user");
+            $req->execute();
+            $count = $req->fetchAll(PDO::FETCH_COLUMN);
+            var_dump($count[0]);
+            return $count[0];
+        }
+
 }

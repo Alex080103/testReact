@@ -8,6 +8,7 @@ import EspaceMilo from "./pages/EspaceMilo.js";
 import EspaceJeune from "./pages/EspaceJeune.js";
 import Crud from "./pages/Crud";
 import Contact from "./pages/Contact";
+import CalendarPage from "./pages/CalendarPage";
 import Mentions from "./pages/Mentions.js";
 import OneForAll from "./pages/OneForAll.js";
 
@@ -33,7 +34,7 @@ export default function App() {
   
   return (
     <BrowserRouter>
-    <Nav isConnected={isConnected}/>
+    <Nav isConnected={isConnected} setIsConnected={setIsConnected}/>
       <Routes>
         <Route path='/EspaceEntreprise' element= {<EspaceEntreprise/>} />
         <Route path='/EspaceMilo' element= {<EspaceMilo/>} />
@@ -41,13 +42,14 @@ export default function App() {
         <Route path='/Crud/:team' element= {
           <Protected isConnected={isConnected}>
             <Crud/>
-          </Protected>} />
+          </Protected>
+        }/>
         <Route path='/Contact' element={<Contact/>}/>
         <Route path='/Mentions' element={<Mentions isConnected={isConnected} setIsConnected={setIsConnected}/>}/>
         <Route path='/OneForAll' element={<OneForAll/>}/>
         <Route path='/Accueil' element= {<Home/>} />
-        <Route path='*' element={<Error404/>}/>
-
+        <Route path='*' element={<Home/>}/>
+        <Route path='/Calendar' element={<CalendarPage/>}/>
       </Routes>
     <Footer setIsConnected={setIsConnected}/>
     </BrowserRouter>

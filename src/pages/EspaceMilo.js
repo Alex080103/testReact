@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tab from "../components/Tab.jsx";
 import TabContent from "../components/TabContent.jsx";
 import Team from "../components/espaceMilo/Team.jsx";
@@ -9,17 +9,19 @@ import { Helmet } from "react-helmet-async";
 
 const EspaceMilo = () => {
     const [activeTab, setActiveTab] = useState("tab1");
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+      }, [])
     return (
         <main>
             <Helmet>
                 <meta name="description" content="Apprends en plus sur la Mission Locale Sud Ardennes, les horaires, les réseaux et sur l'équipe qui la compose!"/>
-                <title>La Mission Locale</title>
-                <link rel="canonical" href="/EspaceMilo"/>
+                <title>Mission Locale Sud Ardennes / La Mission Locale</title>
+                <link rel="canonical" href="https://mlsudardennes08.fr/EspaceMilo"/>
             </Helmet>
             <section id="visual">
                 <h1 className="font-title text-4xl md:text-5xl py-8 md:py-16 text-center">La Mission Locale Sud Ardennes</h1>
-                <div className="grid md:grid-cols-1 lg:grid-cols-[40%_60%] items-center xl:grid-cols-[57%_40%] gap-8 lg:mb-16">
+                <div className="grid md:grid-cols-1 lg:grid-cols-[40%_60%] items-center xl:grid-cols-[56%_41%] gap-8 lg:mb-16">
                     <picture>
                         <source media="(max-width: 500px)" srcSet="assets/img/miloPage/Plan_de_travail_2.png"></source>
                         <source media="(min-width: 500px)" srcSet="assets/img/miloPage/Plan_de_travail_1.png"></source>
@@ -58,8 +60,8 @@ const EspaceMilo = () => {
                 <TabContent id="tab3" activeTab={activeTab} value="1">
                     <div className="relative">
                         <a href="download/Rapport_2022.pdf" download="Rapport_D'activité_Mission_Locale_Sud_Ardennes_2022.pdf"
-                            className="absolute -bottom-10 md:bottom-auto md:top-10 lg:top-16 xl:top-20 right-8 font-bold italic text-md lg:text-xl bg-main-pink p-1 px-2 lg:p-2 lg:px-4 text-main-white rounded-lg">Rapport d'activité 2022 
-                            <i class="fa-solid fa-download bg-main-pink text-main-white p-2 lg:p-4"></i>
+                            className="absolute -bottom-10 md:bottom-auto inset-x-0 md:inset-auto text-center rounded-none md:top-10 lg:top-16 xl:top-20 md:right-8 font-bold italic text-md lg:text-xl bg-main-pink p-1 px-2 lg:p-2 lg:px-4 text-main-white md:rounded-lg">Rapport d'activité 2022 
+                            <i className="fa-solid fa-download bg-main-pink text-main-white p-2 lg:p-4"></i>
                         </a>
                         <picture>
                             <source media="(max-width: 500px)" srcSet="assets/img/miloPage/financeurs_mobile.jpg"></source>

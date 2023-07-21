@@ -1,22 +1,19 @@
 import axios from "axios";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetchPost, setError}) => {
-    // const [modalIsOpen, setModalIsOpen] = useState(false);
-    // function handleClick {
-    //     setModalIsOpen((modalIsOpen) => !modalIsOpen);
-    // }${ modalIsOpen == true ? "" : "hidden"}
+    
     const [response, setResponse] = useState(false);
+
     let content = contentToModal;
-    const formTeam = useRef();
     let form = null;
 
     function handleSubmit (event) {
         event.preventDefault();
         form = new FormData(event.target);
-        form.append("photo",form.photo);
+        // form.append("photo",form.photo);
         // console.log(...form);
-        axios.post('http://localhost:8000/public/php/index.php',
+        axios.post('../php/index.php',
         form,
          {headers: { 'Content-Type': 'multipart/form-data' }}).then(function(response) {
             setResponse(response.data);
@@ -32,15 +29,17 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
             } else if (response.data == false) {
                 setError("Erreur de traitement");
             } else if (response.data.error !== null) {
-                console.log(response.data.error);
                 setError(response.data.error);
             }
         }).catch (error => {
             setError("Une erreur est survenue");
-            console.log(error);
         }
         )
     }
+    // if (isOpen == true) {
+    //     console.log(content.descriptionPost);
+
+    // }
     return (
     <div id={type == ":team" && action == "add" ? "add-modal-team" : type == ":post" && action == "add" ? "add-modal-post" :
         type == ":team" && action == "modif" ? "modif-modal-team" : type == ":post" && action == "modif" ? "modif-modal-post" : "default-modal"
@@ -89,7 +88,8 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
                            <form className="space-y-6" action="#" onSubmit={() => handleSubmit(event)}>
                                <div>
                                    <label htmlFor="description" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la description` : "Ajouter une description"}</label>
-                                   <textarea type="text" name="post" defaultValue={ action == "modif" ? content['description'] : ""} id="description" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                   <textarea type="text" name="post" defaultValue={ action == "modif" ? content['descriptionPost'] : ""}  id="description" rows="5" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                        
                                    </textarea>
                                </div>
                                <div>
@@ -103,7 +103,7 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
                                     </input>
                                 </div>
                                 <div>
-                                    <label htmlFor="poster" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier l'affiche (Taille max: 4mo)` : "Ajouter une affiche (Taille max: 4mo)"}</label>
+                                    <label htmlFor="poster" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier l'affiche (Taille max: 4mo)` : "Ajouter une affiche (Taille max: 4mo)"} <em>hauteur recommandé (1000px)</em></label>
                                     <input type="file" name="poster" id="poster"  placeholder="Ajouter une affiche" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
                                     </input>
                                 </div>
@@ -112,18 +112,25 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
                                     <input type="file" name="screen" id="screen" placeholder="Ajouter une screen de la vidéo youtube" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
                                     </input>
                                 </div>
+                                <div>
+                                    <label htmlFor="status" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier le statut` : "Ajouter un statut"}</label>
+                                    <select name="status" id="status" placeholder="Ajoutez un status" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                        <option value="A venir">A venir</option>
+                                        <option value="Rétrospective">Rétrospective</option>
+                                    </select>
+                                </div>
                                 <input type="hidden" name="action" value={`${action == "modif" ? "modifPost" : 'addPost'}`} />
 
                                 { action == "modif" ?
                                 <input type="hidden" name ="id" value={content['id']} />
                                 : ""}
-                               <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ajoutez votre post</button>
+                               <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">{ action == "modif" ? "Modifiez" : "Ajoutez"} votre post</button>
                            </form>
                        </div>
                     : type == ":team" ?
                     <div className="px-6 py-6 lg:px-8">
                            <h3 className="mb-4 text-xl font-medium text-white italic">{ action == "modif" ? `Modifier un utilisateur` : "Ajouter un utilisateur"}</h3>
-                           <form ref={formTeam} className="space-y-6" action="#" onSubmit={() => handleSubmit(event)}>
+                           <form className="space-y-6" action="#" onSubmit={() => handleSubmit(event)}>
                                <div>
                                    <label htmlFor="name" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier le nom` : "Ajouter un nom"}</label>
                                    <input type="text" name="name" id="name" defaultValue={ action == "modif" ? content['name'] : ""} placeholder="Ajoutez un nom" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
@@ -140,37 +147,43 @@ const Modal = ({isOpen, type, action, contentToModal, setIsOpen, fetchTeam, fetc
                                     </input>
                                 </div>
                                 <div>
-                                    <label htmlFor="poster" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier une description (max 135 caractères)` : "Ajoutez une description (max 135 caractères)"} </label>
-                                    <textarea type="text" name="description" id="poster" defaultValue={ action == "modif" ? content['description'] : ""} placeholder="Ajoutez une description" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                    <label htmlFor="descriptionUser" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier une description (max 250 caractères)` : "Ajoutez une description (max 250 caractères)"} </label>
+                                    <textarea type="text" name="description" id="descriptionUser" 
+                                    defaultValue={ action == "modif" ? content['description'] : ""} rows="5" 
+                                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500
+                                     focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500  dark:text-white" required>
+                                        
                                     </textarea>
                                 </div>
                                 <div>
-                                    <label htmlFor="screen" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la photo de l'accueil` : "Ajouter une photo pour l'accueil"}(format rond 142px/142px)</label>
-                                    <input type="file" name="photoAccueil" id="screen" placeholder="Ajoutez une screen de la vidéo youtube" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
+                                    <label htmlFor="screen" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la photo de l'accueil` : "Ajouter une photo pour l'accueil"}<em> (format rond 142px/142px)</em></label>
+                                    <input type="file" name="photoAccueil" id="screen"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
                                     </input>
                                 </div>
                                 <div>
-                                    <label htmlFor="screen" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la photo général` : "Ajouter une photo général"}(format largeur 283px/ hauteur 425px)</label>
-                                    <input type="file" name="photo" id="screen" placeholder="Ajoutez une screen de la vidéo youtube" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
+                                    <label htmlFor="screen" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la photo général` : "Ajouter une photo général"}<em> (format largeur 283px/ hauteur 425px)</em></label>
+                                    <input type="file" name="photo" id="screen"  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" { ...action == "modif" ? "" : "required"}>
                                     </input>
                                 </div>
                                 <div>
                                     <label htmlFor="localisation" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier la localisation` : "Ajouter une localisation"}</label>
                                     <select type="text" name="localisation" id="localisation" placeholder="Ajoutez une localisation" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
-                                        <option value="Rethel" selected>Rethel</option>
+                                        <option value="Rethel">Rethel</option>
                                         <option value="Vouziers">Vouziers</option>
+                                        <option value="null">null</option>
                                     </select>
                                 </div>
                                 <div>
                                     <label htmlFor="linkedin" className="block mb-2 text-sm font-medium text-white">{ action == "modif" ? `Modifier le linkedin` : "Ajouter un linkedin"}</label>
-                                    <input type="text" name="linkedin" id="linkedin" defaultValue={ action == "modif" ? content['linkedin'] : ""} placeholder="Ajoutez un lien" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                                    <input type="text" name="linkedin" id="linkedin" defaultValue={ action == "modif" ? content['linkedin'] : ""} placeholder="Ajoutez un lien" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                                     </input>
                                 </div>
                                 <input type="hidden" name="action" value={`${action == "modif" ? "modifUser" : 'addUser'}`} />
                                 { action == "modif" ?
                                 <input type="hidden" name ="id" value={content['id']} />
                                 : ""}
-                               <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Ajoutez votre post</button>
+                               <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                { action == "modif" ? "Modifiez" : "Ajoutez"} votre utilisateur</button>
                            </form>
                        </div>
                     : ""

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const Socials = ({persons}) => {
     
     return (
-        <section id="socials" className="bg-[url('assets/img/homepage/photoReseaux.jpg')] bg-center md:bg-fixed bg-cover" title="photo de personnes en groupe">
+        <section id="socials" className="bg-[url('assets/img/homepage/photoReseauxMobile.jpg')] md:bg-[url('assets/img/homepage/photoReseaux.jpg')] bg-cover bg-bottom md:bg-center md:bg-fixed" title="photo de personnes en groupe">
         <div className="h-auto md:h-auto w-full relative bg-gray-600 bg-opacity-70 ">
             <div className="grid grid-cols-1 md:grid-cols-2 grid-row-1 items-center pt-[50px] text-main-white  md:py-12">
                 <div className="flex ml-8 gap-8 items-center">
@@ -13,19 +13,19 @@ const Socials = ({persons}) => {
                         <h3 className="font-title text-4xl lg:text-5xl italic mb-6 tracking-[0.1em]">Rejoignez la communauté</h3>
                         <div>
                             <i className="fa-brands fa-square-facebook mr-2 text-main-blue"></i>
-                            <a href="#"> Sur Facebook</a>
+                            <a href="https://www.facebook.com/milosudardennes" target="_blank"> Sur Facebook</a>
                         </div>
                         <div>
                             <i className="fa-brands fa-youtube mr-2 text-main-red"></i>
-                            <a href="#"> Sur Youtube</a>
+                            <a href="https://www.youtube.com/@missionlocalesudardennes5003/videos" target="_blank"> Sur Youtube</a>
                         </div>
                         <div>
                             <i className="fa-brands fa-instagram mr-2 text-yellow-500"></i>
-                            <a href="#"> Sur Instagram</a>
+                            <a href="https://www.instagram.com/mission_locale_sud_ardennes/" target="_blank"> Sur Instagram</a>
                         </div>
                         <div>
                             <i className="fa-brands fa-square-facebook mr-2 text-main-blue"></i>
-                            <a href="#"> Sur le groupe Job Emploi Rethel</a>
+                            <a href="https://www.facebook.com/groups/994160127762101" target="_blank"> Sur le groupe Job Emploi Rethel</a>
                         </div>
                     </div>
                 </div>
@@ -40,12 +40,12 @@ const Socials = ({persons}) => {
                                     <div className="max-w-[98%] sm:max-w-[80%]  md:max-w-md bg-[url('assets/img/homepage/bullesPetit.jpg')] bg-contain border-2 border-main-pink  shadow-lg ${hidden} rounded-lg overflow-hidden my-2 sm:my-4">
                                         <div className="py-2 sm:py-4 px-6">
                                             <div className="grid grid-cols-2 items-center">
-                                                <img className="w-32 mx-auto h-32 rounded-full object-cover object-center" 
+                                                <img className="w-32 mx-auto h-32 rounded-full object-cover object-top" 
                                                 src={person['photo']} alt="membre de l'équipe">
                                                 </img>
                                                 <div>
-                                                    <p className="text-2xl font-semibold text-gray-800 text-center italic">{person['nom']} <span>{person['prenom']}</span> </p>
-                                                    <p className="text-md text-blue-800 text-center italic"> {person['role']} </p>
+                                                    <p className="text-2xl font-semibold text-gray-800 text-center italic uppercase"><span className="capitalize">{person['surname']}</span> {person['name']}  </p>
+                                                    <p className="text-md text-blue-800 text-center italic"> {person['poste']} </p>
                                                 </div>
                                             </div>
                                             <p className="py-2 sm:text-lg text-gray-700 text-center line-clamp-5">""{person['description']}""</p>

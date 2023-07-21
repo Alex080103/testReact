@@ -13,6 +13,9 @@ const Crud = () =>
     const [error, setError] = useState();
     const [datas, setDatas] = useState([]);
     const [isLoad, setIsLoad] = useState(false);
+    const [limit, setLimit] = useState(5);
+    const [offset, setOffset] = useState(0);
+    const [totalDatas, setTotalDatas] = useState(0);
     const name = useParams();
     // console.log("salut");
       useEffect(() => {
@@ -23,16 +26,20 @@ const Crud = () =>
             }
         }, [name.team]);
 
-        function fetchTeam() {
-            axios.post('http://localhost:8000/public/php/index.php', {
-                action : 'showAllUsers'
+        function fetchTeam(limit, offset) {
+            axios.post('../php/index.php', {
+            // axios.post('http://localhost:8000/public/php/index.php', {
+                action : 'showAllUsers',
+                // limit: limit,
+                // offset: offset
             }).then(function(response) {
                 setDatas(response.data);
+                // setTotalDatas(response.data.count); 
                 setIsLoad((isLoad) => !isLoad);
             })
         }   
         function fetchPost() {
-            axios.post('http://localhost:8000/public/php/index.php', {
+            axios.post('../php/index.php', {
                 action: 'showAllPosts'
             }).then(function(response) {
                 setDatas(response.data);
@@ -45,7 +52,7 @@ const Crud = () =>
             
             <main>
                 <Helmet>
-                    <title>Gestion Admin</title>
+                    <title>Mission Locale Sud Ardennes / Gestion Admin</title>
                     <meta name="robots" content="noindex"/>
                 </Helmet>
                 <section className="bg-main-white mt-8 mb-16 pr-2">
@@ -57,7 +64,7 @@ const Crud = () =>
                             <div className="overflow-x-auto">
                                 {datas.length !== 0 ? <Table datas={datas} render={isLoad} urlName={name.team} fetchTeam={fetchTeam} fetchPost={fetchPost} setError={setError}></Table> : <div>Loading</div>}
                             </div>
-                            <Pagination></Pagination>
+                            {/* <Pagination setLimit={setLimit} setOffset={setOffset} datas={datas} limit={limit} offset={offset} totalDatas={totalDatas}></Pagination> */}
                         </div>
                     </div>
                 </section>

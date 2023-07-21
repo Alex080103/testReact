@@ -4,14 +4,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
+    console.log(datas);
     const [showDatas, setDatas] = useState(datas);
     const [contentToModal, setModalContent] = useState({});
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [showPictures, setShowPictures] = useState(-1);
-    // console.log(showPictures);
+    console.log(showDatas);
 
     function handleDelete(action, id) {
-        axios.post('http://localhost:8000/public/php/index.php', {
+        axios.post('../php/index.php', {
             action : action,
             id : id
         }).then(function(response) {
@@ -27,7 +28,7 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
     
     function setContentToModal(content, index) {
         setIsOpenModal((isOpenModal) => !isOpenModal);
-        setModalContent(content);
+        setModalContent(showDatas[index]);
     }
     useEffect(() => {
         setDatas(datas);
@@ -46,6 +47,7 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                         <th scope="col" className="px-4 py-3">Screen vidéo</th>
                         <th scope="col" className="px-4 py-3">Lien vidéo</th>
                         <th scope="col" className="px-4 py-3 text-center">Lien de la publication</th>
+                        <th scope="col" className="px-4 py-3">Statut</th>
                         <th scope="col" className="px-4 py-3">
                             <span className="sr-only">Actions</span>
                         </th>
@@ -81,12 +83,12 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                                 }
                                 
                                 <div className={`grid  ${ showPictures !== index ? "max-h-0 opacity-0" : "max-h-[100%] opacity-100"} grid-cols-2 overflow-hidden items-center gap-4 transition-opacity tranision-[height] ease-out duration-[0.6s]`}>
-                                    <img className="max-h-40" src={content['photo']}></img>
-                                    <img className="max-h-40" src={content['photo_accueil']}></img>
+                                    <img className="max-h-40" src={`../${content['photo']}`}></img>
+                                    <img className="max-h-40" src={`../${content['photo_accueil']}`}></img>
                                 </div>
                                 
                             </td>
-                            <td className="px-4 py-3">{content['description']}</td>
+                            <td className="px-4 py-3 line-clamp-[5]">{content['description']}</td>
                             <td className="px-4 py-3">{content['localisation']}</td>
                             <td className="px-4 py-3">{content['linkedin']}</td>
 
@@ -107,14 +109,15 @@ const Table = ({datas, onload, urlName, fetchTeam, fetchPost, setError}) => {
                         : urlName == ":post" ?
                         <tr className="border-b max-h-[10px]" key={index}>
                             <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">{content['date']}</th>
-                            <td className="px-4 py-3">{content['description']}</td>
-                            <td className="px-4 py-3 "><img className="max-h-40" src={content['poster']}></img></td>
-                            <td className="px-4 py-3"><img className="max-h-40" src={content['video']}></img></td>
-                            <td className="px-4 py-3">{content['video_link']}</td>
-                            <td className="px-4 py-3">{content['link']}</td>
+                            <td className="px-4 py-3 "><div className="max-w-[500px] line-clamp-[10]">{content['descriptionPost']}</div></td>
+                            <td className="px-4 py-3 "><img className="max-h-40" src={`../${content['poster']}`}></img></td>
+                            <td className="px-4 py-3"><img className="max-h-40" src={`../${content['video']}`}></img></td>
+                            <td className="px-4 py-3 "><div className="max-w-[100px] break-words">{content['video_link']}</div></td>
+                            <td className="px-4 py-3"><div className="max-w-[100px] break-words">{content['link']}</div></td>
+                            <td className="px-4 py-3">{content['status']}</td>
 
-                            <td  className="px-4 py-3 flex items-center justify-center mx-auto text-center z-0">
-                                <div className="w-44 z-10 bg-white rounded divide-y divide-gray-100 shadow  ">
+                            <td  className="px-4 py-3 flex items-center justify-items-center mb-0 my-auto text-center min-h-[220px] max-h-[300px] z-0">
+                                <div className="w-44 z-10 bg-white rounded divide-y divide-gray-100 shadow ">
                                     <ul className="py-1 text-sm text-gray-700 w-full">
                                         <li>
                                             <button onClick={() => setContentToModal(content, index)}
