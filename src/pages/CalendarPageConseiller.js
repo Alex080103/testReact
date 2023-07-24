@@ -18,7 +18,7 @@ const CalendarPageConseiller = () => {
     const allRdv = [
         [
             {
-                date: new Date(2023, 6, 21),
+                date: new Date(2023, 6, 24),
             },
             { 
                 jeune : "Roger",
@@ -125,7 +125,7 @@ const CalendarPageConseiller = () => {
             </div>
             <div className="text-center bg-main-white p-3 m-4 border-2 rounded-lg grid gap-4">
               <h3 className="text-3xl mt-2 "><i className="fa-solid fa-users mr-2 text-main-pink text-2xl "></i>Tout vos suivis : </h3>
-              <Link to={'/Formulaire/:addMember'} className="bg-main-pink font-bold w-full my-auto sm:w-[80%] px-2 md:w-1/2 py-2 text-main-white border mx-auto hover:bg-main-white hover:text-main-pink hover:border transition-all hover:border-main-pink rounded-lg"
+              <Link to={'/Catalogue/:jeunes'} className="bg-main-pink font-bold w-full my-auto sm:w-[80%] px-2 md:w-1/2 py-2 text-main-white border mx-auto hover:bg-main-white hover:text-main-pink hover:border transition-all hover:border-main-pink rounded-lg"
                 >
                 Voir
               </Link>

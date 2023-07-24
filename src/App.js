@@ -21,6 +21,8 @@ import Protected from "./components/admin/Protected";
 import Error404 from "./pages/Error404";
 import CalendarPageConseiller from "./pages/CalendarPageConseiller";
 import Formulaire from "./pages/Formulaire";
+import Catalogue from "./pages/Catalogue";
+import Atelier from "./pages/Atelier";
 
 export default function App() {
 
@@ -43,6 +45,8 @@ export default function App() {
             <Crud/>
           </Protected>
         }/>
+        <Route path="/Atelier/:id" element={<Atelier/>}/>
+        <Route path="/Catalogue/:jeunes" element={<Catalogue/>}/>
         <Route path='/CalendarJeune' element={<CalendarPageJeune/>}/>
         <Route path='/CalendarConseiller' element={<CalendarPageConseiller/>}/>
         <Route path='/Formulaire/:addMember' element={<Formulaire/>}/>

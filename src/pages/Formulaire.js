@@ -37,7 +37,7 @@ const Formulaire = () => {
                       <input type="text" id="phone" name="phone" className="block p-3 w-full text-sm text-gray-900  rounded-lg border border-gray-600 shadow-sm focus-visible:outline-main-pink " placeholder="Votre téléphone" required></input>
                   </div>
                   <div>
-                      <label htmlFor="adress" className="block mb-2 text-sm font-medium text-gray-900 ">Votre ville de résidence</label>
+                      <label htmlFor="adress" className="block mb-2 text-sm font-medium text-gray-900 ">Votre adresse</label>
                       <input type="text" id="adress" name="adress" className="block p-3 w-full text-sm text-gray-900  rounded-lg border border-gray-600 shadow-sm focus-visible:outline-main-pink " placeholder="Votre adresse" required></input>
                   </div>
                   <div>
@@ -46,7 +46,7 @@ const Formulaire = () => {
                        border-gray-600 shadow-sm focus-visible:outline-main-pink" placeholder="Votre âge" required></input>
                   </div>
                   <div className="md:col-start-1 md:col-end-3 w-1/2 mx-auto">
-                      <label htmlFor="age" className="block mb-2 text-sm font-medium text-gray-900 ">Votre âge</label>
+                      <label htmlFor="age" className="block mb-2 text-sm font-medium text-gray-900 ">Choisir un conseiller</label>
                       <select type="text" id="age" name="age" className="block p-3 w-full text-gray-900 border-gray-900 rounded-lg border
                        shadow-sm focus-visible:outline-main-pink font-bold" placeholder="Votre âge" required>
                         <option value={"Sylvie"}>Sylvie</option>
