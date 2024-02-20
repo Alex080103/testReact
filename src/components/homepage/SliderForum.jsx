@@ -28,9 +28,9 @@ const SliderForum = ({forums}) => {
                         </div>
                         <p className="mt-4 text-right hidden sm:inline mr sm:!line-clamp-3 md:!line-clamp-[10]">{forum.descriptionPost}</p>
                         <div className="flex sm:mb-12 md:mb-0 md:flex-wrap justify-center">
-                            <a href={forum.link} target='_blank' className="w-1/2 sm:w-auto bg-blue-600 hover:bg-blue-700 transition-colors rounded-full text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la publication</a>
-                            <a href={forum.video_link} target='_blank' className="mx-auto hidden lg:block"><img src={forum.video} className="aspect-video h-32  mx-auto mt-8"/></a>
-                            <a href={forum.video_link} target='_blank'  className="w-1/2 sm:w-auto bg-main-pink border text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto hover:bg-main-white hover:text-main-pink 
+                            <a href={forum.link} target='_blank' className="w-1/2 md:min-w-[51%] sm:w-auto bg-blue-600 hover:bg-blue-700 transition-colors md:rounded-full text-sm sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto">Voir la publication</a>
+                            <a href={forum.video_link} target='_blank' className="mx-auto hidden md:min-w-[51%] lg:block"><img src={forum.video} className="aspect-video h-32   mx-auto mt-8"/></a>
+                            <a href={forum.video_link} target='_blank'  className="w-1/2 sm:w-auto bg-main-pink border md:min-w-[51%] text-sm md:rounded-full sm:text-xl font-bold px-4 py-2 sm:mt-2 md:mt-8 text-main-white mx-auto hover:bg-main-white hover:text-main-pink 
                             hover:border transition-all hover:border-main-pink">Voir la vidéo</a>
                         </div>
                         <p className=" sm:hidden block w-[100%] border-t-main-white border-t-2 rounded-br-[10px]  sm:p-2 md:p-3 bg-main-pink text-main-white font-title text-xl">{forum.status} !</p>

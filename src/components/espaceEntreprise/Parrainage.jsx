@@ -22,14 +22,14 @@ const Parrainage = () => {
                             <li><strong>Apporter des informations</strong> sur les entreprises, les logiques et les contraintes des employeurs.</li>
                             <li><strong>Faire profiter </strong>de son bon sens, de ses valeurs.</li>
                             <li><strong>Aider à structurer</strong> les démarches de recherche d'emploi,</li>
-                            <li><strong>Faire part</strong> des points à &méliorer</li>
+                            <li><strong>Faire part</strong> des points à améliorer</li>
                         </ul>
                     </div>
                     <p className="text-2xl text-center">Les principales missions <span className="text-main-orange font-bold">du parrain et de la marraine :</span></p>
                     <ul className="text-center space-y-4 text-lg font-bold">
                         <li><span className="text-main-purple">Sensibiliser le jeune</span> aux réalités du monde du travail</li>
                         <li><span className="text-main-pink">Partager sa connaissance</span> de l'entreprise et de son environnement</li>
-                        <li><span className="text-main-blue">Accompagner le jeune</span> dans son projet professionel</li>
+                        <li><span className="text-main-blue">Accompagner le jeune</span> dans son projet professionnel</li>
                         <li><span className="text-main-green">Mobiliser son réseau</span> professionel et personnel</li>                    
                         <li><span className="text-main-orange">Aider à rétablir</span> la confiance en soi</li>                    
                     </ul>
